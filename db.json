@@ -1,0 +1,54 @@
+{
+  "foodGroups": [
+    {
+      "id": 1,
+      "ma": "SvT001",
+      "name": "Món khai vị"
+    },
+    {
+      "id": 2,
+      "ma": "SvT002",
+      "name": "Món chính"
+    },
+    {
+      "id": 3,
+      "ma": "SvT003",
+      "name": "Món lẩu"
+    },
+    {
+      "id": 4,
+      "ma": "SvT004",
+      "name": "Món nướng"
+    },
+    {
+      "id": 5,
+      "ma": "SvT005",
+      "name": "Món chiên"
+    },
+    {
+      "id": 6,
+      "ma": "SvT006",
+      "name": "Món hấp"
+    },
+    {
+      "id": 7,
+      "ma": "SvT007",
+      "name": "Món chay"
+    },
+    {
+      "id": 8,
+      "ma": "SvT008",
+      "name": "Nước uống"
+    },
+    {
+      "id": 9,
+      "ma": "SvT009",
+      "name": "Tráng miệng"
+    },
+    {
+      "id": 10,
+      "ma": "SvT010",
+      "name": "Combo"
+    }
+  ]
+}
