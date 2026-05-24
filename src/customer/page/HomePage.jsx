@@ -5,7 +5,8 @@ export default function HomePage() {
   <Header/>
   {/* phần ảnh box chứa ảnh của page */}
   {/* The image box contains the page's images. */}
-    <div style={{
+    <div 
+    style={{
       borderRadius:"10px",
       height:"500px",
       margin:"20px",
@@ -16,12 +17,14 @@ export default function HomePage() {
       justifyContent:"center",
       alignItems:"center"
     }}>
-      <img style={{
+      <img 
+      style={{
         width:"100%",
         height:"100%",
         objectFit:"cover"
       }}  src="https://i.pinimg.com/736x/c2/4c/f4/c24cf4b4e10242dfd414a503dd147dd2.jpg" alt="landing page image" />
-      <div style={{
+      <div 
+      style={{
         width:"100%",
         height:"100%",
         position:"absolute",
@@ -53,6 +56,24 @@ export default function HomePage() {
       
      
     }}>
+      <h2 
+      style={{
+        width:"100%",
+        textAlign:"center",
+        padding:"20px",
+        color:"#732f0a",
+        fontWeight:"bold"
+      }}
+      >Service Menu</h2>
+      <div 
+      style={{
+        margin:"20px",
+        backgroundColor:"black",
+        height:"100px"
+      }}
+      >
+        
+      </div>
 
     </section>
   </>;
