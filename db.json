@@ -1,54 +1,170 @@
 {
   "foodGroups": [
     {
-      "id": 1,
-      "ma": "SvT001",
-      "name": "Món khai vị"
+      "id": "SVT001",
+      "name": "Cà phê"
     },
     {
-      "id": 2,
-      "ma": "SvT002",
-      "name": "Món chính"
+      "id": "SVT002",
+      "name": "Nước ép"
     },
     {
-      "id": 3,
-      "ma": "SvT003",
-      "name": "Món lẩu"
+      "id": "SVT003",
+      "name": "Trà"
     },
     {
-      "id": 4,
-      "ma": "SvT004",
-      "name": "Món nướng"
+      "id": "SVT004",
+      "name": "Sinh tố"
     },
     {
-      "id": 5,
-      "ma": "SvT005",
-      "name": "Món chiên"
+      "id": "SVT005",
+      "name": "Bánh"
+    }
+  ],
+  
+  "foods": [
+    {
+      "id": "SV001",
+      "name": "Cà phê sữa",
+      "unit": "SVT001",
+      "price": 25000,
+      "type": "Cà phê"
     },
     {
-      "id": 6,
-      "ma": "SvT006",
-      "name": "Món hấp"
+      "id": "SV002",
+      "name": "Cà phê đen",
+      "unit": "SVT001",
+      "price": 20000,
+      "type": "Cà phê"
     },
     {
-      "id": 7,
-      "ma": "SvT007",
-      "name": "Món chay"
+      "id": "SV003",
+      "name": "Nước ép cam",
+      "unit": "SVT002",
+      "price": 30000,
+      "type": "Nước ép"
     },
     {
-      "id": 8,
-      "ma": "SvT008",
-      "name": "Nước uống"
+      "id": "SV004",
+      "name": "Nước ép dưa hấu",
+      "unit": "SVT002",
+      "price": 32000,
+      "type": "Nước ép"
     },
     {
-      "id": 9,
-      "ma": "SvT009",
-      "name": "Tráng miệng"
+      "id": "SV005",
+      "name": "Trà đào",
+      "unit": "SVT003",
+      "price": 35000,
+      "type": "Trà"
     },
     {
-      "id": 10,
-      "ma": "SvT010",
-      "name": "Combo"
+      "id": "SV006",
+      "name": "Trà chanh",
+      "unit": "SVT003",
+      "price": 25000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV007",
+      "name": "Sinh tố bơ",
+      "unit": "SVT004",
+      "price": 40000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV008",
+      "name": "Sinh tố xoài",
+      "unit": "SVT004",
+      "price": 42000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV009",
+      "name": "Bánh tiramisu",
+      "unit": "SVT005",
+      "price": 45000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV010",
+      "name": "Bánh su kem",
+      "unit": "SVT005",
+      "price": 28000,
+      "type": "Bánh"
+    }
+  ],
+  "bills": [
+    {
+      "id": "HD001",
+      "dateCreated": "23/05/2026",
+      "table": "TB001",
+      "creator": "Nguyễn Văn An",
+      "total": 95000
+    },
+    {
+      "id": "HD002",
+      "dateCreated": "23/05/2026",
+      "table": "TB002",
+      "creator": "Trần Minh Khang",
+      "total": 120000
+    },
+    {
+      "id": "HD003",
+      "dateCreated": "23/05/2026",
+      "table": "TB003",
+      "creator": "Lê Hoàng Nam",
+      "total": 85000
+    },
+    {
+      "id": "HD004",
+      "dateCreated": "23/05/2026",
+      "table": "TB004",
+      "creator": "Phạm Gia Huy",
+      "total": 155000
+    },
+    {
+      "id": "HD005",
+      "dateCreated": "23/05/2026",
+      "table": "TB005",
+      "creator": "Võ Thu Trang",
+      "total": 210000
+    },
+    {
+      "id": "HD006",
+      "dateCreated": "23/05/2026",
+      "table": "TB006",
+      "creator": "Nguyễn Đức Anh",
+      "total": 68000
+    },
+    {
+      "id": "HD007",
+      "dateCreated": "23/05/2026",
+      "table": "TB007",
+      "creator": "Bùi Khánh Vy",
+      "total": 175000
+    },
+    {
+      "id": "HD008",
+      "dateCreated": "23/05/2026",
+      "table": "TB008",
+      "creator": "Trương Mỹ Linh",
+      "total": 132000
+    },
+    {
+      "id": "HD009",
+      "dateCreated": "23/05/2026",
+      "table": "TB009",
+      "creator": "Đặng Quốc Bảo",
+      "total": 99000
+    },
+    {
+      "id": "HD010",
+      "dateCreated": "23/05/2026",
+      "table": "TB010",
+      "creator": "Phan Tuấn Kiệt",
+      "total": 250000
     }
   ]
+
 }
