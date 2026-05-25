@@ -1,4 +1,42 @@
 {
+  "users": [
+    {
+      "id": "U001",
+      "username": "admin",
+      "password": "admin222",
+      "name": "Nguyễn Trung Kiên",
+      "address": "123 Lê Lợi, Quận 1, TP.HCM",
+      "tel": "0901234567",
+      "role": "Admin",
+      "birthday": "1990-05-15",
+      "gender": "Nam",
+      "salary": 20000000
+    },
+    {
+      "id": "U002",
+      "username": "staff1",
+      "password": "staff123",
+      "name": "Nguyễn Nuôi Gà",
+      "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
+      "tel": "0912345678",
+      "role": "Staff",
+      "birthday": "1995-08-20",
+      "gender": "Nam",
+      "salary": 10000000
+    },
+    {
+      "id": "U003",
+      "username": "staff2",
+      "password": "staff123",
+      "name": "Trần Thị Bánh Bèo",
+      "address": "789 Trần Hưng Đạo, Quận 5, TP.HCM",
+      "tel": "0923456789",
+      "role": "Staff",
+      "birthday": "1998-03-10",
+      "gender": "Nữ",
+      "salary": 10000000
+    }
+  ],
   "foodGroups": [
     {
       "id": "SVT001",
@@ -384,5 +422,6 @@
       "price": 60000,
       "type": "Bánh"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
