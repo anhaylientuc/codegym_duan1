@@ -7,6 +7,7 @@ const CustomPagination = ({ numPages, setpage, page }) => {
                 if (page > 1)
                     setpage(page - 1);
             }}>
+                Trước
             </Pagination.Prev>
             {
                 [...Array(numPages)].map((item, index) => {
@@ -24,7 +25,7 @@ const CustomPagination = ({ numPages, setpage, page }) => {
                 if (page < numPages)
                     setpage(page + 1);
             }}>
-
+                Sau
             </Pagination.Next>
         </Pagination>
     )
