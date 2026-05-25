@@ -8,21 +8,36 @@ const getAll = async () => {
         console.log(error)
     }
 }
-const search = async (keyword) => {
-    
+const getByPage = async (page) => {
     try {
-        console.log(keyword)
-        const params=new URLSearchParams();
-        Object.entries(keyword).forEach(([key,value])=>{
-            params.append(key,value)
-        })
-        const url=BASE_URL+`?${params}`
-        console.log(url)
+        const url = BASE_URL + `?_page=${page}&_per_page=${6}`
         const res = await axios.get(url);
-        console.log(res)
         return res.data;
     } catch (error) {
         console.log(error)
     }
 }
-export const FoodGroupsServices = { getAll,search }
+const search = async (keyword) => {
+
+    try {
+        const params = new URLSearchParams();
+        Object.entries(keyword).forEach(([key, value]) => {
+            params.append(key, value)
+        })
+        const url = BASE_URL + `?${params}`
+        const res = await axios.get(url);
+        return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+const insert = async (data) => {
+    try {
+        const res = await axios.post(BASE_URL, data);
+        return res.data;
+    } catch (error) {
+        console.log(error)
+
+    }
+}
+export const FoodGroupsServices = { getAll, search, getByPage,insert }
