@@ -1,23 +1,30 @@
 import { FoodGroupsServices } from "../../services/FoodGroupsServices";
-const handleSearch=async(keywords)=>{
+const handleSearch = async (keywords) => {
     try {
-        const res=await FoodGroupsServices.search(keywords);
+        const res = await FoodGroupsServices.search(keywords);
         console.log(res)
         return res;
     } catch (error) {
         console.log(error);
     }
 }
-const handleAdd=(values)=>{
-    
+const handleAdd = (values) => {
+
 }
-const handleGetAll=async()=>{
+const handleGetAll = async () => {
     try {
-        const res=await FoodGroupsServices.getAll();
+        const res = await FoodGroupsServices.getAll();
         return res;
     } catch (error) {
         console.log(error);
     }
 }
-
-export const FoodGroupsControllers={handleSearch,handleGetAll}
+const handleGetByPage = async (page) => {
+    try {
+        const res = await FoodGroupsServices.getByPage(page);
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const FoodGroupsControllers = { handleSearch, handleGetAll ,handleGetByPage}
