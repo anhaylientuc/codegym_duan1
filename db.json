@@ -1,0 +1,427 @@
+{
+  "users": [
+    {
+      "id": "U001",
+      "username": "admin",
+      "password": "admin222",
+      "name": "Nguyễn Trung Kiên",
+      "address": "123 Lê Lợi, Quận 1, TP.HCM",
+      "tel": "0901234567",
+      "role": "Admin",
+      "birthday": "1990-05-15",
+      "gender": "Nam",
+      "salary": 20000000
+    },
+    {
+      "id": "U002",
+      "username": "staff1",
+      "password": "staff123",
+      "name": "Nguyễn Nuôi Gà",
+      "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
+      "tel": "0912345678",
+      "role": "Staff",
+      "birthday": "1995-08-20",
+      "gender": "Nam",
+      "salary": 10000000
+    },
+    {
+      "id": "U003",
+      "username": "staff2",
+      "password": "staff123",
+      "name": "Trần Thị Bánh Bèo",
+      "address": "789 Trần Hưng Đạo, Quận 5, TP.HCM",
+      "tel": "0923456789",
+      "role": "Staff",
+      "birthday": "1998-03-10",
+      "gender": "Nữ",
+      "salary": 10000000
+    }
+  ],
+  "foodGroups": [
+    {
+      "id": "SVT001",
+      "name": "Cà phê"
+    },
+    {
+      "id": "SVT002",
+      "name": "Nước ép"
+    },
+    {
+      "id": "SVT003",
+      "name": "Trà"
+    },
+    {
+      "id": "SVT004",
+      "name": "Sinh tố"
+    },
+    {
+      "id": "SVT005",
+      "name": "Bánh"
+    },
+    {
+      "id": "SVT006",
+      "name": "Mì"
+    },
+    {
+      "id": "SVT007",
+      "name": "Cơm"
+    },
+    {
+      "id": "SVT008",
+      "name": "Phở"
+    }
+  ],
+  "foods": [
+    {
+      "id": "SV011",
+      "name": "Cà phê bạc xỉu",
+      "unit": "SVT001",
+      "price": 30000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV012",
+      "name": "Cà phê muối",
+      "unit": "SVT001",
+      "price": 35000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV013",
+      "name": "Cà phê đá xay",
+      "unit": "SVT001",
+      "price": 45000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV014",
+      "name": "Cappuccino",
+      "unit": "SVT001",
+      "price": 50000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV015",
+      "name": "Latte",
+      "unit": "SVT001",
+      "price": 52000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV016",
+      "name": "Nước ép táo",
+      "unit": "SVT002",
+      "price": 30000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV017",
+      "name": "Nước ép dứa",
+      "unit": "SVT002",
+      "price": 32000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV018",
+      "name": "Nước ép cà rốt",
+      "unit": "SVT002",
+      "price": 35000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV019",
+      "name": "Nước ép ổi",
+      "unit": "SVT002",
+      "price": 34000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV020",
+      "name": "Nước ép mix trái cây",
+      "unit": "SVT002",
+      "price": 45000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV021",
+      "name": "Trà sữa trân châu",
+      "unit": "SVT003",
+      "price": 40000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV022",
+      "name": "Trà vải",
+      "unit": "SVT003",
+      "price": 35000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV023",
+      "name": "Trà tắc",
+      "unit": "SVT003",
+      "price": 25000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV024",
+      "name": "Trà gừng",
+      "unit": "SVT003",
+      "price": 28000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV025",
+      "name": "Trà hoa cúc",
+      "unit": "SVT003",
+      "price": 30000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV026",
+      "name": "Sinh tố dâu",
+      "unit": "SVT004",
+      "price": 42000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV027",
+      "name": "Sinh tố chuối",
+      "unit": "SVT004",
+      "price": 39000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV028",
+      "name": "Sinh tố dừa",
+      "unit": "SVT004",
+      "price": 45000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV029",
+      "name": "Sinh tố mãng cầu",
+      "unit": "SVT004",
+      "price": 46000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV030",
+      "name": "Sinh tố kiwi",
+      "unit": "SVT004",
+      "price": 50000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV031",
+      "name": "Bánh kem dâu",
+      "unit": "SVT005",
+      "price": 55000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV032",
+      "name": "Bánh flan",
+      "unit": "SVT005",
+      "price": 25000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV033",
+      "name": "Bánh mousse chanh dây",
+      "unit": "SVT005",
+      "price": 50000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV034",
+      "name": "Bánh cheesecake",
+      "unit": "SVT005",
+      "price": 60000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV035",
+      "name": "Bánh bông lan trứng muối",
+      "unit": "SVT005",
+      "price": 65000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV036",
+      "name": "Espresso",
+      "unit": "SVT001",
+      "price": 40000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV037",
+      "name": "Americano",
+      "unit": "SVT001",
+      "price": 45000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV038",
+      "name": "Mocha",
+      "unit": "SVT001",
+      "price": 55000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV039",
+      "name": "Cold Brew",
+      "unit": "SVT001",
+      "price": 50000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV040",
+      "name": "Cà phê cốt dừa",
+      "unit": "SVT001",
+      "price": 48000,
+      "type": "Cà phê"
+    },
+    {
+      "id": "SV041",
+      "name": "Nước ép chanh dây",
+      "unit": "SVT002",
+      "price": 30000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV042",
+      "name": "Nước ép nho",
+      "unit": "SVT002",
+      "price": 35000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV043",
+      "name": "Nước ép xoài",
+      "unit": "SVT002",
+      "price": 35000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV044",
+      "name": "Nước ép dâu",
+      "unit": "SVT002",
+      "price": 42000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV045",
+      "name": "Nước ép đào",
+      "unit": "SVT002",
+      "price": 38000,
+      "type": "Nước ép"
+    },
+    {
+      "id": "SV046",
+      "name": "Trà đào cam sả",
+      "unit": "SVT003",
+      "price": 45000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV047",
+      "name": "Trà ô long",
+      "unit": "SVT003",
+      "price": 40000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV048",
+      "name": "Trà sen vàng",
+      "unit": "SVT003",
+      "price": 42000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV049",
+      "name": "Trà matcha",
+      "unit": "SVT003",
+      "price": 50000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV050",
+      "name": "Trà chanh mật ong",
+      "unit": "SVT003",
+      "price": 32000,
+      "type": "Trà"
+    },
+    {
+      "id": "SV051",
+      "name": "Sinh tố việt quất",
+      "unit": "SVT004",
+      "price": 52000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV052",
+      "name": "Sinh tố thanh long",
+      "unit": "SVT004",
+      "price": 42000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV053",
+      "name": "Sinh tố mít",
+      "unit": "SVT004",
+      "price": 45000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV054",
+      "name": "Sinh tố dứa",
+      "unit": "SVT004",
+      "price": 39000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV055",
+      "name": "Sinh tố cam",
+      "unit": "SVT004",
+      "price": 41000,
+      "type": "Sinh tố"
+    },
+    {
+      "id": "SV056",
+      "name": "Bánh tart trứng",
+      "unit": "SVT005",
+      "price": 28000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV057",
+      "name": "Bánh chocolate",
+      "unit": "SVT005",
+      "price": 55000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV058",
+      "name": "Bánh donut",
+      "unit": "SVT005",
+      "price": 25000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV059",
+      "name": "Bánh croissant",
+      "unit": "SVT005",
+      "price": 30000,
+      "type": "Bánh"
+    },
+    {
+      "id": "SV060",
+      "name": "Bánh macaron",
+      "unit": "SVT005",
+      "price": 60000,
+      "type": "Bánh"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

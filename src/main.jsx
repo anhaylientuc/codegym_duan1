@@ -1,10 +1,33 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/theme.css";
+import { LoginComponent } from "./components/LoginComponent.jsx";
+import { AdminPage } from "./admin/AdminPage.jsx";
+import { StaffMenu } from "./staff/StaffMenu.jsx";
+import { FoodGroupsManagement } from "./staff/components/FoodGroupsManagement.jsx";
+import { ProfileComponent } from "./components/ProfileComponent.jsx";
+import { ChangePasswordComponent } from "./components/ChangePasswordComponent.jsx";
+import { StaffListComponent } from "./admin/components/StaffListComponent.jsx";
+import { StaffFormComponent } from "./admin/components/StaffFormComponent.jsx";
+import HomeComponent from "./components/HomeComponent.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path="/login" element={<LoginComponent />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/staff" element={<StaffListComponent />} />
+        <Route path="/admin/staff/add" element={<StaffFormComponent />} />
+        <Route path="/admin/staff/edit" element={<StaffFormComponent />} />
+        <Route path="/staff" element={<StaffMenu />} />
+        <Route path="/staff/food-groups" element={<FoodGroupsManagement />} />
+        <Route path="/profile" element={<ProfileComponent />} />
+        <Route path="/change-password" element={<ChangePasswordComponent />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
-)
+);
