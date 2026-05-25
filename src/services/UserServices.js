@@ -75,6 +75,19 @@ const search = async (keyword) => {
   }
 };
 
+const checkUsernameExists = async (username) => {
+  try {
+    const res = await axios.get(BASE_URL);
+    const users = Array.isArray(res.data) ? res.data : res.data.data;
+    return users.some(
+      (u) => u.username.toLowerCase() === username.toLowerCase(),
+    );
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
 const insert = async (data) => {
   try {
     const res = await axios.post(BASE_URL, data);
@@ -123,6 +136,7 @@ export const UserServices = {
   getAll,
   getAllStaff,
   search,
+  checkUsernameExists,
   insert,
   update,
   remove,

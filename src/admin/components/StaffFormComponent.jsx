@@ -66,6 +66,19 @@ export const StaffFormComponent = () => {
       return;
     }
 
+    if (!isEdit) {
+      const usernameExists = await UserServices.checkUsernameExists(
+        formData.username,
+      );
+      if (usernameExists) {
+        setMessage({
+          text: "Username đã tồn tại! Vui lòng chọn username khác.",
+          type: "danger",
+        });
+        return;
+      }
+    }
+
     const dataToSave = {
       ...formData,
       salary: Number(formData.salary) || 0,
