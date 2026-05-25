@@ -1,11 +1,12 @@
-import { Button, Stack } from "react-bootstrap"
+import { Button, Container, Stack, Col, Row } from "react-bootstrap"
 import FormSearchFoodGroupsManagement from "./FormSearchFoodGroupsManagement"
 import { FoodGroupsControllers } from "../controllers/FoodGroupsControllers"
 
 import ListFoodGroupsComponent from "./ListFoodGroupsComponent"
 import { useState, useEffect } from "react"
-import CustomPagination from "./CustomPagination"
+import CustomPagination from "./custom/CustomPagination"
 import ModalAddFoodGroupsComponent from "./ModalAddFoodGroupsComponent"
+import CustomModal from "./custom/CustomModal"
 export const FoodGroupsManagement = () => {
     const [list, setlist] = useState([])
     const [numPages, setnumPages] = useState(0)
@@ -18,29 +19,40 @@ export const FoodGroupsManagement = () => {
             setnumPages(Math.ceil(res.length / 6));
         }
         fetchData();
-    }, [page,show])
+    }, [page, show])
     return (
-        <Stack>
-            <div>
-                Danh sách nhóm món
-            </div>
-            <ModalAddFoodGroupsComponent show={show} setshow={setshow}/>
+        <Container>
+            <Row className="justify-content-center mb-3">
+                <Col xs="auto">
+                    <h3>Danh sách nhóm món</h3>
+                </Col>
+            </Row>
+             <ModalAddFoodGroupsComponent show={show} setshow={setshow} /> 
+          
+            <Row className="justify-content-center mb-3">
+                <Col md={8}>
+                    <FormSearchFoodGroupsManagement
+                        setlist={setlist}
+                        handleSearch={FoodGroupsControllers.handleSearch} />
+                </Col>
 
-            <div>
-                <FormSearchFoodGroupsManagement
-                    setlist={setlist}
-                    handleSearch={FoodGroupsControllers.handleSearch} />
-            </div>
-            <div>
-                <Button variant="primary" onClick={()=>{setshow(!show)}}>Thêm</Button>
-            </div>
-            <div>
+            </Row>
+            <Row className="mb-3">
+                <Col>
+                    <Button variant="primary" onClick={() => { setshow(!show) }}>Thêm</Button>
+
+                </Col>
+            </Row>
+            <Row>
                 <ListFoodGroupsComponent
-                    list={list} />
-            </div>
-            <div>
-                <CustomPagination numPages={numPages} setpage={setpage} page={page} />
-            </div>
-        </Stack>
+                    list={list} setshow={setshow} />
+            </Row>
+            <Row >
+                <Col xs="auto" className="ms-auto">
+                    <CustomPagination as={Col} numPages={numPages} setpage={setpage} page={page} />
+
+                </Col>
+            </Row>
+        </Container>
     )
 }
