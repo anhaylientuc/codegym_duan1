@@ -34,7 +34,7 @@ export default function Header(){
         fontSize:"20px",
         fontWeight:"bold",
         justifyItems:"center",
-        color:"#ebc477",
+        color:"#DCA237",
         alignItems:"center"
     }}
     >
@@ -53,7 +53,8 @@ export default function Header(){
         </div>
         <p style={{
             margin:"0",
-            fontFamily:'"Times New Roman", Times, serif'
+         
+            fontFamily:'"Arvo", serif'
         }} >MENU</p>
     </div>
     <button
