@@ -21,8 +21,14 @@ const ModalAddFoodGroupsComponent = ({ show, action,setshow }) => {
                 <FormAddFoodGroupsComponent onSubmit={handleSubmit}/>
             </Modal.Body>
             <Modal.Footer>
-                <Button >Cancel</Button>
-                <Button type='submit' form='form-food-group'>Add</Button>
+                <Button variant='secondary' onClick={()=>setshow(!show)}>Hủy</Button>
+                {
+                    
+                }
+                <Button variant='warning' onClick={()=>setshow(!show)}>Sửa</Button>
+                <Button variant='danger' onClick={()=>setshow(!show)}>Xóa</Button>
+
+                <Button variant='success' type='submit' form='form-food-group'>Thêm</Button>
             </Modal.Footer>
         </Modal>
     )
