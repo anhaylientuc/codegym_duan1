@@ -14,6 +14,7 @@ import { StaffMenu } from './staff/StaffMenu'
 import { FoodGroupsManagement } from './staff/components/FoodGroupsManagement'
 import { ProfileComponent } from './components/ProfileComponent'
 import { ChangePasswordComponent } from './components/ChangePasswordComponent'
+import MenuPage from './customer/page/MenuPage'
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
 
       <Routes>
         {/* toàn */}
-         <Route path={`/home/customer`} element={<HomePage />} />
+         <Route path={`customer/home`} element={<HomePage />} />
+         <Route path={`customer/menu`} element={<MenuPage />} />
          {/* ///////////////////// */}
          {/* kiên */}
          <Route path="/" element={<HomeComponent />} />

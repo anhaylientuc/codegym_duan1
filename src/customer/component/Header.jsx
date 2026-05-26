@@ -4,9 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../customer.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Header(){
 
+    const navigate = useNavigate();
 
     return  <header style={{
         width:"100%",
@@ -24,6 +26,9 @@ export default function Header(){
     }}
     src="/header_img.png" alt="header_img" />
     <div 
+    onClick={()=>{
+    navigate(`/customer/menu`)
+    }}
     style={{
         position:"absolute",
         zIndex:"2",
@@ -35,7 +40,8 @@ export default function Header(){
         fontWeight:"bold",
         justifyItems:"center",
         color:"#DCA237",
-        alignItems:"center"
+        alignItems:"center",
+        cursor:"pointer",
     }}
     >
         <div
