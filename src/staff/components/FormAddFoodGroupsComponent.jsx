@@ -19,14 +19,7 @@ const FormAddFoodGroupsComponent = ({onSubmit}) => {
                 name: ''
             }}
             onSubmit={onSubmit}
-            // onSubmit={async (values) => {
-            //     try {
-            //         const res = await FoodGroupsServices.insert(values);
-            //         console.log(res);
-            //     } catch (error) {
-            //         console.log(error)
-            //     }
-            // }}
+         
 
 
         >

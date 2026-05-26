@@ -1,16 +1,22 @@
 import React from 'react'
-import { Formik, Form, Field } from 'formik';
+import { Formik, Field } from 'formik';
+import Form from 'react-bootstrap/Form';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import { FoodGroupsControllers } from '../controllers/FoodGroupsControllers';
+import { Button } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Schema = Yup.object().shape({
-   id: Yup.string()
-     .required('Please enter a keyword!'),
-   name: Yup.string()
-     .required('Please enter a keyword!'),
- });
+    id: Yup.string()
+        .required('Please enter a keyword!'),
+    name: Yup.string()
+        .required('Please enter a keyword!'),
+});
 const FormSearchFoodGroupsManagement = (props) => {
-    const {handleSearch,setlist}=props;
+    const { handleSearch, setlist } = props;
     return (
         <Formik
             initialValues={{
@@ -18,27 +24,78 @@ const FormSearchFoodGroupsManagement = (props) => {
                 name: ''
             }}
             validationSchema={Schema}
-            
-           onSubmit={async(values)=>{
-                        const res=await FoodGroupsControllers.handleSearch(values);
-                        console.log(res);
-                        setlist(res);
-                    }}
+
+            onSubmit={async (values) => {
+                const res = await FoodGroupsControllers.handleSearch(values);
+                console.log(res);
+                setlist(res);
+            }}
         >
-            {({ errors, touched }) => (
-                <Form>
-                    <Field name="id" />
-                    {errors.id && touched.id ? (
-                        <div>{errors.id}</div>
-                    ) : null}
-                    <Field name="name" />
-                    {errors.name && touched.name ? (
-                        <div>{errors.name}</div>
-                    ) : null}
-                   
-                    <button type="submit" >Search</button>
+            {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
+                <Form onSubmit={handleSubmit} id='form-food-group'>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <Form.Group as={Row} className="align-items-center">
+                                  
+                                        <Col md={2}>
+                                            <Form.Label>Mã:</Form.Label>
+                                        </Col>
+                                        <Col md={8}>
+                                            <Form.Control name='id'
+                                                value={values.id}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                isInvalid={
+                                                    touched.id && errors.id
+                                                }
+                                            ></Form.Control>
+                                            <Form.Control.Feedback type='invalid'>
+                                                Some of fields are invalid!
+                                            </Form.Control.Feedback>
+                                        </Col>
+                                   
+
+
+
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Form.Group as={Row}  className="align-items-center" >
+                                  
+                                        <Col md={2} >
+                                            <Form.Label>Tên:</Form.Label>
+                                        </Col>
+                                        <Col md={8}>
+                                            <Form.Control name='name'
+                                                value={values.name}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                isInvalid={
+                                                    touched.name && errors.name
+                                                }
+                                            ></Form.Control>
+                                            <Form.Control.Feedback type='invalid'>
+                                                Some of fields are invalid!
+                                            </Form.Control.Feedback>
+                                        </Col>
+                                 
+
+
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Button type='submit'>Search</Button>
+                            </Col>
+                        </Row>
+
+
+                    </Container>
+
                 </Form>
-            )}
+            )
+
+            }
         </Formik>
     )
 }
