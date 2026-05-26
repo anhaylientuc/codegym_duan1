@@ -37,7 +37,7 @@ export default function NewPost(){
         style={{
           fontFamily:"'Arvo', serif",
           fontWeight:"bold",
-          color:"#dca237"
+          color:"#DCA237"
         }}
       >NEW POST</h2>
 

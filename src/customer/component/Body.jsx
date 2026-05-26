@@ -1,67 +1,78 @@
+import axios from "axios";
 import { useEffect, useState } from "react"
 
 export default function Body(){
-
+    const apiData = import.meta.env.VITE_API_URL;
     const [listNewFood,setlistNewFood] = useState([]);
     const [listTopFood,setlistTopFood] = useState([]);
 
+
+    const getTop5=(data)=>{
+    const countData=[];
+    for(let i=0; i< data.length;i++){
+        for(let j=0;j< data[i].ordered.length; j++){
+            let count =0;
+            for(let k=0;k<countData.length;k++){
+                if(data[i].ordered[j].id===countData[k].id){
+                    countData[k].quantity= countData[k].quantity+ data[i].ordered[j].quantity;
+                    count++;
+                }
+            }
+            if(count===0){
+                const newCoutData ={
+                    id : data[i].ordered[j].id,
+                    quantity:data[i].ordered[j].quantity
+                }
+                countData.push(newCoutData);
+            }
+        }
+        }
+        console.log(countData);
+        countData.sort((a,b)=>b.quantity - a.quantity);
+        const top5 =[];
+        for(let i=0;i<5;i++){
+            top5.push(countData[i]);
+        }
+        setlistTopFood(top5)
+    }
+
+    const getData=async()=>{
+        try{
+            const dataNewFood= await axios.get(`${apiData}/foods?_sort=id&_order=desc&_limit=5`);
+
+            console.log(dataNewFood.data);
+            
+            if(dataNewFood){
+                console.log("ss new");
+                
+                setlistNewFood(dataNewFood);
+            }
+            const dataTopFood = axios.get(`${apiData}/bill`);
+            console.log(dataTopFood);
+            getTop5(dataTopFood);
+        }catch(err){
+            console.log("erro get data new food : " +err);
+            
+        }
+    }
+
     const [tapList,settapList]= useState(1);
 
-    const newFood = [
-        {
-            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxYVV0SwvD6OEe4ttESQsaRpRX11fBXmeQ&s",
-            text:"Explore Lecker Coffee 1"
-        },
-        {
-            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxYVV0SwvD6OEe4ttESQsaRpRX11fBXmeQ&s",
-            text:"Explore Lecker Coffee 2"
-        },
-        {
-            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxYVV0SwvD6OEe4ttESQsaRpRX11fBXmeQ&s",
-            text:"Explore Lecker Coffee 3"
-        },
-        {
-            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxYVV0SwvD6OEe4ttESQsaRpRX11fBXmeQ&s",
-            text:"Explore Lecker Coffee 4"
-        },
-        {
-            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmxYVV0SwvD6OEe4ttESQsaRpRX11fBXmeQ&s",
-            text:"Explore Lecker Coffee Explore Lecker Coffee Explore Lecker Coffee Explore Lecker Coffee"
-        },
-    ]
 
-    const mostOder = [
-        {
-            img:"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/mon_an_man_fa683df2da.jpg",
-            text:"Explore Lecker Coffee 1"
-        },
-        {
-            img:"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/mon_an_man_fa683df2da.jpg",
-            text:"Explore Lecker Coffee 2"
-        },
-        {
-            img:"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/mon_an_man_fa683df2da.jpg",
-            text:"Explore Lecker Coffee 3"
-        },
-        {
-            img:"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/mon_an_man_fa683df2da.jpg",
-            text:"Explore Lecker Coffee 4"
-        },
-        {
-            img:"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/mon_an_man_fa683df2da.jpg",
-            text:"Explore Lecker Coffee Explore Lecker Coffee Explore Lecker Coffee Explore Lecker Coffee"
-        },
-    ]
 
     const [listShow,setlistShow]=useState([]);
 
     useEffect(()=>{
         if(tapList===1){
-            setlistShow(newFood);
+            setlistShow(listNewFood);
         }else{
-            setlistShow(mostOder);
+            setlistShow(listTopFood);
         }
     },[tapList])
+
+    useEffect(()=>{
+        getData();
+    },[])
 
     return <section
     style={{
