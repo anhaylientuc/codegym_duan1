@@ -1,32 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import HomePage from './customer/page/HomePage'
+import "./App.css";
+import HomePage from "./customer/page/HomePage";
 import { Route, Routes } from "react-router-dom";
-import HomeComponent from './components/HomeComponent'
-import { LoginComponent } from './components/LoginComponent'
-import { AdminPage } from './admin/AdminPage'
-import { StaffListComponent } from './admin/components/StaffListComponent'
-import { StaffFormComponent } from './admin/components/StaffFormComponent'
-import { StaffMenu } from './staff/StaffMenu'
-import { FoodGroupsManagement } from './staff/components/FoodGroupsManagement'
-import { ProfileComponent } from './components/ProfileComponent'
-import { ChangePasswordComponent } from './components/ChangePasswordComponent'
+import HomeComponent from "./components/HomeComponent";
+import { LoginComponent } from "./components/LoginComponent";
+import { AdminPage } from "./admin/AdminPage";
+import { StaffListComponent } from "./admin/components/StaffListComponent";
+import { StaffFormComponent } from "./admin/components/StaffFormComponent";
+import { StaffMenu } from "./staff/StaffMenu";
+import { FoodGroupsManagement } from "./staff/components/FoodGroupsManagement";
+import { ProfileComponent } from "./components/ProfileComponent";
+import { ChangePasswordComponent } from "./components/ChangePasswordComponent";
 
 function App() {
-
-
   return (
     <>
-
       <Routes>
         {/* toàn */}
-         <Route path={`/home/customer`} element={<HomePage />} />
-         {/* ///////////////////// */}
-         {/* kiên */}
-         <Route path="/" element={<HomeComponent />} />
+        <Route path={`/home/customer`} element={<HomePage />} />
+        {/* ///////////////////// */}
+        {/* kiên */}
+        <Route path="/" element={<HomeComponent />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/admin/staff" element={<StaffListComponent />} />
@@ -39,7 +32,7 @@ function App() {
         {/* ////////////////////////////// */}
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
