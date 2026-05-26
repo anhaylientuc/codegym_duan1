@@ -71,7 +71,7 @@ for(let i=0; i< data.length;i++){
         }else{
             setlistShow(listTopFood);
         }
-    },[tapList])
+    })
 
     useEffect(()=>{
         getData();
@@ -174,7 +174,7 @@ for(let i=0; i< data.length;i++){
                     margin:"5px",
                       cursor:"pointer"
                 }}
-            >Top 5 most ordered dishes</p>
+            >Top 5 Best Sellers</p>
             <div
                 style={{
                 width:"200px",
