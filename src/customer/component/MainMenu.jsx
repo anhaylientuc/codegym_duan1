@@ -228,7 +228,7 @@ export default function MainMenu(tap){
         }
         {/* ///////////////////////////////// */}
         {
-            DataProduct.items===0 && <p
+            DataProduct?.items===0 && <p
             style={{
                 color:"rgb(0, 0, 0,0.5)",
                 fontStyle:"italic",
