@@ -17,12 +17,18 @@ import { ModalTypeProvider } from "./staff/context/ModalType.jsx";
 import FoodManagementComponent from "./staff/components/food/FoodManagementComponent.jsx";
 import { ModalFoodProvider } from "./staff/context/ModalFood.jsx";
 import App from "./App.jsx";
+import TableManagementComponent from "./staff/components/table/TableManagementComponent.jsx";
+import CustomForm from "./staff/components/custom/CustomForm.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <App/>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <ModalFoodProvider>
+      <FoodManagementComponent />
+      {/* <CustomForm fields={[{label:'ma',value:'id'},{label:'ten',value:'name'}]}/> */}
+    </ModalFoodProvider>
   </StrictMode>,
 );
 
