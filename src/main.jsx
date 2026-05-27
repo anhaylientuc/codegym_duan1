@@ -7,12 +7,15 @@ import "./styles/theme.css";
 import { LoginComponent } from "./components/LoginComponent.jsx";
 import { AdminPage } from "./admin/AdminPage.jsx";
 import { StaffMenu } from "./staff/StaffMenu.jsx";
-import { FoodGroupsManagement } from "./staff/components/FoodGroupsManagement.jsx";
+import { FoodGroupsManagement } from "./staff/components/type/FoodGroupsManagement.jsx";
 import { ProfileComponent } from "./components/ProfileComponent.jsx";
 import { ChangePasswordComponent } from "./components/ChangePasswordComponent.jsx";
 import { StaffListComponent } from "./admin/components/StaffListComponent.jsx";
 import { StaffFormComponent } from "./admin/components/StaffFormComponent.jsx";
 import HomeComponent from "./components/HomeComponent.jsx";
+import { ModalTypeProvider } from "./staff/context/ModalType.jsx";
+import FoodManagementComponent from "./staff/components/food/FoodManagementComponent.jsx";
+import { ModalFoodProvider } from "./staff/context/ModalFood.jsx";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(

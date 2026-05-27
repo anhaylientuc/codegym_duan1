@@ -3,7 +3,7 @@ import { Formik, Field } from 'formik';
 import Form from 'react-bootstrap/Form';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { FoodGroupsControllers } from '../controllers/FoodGroupsControllers';
+import { FoodGroupsControllers } from '../../controllers/FoodGroupsControllers';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -32,7 +32,7 @@ const FormSearchFoodGroupsManagement = (props) => {
             }}
         >
             {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
-                <Form onSubmit={handleSubmit} id='form-food-group'>
+                <Form onSubmit={handleSubmit} >
                     <Container>
                         <Row>
                             <Col>

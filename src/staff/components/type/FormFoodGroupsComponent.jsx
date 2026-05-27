@@ -2,8 +2,9 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import React from 'react'
 import Form from 'react-bootstrap/Form';
-import { FoodGroupsServices } from '../../services/FoodGroupsServices';
-const FormAddFoodGroupsComponent = ({onSubmit}) => {
+import { useModalType } from '../../context/ModalType';
+import { FoodGroupsServices } from '../../../services/FoodGroupsServices';
+const FormAddFoodGroupsComponent = ({onSubmit,initialValues}) => {
     const Schema = Yup.object().shape({
         id: Yup.string()
             .required(),
@@ -14,12 +15,9 @@ const FormAddFoodGroupsComponent = ({onSubmit}) => {
         <Formik
             validationSchema={Schema}
 
-            initialValues={{
-                id: '',
-                name: ''
-            }}
+            initialValues={initialValues}
             onSubmit={onSubmit}
-         
+            enableReinitialize
 
 
         >
