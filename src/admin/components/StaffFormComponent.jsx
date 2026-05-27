@@ -246,7 +246,6 @@ export const StaffFormComponent = () => {
                           value={formData.role}
                           onChange={handleChange}
                         >
-                          <option value="Admin">Admin</option>
                           <option value="Staff">Staff</option>
                         </Form.Select>
                       </Form.Group>

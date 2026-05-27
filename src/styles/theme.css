@@ -608,7 +608,7 @@ a:hover {
 /* ===== FORM STYLES ===== */
 .cafe-form .form-control,
 .cafe-form .form-select {
-  background: var(--color-bg-input);
+  background-color: var(--color-bg-input);
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   padding: 0.65rem 1rem;
@@ -625,7 +625,7 @@ a:hover {
 .cafe-form .form-select:focus {
   border-color: var(--color-gold);
   box-shadow: 0 0 0 3px rgba(220, 162, 55, 0.15);
-  background: var(--color-bg-input);
+  background-color: var(--color-bg-input);
   color: var(--color-text-main);
 }
 
@@ -642,6 +642,10 @@ a:hover {
 
 .cafe-form .form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23DCA237' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  padding-right: 2.25rem;
 }
 
 /* ===== SEARCH BAR ===== */

@@ -261,7 +261,7 @@ export const StaffListComponent = () => {
                         {staff.username}
                       </strong>
                     </td>
-                    <td style={{ color: "#FFFFFF" }}>{staff.name}</td>
+                    <td style={{ color: "#784b10" }}>{staff.name}</td>
                     <td>{staff.address}</td>
                     <td>{staff.tel}</td>
                     <td>{staff.gender}</td>

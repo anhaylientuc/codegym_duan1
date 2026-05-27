@@ -10,6 +10,7 @@ import { StaffMenu } from "./staff/StaffMenu";
 import { FoodGroupsManagement } from "./staff/components/FoodGroupsManagement";
 import { ProfileComponent } from "./components/ProfileComponent";
 import { ChangePasswordComponent } from "./components/ChangePasswordComponent";
+import { UpdateProfileComponent } from "./admin/components/UpdateProfileComponent";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/staff/food-groups" element={<FoodGroupsManagement />} />
         <Route path="/profile" element={<ProfileComponent />} />
         <Route path="/change-password" element={<ChangePasswordComponent />} />
+        <Route path="/admin/update" element={<UpdateProfileComponent />} />
         {/* ////////////////////////////// */}
       </Routes>
     </>
