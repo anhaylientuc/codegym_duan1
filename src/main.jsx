@@ -22,13 +22,9 @@ import CustomForm from "./staff/components/custom/CustomForm.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <App/>
-    </BrowserRouter> */}
-    <ModalFoodProvider>
-      <FoodManagementComponent />
-      {/* <CustomForm fields={[{label:'ma',value:'id'},{label:'ten',value:'name'}]}/> */}
-    </ModalFoodProvider>
+    </BrowserRouter>
   </StrictMode>,
 );
 
