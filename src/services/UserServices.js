@@ -68,7 +68,9 @@ const search = async (keyword) => {
       return matchUsername || matchName || matchTel;
     });
 
-    return filtered.sort((a, b) => a.username.localeCompare(b.username));
+    return filtered
+      .filter((f) => f.role === "Staff")
+      .sort((a, b) => a.username.localeCompare(b.username));
   } catch (error) {
     console.log(error);
     return [];

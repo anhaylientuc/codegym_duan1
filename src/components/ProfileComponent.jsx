@@ -24,7 +24,7 @@ export const ProfileComponent = () => {
   };
 
   const handleUpdate = () => {
-    navigate("/update-user", { state: { user } });
+    navigate("/admin/update", { state: { user } });
   };
 
   const handleBack = () => {
