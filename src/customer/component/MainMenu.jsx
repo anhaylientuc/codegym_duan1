@@ -1,21 +1,39 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import '../customer.css'
 
 export default function MainMenu(tap){
+    console.log(tap.tap.id);
+
+    const scroll = useRef();
+
+      const scrollOnTop = () => {
+         scroll.current?.scrollIntoView({ behavior: "smooth" });
+        };
 
     const api = import.meta.env.VITE_API_URL;
 
     const [listProduct,setlistProduct]=useState([]);
+    const [DataProduct,setDataProduct]=useState();
+
+    const [numberPage,setnumberPage] = useState(1);
 
     const getListProduct =async()=>{
         try{
-            const data = await axios.get(`${api}/foods?_page=5&_per_page=10`);
-            console.log(api);
+            if(tap.tap.id==="All"){
+                const data = await axios.get(`${api}/foods?_page=${numberPage}&_per_page=10`);
+                setDataProduct(data.data);
+                setlistProduct(data.data.data)
+
+            }else{
+                const data = await axios.get(`${api}/foods?unit=${tap.tap.id}&_page=${numberPage}&_per_page=10`);
+                setDataProduct(data.data);
+                setlistProduct(data.data.data)
+            }
             
-            console.log(data);
-            setlistProduct(data.data.data)
+            
+            
             
         }catch(err){
             console.log("get data product false : "+err);
@@ -27,8 +45,33 @@ export default function MainMenu(tap){
         getListProduct();
     },[])
 
+    const plusPage=()=>{
+        if(DataProduct?.next !==null){
+            setnumberPage(numberPage+1);
+        }
+    }
+    const minusPage=()=>{
+        if(DataProduct?.prev !==null){
+            setnumberPage(numberPage-1);
+        }
+    }
+
+    const skipPage=(item)=>{
+        setnumberPage(item);
+    }
+    useEffect(()=>{
+        getListProduct();
+        scrollOnTop()
+    },[numberPage])
+    
+    useEffect(()=>{
+        getListProduct();
+        scrollOnTop()
+    },[tap.tap.id])
+
 
     return<section
+    ref={scroll}
     style={{
         width:"530px",
         flexShrink:"0",
@@ -40,6 +83,7 @@ export default function MainMenu(tap){
      
     }}
     >
+    
         {listProduct?.map((e,index)=>(
           
         <div style={{
@@ -118,17 +162,54 @@ export default function MainMenu(tap){
         <div
         style={{
             display:"flex",
-            borderRadius:"10px",
-            overflow:"hidden",
-            border:"1px solid rgba(0, 0, 0)",
+            gap:"5px",
             margin:"0 auto",
-            marginTop:"10px"
+            marginTop:"20px"
+
         }}
         >
-            <div className="ctrolPage" >Prev</div>
-            <div className="ctrolPage">1</div>
-            <div className="ctrolPage">2</div>
-            <div className="ctrolPage">Next</div>
+            <div
+            onClick={()=>{
+                    minusPage();
+                }}
+            className="ctrolPage" >Prev</div>
+            {DataProduct?.prev &&
+                <div 
+                onClick={()=>{
+                    skipPage(DataProduct?.first);
+                }}
+                className="ctrolPage">{DataProduct?.first}</div>
+            }
+            {DataProduct?.prev &&
+                <div className="ctrolPage">...</div>
+            }
+            
+            
+
+            <div
+            style={{
+                backgroundColor:"#dca237",
+                color:"white"
+            }}
+            className="ctrolPage">{numberPage}</div>
+
+            {DataProduct?.next &&
+                <div className="ctrolPage">...</div>
+            }
+
+            {DataProduct?.next &&
+                <div
+                onClick={()=>{
+                    skipPage(DataProduct?.last);
+                }}
+                className="ctrolPage">{DataProduct?.last}</div>
+            }
+            
+            <div
+                onClick={()=>{
+                    plusPage();
+                }}
+            className="ctrolPage">Next</div>
         </div>
 
 

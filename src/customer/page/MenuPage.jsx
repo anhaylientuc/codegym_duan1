@@ -43,11 +43,11 @@ export default function(){
     }}
     >
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
-    <MainMenu/>
+    <MainMenu tap={tap}/>
     <section
     style={{
         width:"100%",
-        backgroundColor:"red"
+        backgroundColor:"#000000"
     }}
     >
 
