@@ -113,64 +113,72 @@
       "name": "Cà phê bạc xỉu",
       "unit": "SVT002",
       "price": 30000,
-      "type": "Nước ép",
-      "image": {}
+      "type": "Cà phê",
+      "img":"https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg"
     },
     {
       "id": "SV012",
       "name": "Cà phê muối",
       "unit": "SVT001",
       "price": 35000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg"
     },
     {
       "id": "SV013",
       "name": "Cà phê đá xay",
       "unit": "SVT001",
       "price": 45000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://lypham.vn/wp-content/uploads/2025/03/meo-va-luu-y-khi-lam-ca-phe-da-xay.jpg"
     },
     {
       "id": "SV014",
       "name": "Cappuccino",
       "unit": "SVT001",
       "price": 50000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg"
     },
     {
       "id": "SV015",
       "name": "Latte",
       "unit": "SVT001",
       "price": 52000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg"
     },
     {
       "id": "SV016",
       "name": "Nước ép táo",
       "unit": "SVT002",
       "price": 30000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg"
     },
     {
       "id": "SV017",
       "name": "Nước ép dứa",
       "unit": "SVT002",
       "price": 32000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_8_7_638270466105067286_cach-lam-nuoc-ep-dua-bang-may-xay-sinh-to-thumb.jpg"
     },
     {
       "id": "SV018",
       "name": "Nước ép cà rốt",
       "unit": "SVT002",
       "price": 35000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://bizweb.dktcdn.net/100/421/036/files/nguyen-lieu-che-bien-nuoc-ep-carot.jpg?v=1617093099366"
     },
     {
       "id": "SV019",
       "name": "Nước ép ổi",
       "unit": "SVT002",
       "price": 34000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://lypham.vn/wp-content/uploads/2025/09/nuoc-oi-ep.jpg"
     },
     {
       "id": "SV020",
@@ -184,281 +192,420 @@
       "name": "Trà sữa trân châu",
       "unit": "SVT003",
       "price": 40000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg"
     },
     {
       "id": "SV022",
       "name": "Trà vải",
       "unit": "SVT003",
       "price": 35000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2023/10/cach-lam-tra-vai-thumbnail.jpg"
     },
     {
       "id": "SV023",
       "name": "Trà tắc",
       "unit": "SVT003",
       "price": 25000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://cdn.tgdd.vn/2020/07/CookProductThumb/Tac+mat+ong-620x620.jpg"
     },
     {
       "id": "SV024",
       "name": "Trà gừng",
       "unit": "SVT003",
       "price": 28000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://cdn.tgdd.vn/2021/03/CookProduct/tac-dung-cua-tra-gung-va-cac-cach-pha-tra-gung-don-gian-tai-nha-1-1200x676.jpg"
     },
     {
       "id": "SV025",
       "name": "Trà hoa cúc",
       "unit": "SVT003",
       "price": 30000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://www.cleanipedia.com/images/5iwkm8ckyw6v/68c107Kl8HWNYv58RTMpXc/2d5d01d9f1f068b040118e11d06adc5f/X192Zi5qcGc/1200w/t%C3%A1ch-tr%C3%A0-c%C3%BAc..jpg"
     },
     {
       "id": "SV026",
       "name": "Sinh tố dâu",
       "unit": "SVT004",
       "price": 42000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN4vDI6Zq5dsxA879adrA6dlGrxuGBrDqPog&s"
     },
     {
       "id": "SV027",
       "name": "Sinh tố chuối",
       "unit": "SVT004",
       "price": 39000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLkiIZHXZugeXTKjQokxZrUHI9gv0vacM8iw&s"
     },
     {
       "id": "SV028",
       "name": "Sinh tố dừa",
       "unit": "SVT004",
       "price": 45000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://cdn.tgdd.vn/2021/11/CookDish/cach-lam-sinh-to-dua-thom-ngon-beo-bui-bat-vi-cuc-don-gian-avt-1200x676.jpg"
     },
     {
       "id": "SV029",
       "name": "Sinh tố mãng cầu",
       "unit": "SVT004",
       "price": 46000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://cdn.tgdd.vn/2020/10/CookProduct/6-1200x676.jpg"
     },
     {
       "id": "SV030",
       "name": "Sinh tố kiwi",
       "unit": "SVT004",
       "price": 50000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/800x0/sinh_to_kiwi_3_8436d61a65.jpeg"
     },
     {
       "id": "SV031",
       "name": "Bánh kem dâu",
       "unit": "SVT005",
       "price": 55000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg"
     },
     {
       "id": "SV032",
       "name": "Bánh flan",
       "unit": "SVT005",
       "price": 25000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg"
     },
     {
       "id": "SV033",
       "name": "Bánh mousse chanh dây",
       "unit": "SVT005",
       "price": 50000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg"
     },
     {
       "id": "SV034",
       "name": "Bánh cheesecake",
       "unit": "SVT005",
       "price": 60000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZRAzL06CYeji9XEZLo-Uz8hROQ2yiJ5M7NA&s"
     },
     {
       "id": "SV035",
       "name": "Bánh bông lan trứng muối",
       "unit": "SVT005",
       "price": 65000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://www.huongnghiepaau.com/wp-content/uploads/2019/03/banh-bong-lan-trung-muoi.jpg"
     },
     {
       "id": "SV036",
       "name": "Espresso",
       "unit": "SVT001",
       "price": 40000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://cdn.tgdd.vn/2021/11/CookDish/espresso-la-gi-cach-pha-nguyen-tac-khi-pha-va-cach-uong-ca-avt-1200x676.jpg"
     },
     {
       "id": "SV037",
       "name": "Americano",
       "unit": "SVT001",
       "price": 45000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_10_7_638322743867084776_americano-00.jpeg"
     },
     {
       "id": "SV038",
       "name": "Mocha",
       "unit": "SVT001",
       "price": 55000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://dayphache.edu.vn/wp-content/uploads/2016/05/ca-phe-mocha-nong.jpg"
     },
     {
       "id": "SV039",
       "name": "Cold Brew",
       "unit": "SVT001",
       "price": 50000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkP2h1edPO_f266LRgJ6B9lDuJewhn3Omxkg&s"
     },
     {
       "id": "SV040",
       "name": "Cà phê cốt dừa",
       "unit": "SVT001",
       "price": 48000,
-      "type": "Cà phê"
+      "type": "Cà phê",
+      "img":"https://cdn.tgdd.vn/2021/10/CookRecipe/GalleryStep/thanh-pham-2163.jpg"
     },
     {
       "id": "SV041",
       "name": "Nước ép chanh dây",
       "unit": "SVT002",
       "price": 30000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvwAS9uYDjtigTS10tPyZHhB96GBZgtXZ0bA&s"
     },
     {
       "id": "SV042",
       "name": "Nước ép nho",
       "unit": "SVT002",
       "price": 35000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://bizweb.dktcdn.net/100/603/550/articles/nuoc-ep-nho-0.jpg?v=1779101789307"
     },
     {
       "id": "SV043",
       "name": "Nước ép xoài",
       "unit": "SVT002",
       "price": 35000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://vinut.vn/wp-content/uploads/2023/04/2023-huong-dan-chi-tiet-ve-nuoc-ep-xoai-va-cach-ket-hop-voi-cac-loai-trai-cay-6440dd568c20d.jpg"
     },
     {
       "id": "SV044",
       "name": "Nước ép dâu",
       "unit": "SVT002",
       "price": 42000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/nuoc_ep_dau_tay_4_44fe219abc.jpg"
     },
     {
       "id": "SV045",
       "name": "Nước ép đào",
       "unit": "SVT002",
       "price": 38000,
-      "type": "Nước ép"
+      "type": "Nước ép",
+      "img":"https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/nuoc_ep_dao_thuc_uong_don_gian_nhung_giau_dinh_duong_va_nhieu_loi_ich_4_ffe3d9496d.png"
     },
     {
       "id": "SV046",
       "name": "Trà đào cam sả",
       "unit": "SVT003",
       "price": 45000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://www.huongnghiepaau.com/wp-content/uploads/2017/07/tra-dao-cam-sa-ngot-ngao.jpg"
     },
     {
       "id": "SV047",
       "name": "Trà ô long",
       "unit": "SVT003",
       "price": 40000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://chonongsanonline.com/public/uploads/all/H5fDyECxT3O3nDPc0EIw06BopPMNPDt7GTHNhR4L.jpg"
     },
     {
       "id": "SV048",
       "name": "Trà sen vàng",
       "unit": "SVT003",
       "price": 42000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://cdn.hstatic.net/200000921537/file/cong-thuc-tra-olong-sen-vang-machiato_ab0b36d07439437087f0481d8f9a3e41_grande.jpg"
     },
     {
       "id": "SV049",
       "name": "Trà matcha",
       "unit": "SVT003",
       "price": 50000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://viettuantea.vn/wp-content/uploads/2024/03/bot-tra-xanh-matcha-vu-xuan-viet-tuan-100g-8.jpg"
     },
     {
       "id": "SV050",
       "name": "Trà chanh mật ong",
       "unit": "SVT003",
       "price": 32000,
-      "type": "Trà"
+      "type": "Trà",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/177426/Originals/batch_huong-dan-pha-tra-chanh-mat-ong-1.jpg"
     },
     {
       "id": "SV051",
       "name": "Sinh tố việt quất",
       "unit": "SVT004",
       "price": 52000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2QgO5QRC9GXmm52CWa89ehjgUvcwcYhS3eg&s"
     },
     {
       "id": "SV052",
       "name": "Sinh tố thanh long",
       "unit": "SVT004",
       "price": 42000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://lirp.cdn-website.com/ad0ecff6/dms3rep/multi/opt/recipe-r-pink-power-smoothie-fullsize-1698088461-1920w.jpg"
     },
     {
       "id": "SV053",
       "name": "Sinh tố mít",
       "unit": "SVT004",
       "price": 45000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-1RIIwMD1LTDNAp_-bl_6wdH4j1ZYO5fD9A&s"
     },
     {
       "id": "SV054",
       "name": "Sinh tố dứa",
       "unit": "SVT004",
       "price": 39000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_8_7_638270466105067286_cach-lam-nuoc-ep-dua-bang-may-xay-sinh-to-thumb.jpg"
     },
     {
       "id": "SV055",
       "name": "Sinh tố cam",
       "unit": "SVT004",
       "price": 41000,
-      "type": "Sinh tố"
+      "type": "Sinh tố",
+      "img":"https://cdn.tgdd.vn/2021/09/CookRecipe/Avatar/sinh-to-cam-tao-thumbnail.jpg"
     },
     {
       "id": "SV056",
       "name": "Bánh tart trứng",
       "unit": "SVT005",
       "price": 28000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://cdn.tgdd.vn/Files/2015/03/23/624011/cach-lam-banh-tart-trung-banh-trung-kfc-egg-tart-hong-kong-9-760x367.jpg"
     },
     {
       "id": "SV057",
       "name": "Bánh chocolate",
       "unit": "SVT005",
       "price": 55000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://legendary.com.vn/wp-content/uploads/2024/07/Cac-Loai-Banh-Socola-De-Lam-1.jpg"
     },
     {
       "id": "SV058",
       "name": "Bánh donut",
       "unit": "SVT005",
       "price": 25000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://cdn.tgdd.vn/2022/03/CookRecipe/Avatar/banh-donut-bang-chao-chong-dinh-thumbnail.jpg"
     },
     {
       "id": "SV059",
       "name": "Bánh croissant",
       "unit": "SVT005",
       "price": 30000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://bizweb.dktcdn.net/100/487/455/products/croisanintcroi-1695874747354.jpg?v=1724205250087"
     },
     {
       "id": "SV060",
       "name": "Bánh macaron",
       "unit": "SVT005",
       "price": 60000,
-      "type": "Bánh"
+      "type": "Bánh",
+      "img":"https://cdn.tgdd.vn/2021/10/CookRecipe/Avatar/banh-macaron-bang-bot-mi-thumbnail-1.jpg"
     }
   ],
+  "bill":[ 
+    {
+      "id":"b001",
+      "table":"tb001",
+      "totalAmount":100000,
+      "ordered":[
+        {
+          "id": "SV011",
+          "name": "Cà phê bạc xỉu",
+          "unit": "SVT001",
+          "price": 30000,
+          "type": "Cà phê",
+          "img":"https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
+          "quantity":1
+        },
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "unit": "SVT001",
+          "price": 35000,
+          "type": "Cà phê",
+          "img":"https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id":"b002",
+      "table":"tb002",
+      "totalAmount":52000,
+      "ordered":[
+        {
+          "id": "SV015",
+          "name": "Latte",
+          "unit": "SVT001",
+          "price": 52000,
+          "type": "Cà phê",
+          "img":"https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
+          "quantity": 1
+        }
+        
+      ]
+    },
+    {
+      "id":"b003",
+      "table":"tb003",
+      "totalAmount":52000,
+      "ordered":[
+        {
+          "id": "SV022",
+          "name": "Trà vải",
+          "unit": "SVT003",
+          "price": 35000,
+          "type": "Trà",
+          "img":"https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2023/10/cach-lam-tra-vai-thumbnail.jpg",
+          "quantity": 2
+        },
+        {
+          "id": "SV021",
+          "name": "Trà sữa trân châu",
+          "unit": "SVT003",
+          "price": 40000,
+          "type": "Trà",
+          "img":"https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg",
+          "quantity": 3
+        }
+        
+      ]
+    },
+    {
+      "id":"b004",
+      "table":"tb004",
+      "totalAmount":52000,
+      "ordered":[
+             {
+              "id": "SV032",
+              "name": "Bánh flan",
+              "unit": "SVT005",
+              "price": 25000,
+              "type": "Bánh",
+              "img":"https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
+              "quantity": 1
+            },
+            {
+              "id": "SV033",
+              "name": "Bánh mousse chanh dây",
+              "unit": "SVT005",
+              "price": 50000,
+              "type": "Bánh",
+              "img":"https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
+              "quantity": 1
+            }
+        
+      ]
+    }
+
+  ],
+      
+  
   "$schema": "./node_modules/json-server/schema.json"
 }

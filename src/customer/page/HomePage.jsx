@@ -1,80 +1,54 @@
+import { useRef } from "react";
+import Body from "../component/Body";
+import Footer from "../component/Footer";
 import Header from "../component/Header";
+import NewPost from "../component/NewPost";
 import '../customer.css'
 export default function HomePage() {
+   const scroll1  = useRef(null);
+   const scroll2  = useRef(null);
+
+  const scrollProduck = () => {
+    scroll1.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollHeader = () => {
+    scroll2.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return <>
-  <Header/>
-  {/* phần ảnh box chứa ảnh của page */}
-  {/* The image box contains the page's images. */}
-    <div 
-    style={{
-      borderRadius:"10px",
-      height:"500px",
-      margin:"20px",
-      background:"black",
-      overflow:"hidden",
-      position:"relative",
-      display:"flex",
-      justifyContent:"center",
-      alignItems:"center"
-    }}>
-      <img 
-      style={{
-        width:"100%",
-        height:"100%",
-        objectFit:"cover"
-      }}  src="https://i.pinimg.com/736x/c2/4c/f4/c24cf4b4e10242dfd414a503dd147dd2.jpg" alt="landing page image" />
-      <div 
-      style={{
-        width:"100%",
-        height:"100%",
-        position:"absolute",
-        background:"#73310a3f",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
-      
-      }} >
 
-        <p 
-          style={{
-            color:"white",
-            fontSize:"40px",
-            fontWeight:"bold",
-            textShadow:"2px 2px 5px rgba(0, 0, 0, 0.5)"
-          }}
-        >A Space to <span className="home_page_span">Think.</span>  A Coffee to <span className="home_page_span" >Create</span></p>
+  <div ref={scroll2}>
+    <Header scrollProduck={()=>scrollProduck()}/>
+  </div>
+  
+  <div ref={scroll1}>
+    <Body/>
+  </div>
+    
+    <NewPost/>
+  <Footer/>
+      <img
+    onClick={()=>{
 
-      </div>
-    </div>
-    {/* //////////////////////////////////////////// */}
-
-    {/* phần menu dịch vụ */}
-    {/* Service Menu part */}
-
-    <section style={{
-      margin:"0px 20px",
-      
-     
-    }}>
-      <h2 
-      style={{
-        width:"100%",
-        textAlign:"center",
-        padding:"20px",
-        color:"#732f0a",
-        fontWeight:"bold"
-      }}
-      >Service Menu</h2>
-      <div 
-      style={{
-        margin:"20px",
-        backgroundColor:"black",
-        height:"100px"
-      }}
-      >
+        scrollHeader()
         
-      </div>
-
-    </section>
+        
+    }}
+    style={{
+        width:"100px",
+        flexShrink:"0",
+        border:"none",
+        cursor:"pointer",
+       position:"fixed",
+        right:"20px",
+        bottom:"20px",
+        rotate:"180deg"
+    //    left:"50%",
+    //    right:"50%",
+    //    transform:"translateX(-50%);"
+       
+     }}
+    src="/home_btn.png" alt="" />
+    
   </>;
 }
