@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react"
 
 import '../customer.css'
+import { data } from "react-router-dom";
 
 export default function MainMenu(tap){
     console.log(tap.tap.id);
@@ -23,18 +24,20 @@ export default function MainMenu(tap){
         try{
             if(tap.tap.id==="All"){
                 const data = await axios.get(`${api}/foods?_page=${numberPage}&_per_page=10`);
+                console.log(data.data);
+                
                 setDataProduct(data.data);
                 setlistProduct(data.data.data)
 
             }else{
                 const data = await axios.get(`${api}/foods?unit=${tap.tap.id}&_page=${numberPage}&_per_page=10`);
+                console.log(data.data);
                 setDataProduct(data.data);
                 setlistProduct(data.data.data)
             }
             
             
-            
-            
+ 
         }catch(err){
             console.log("get data product false : "+err);
             
@@ -66,8 +69,11 @@ export default function MainMenu(tap){
     
     useEffect(()=>{
         getListProduct();
+        setnumberPage(1);
         scrollOnTop()
     },[tap.tap.id])
+
+    // //////////////////////////////////////////////////////////////////
 
 
     return<section
@@ -83,6 +89,7 @@ export default function MainMenu(tap){
      
     }}
     >
+        {/* danh sách sản phẩm */}
     
         {listProduct?.map((e,index)=>(
           
@@ -159,6 +166,11 @@ export default function MainMenu(tap){
 
         </div>
         ))}
+        {/* ////////////////////////// */}
+        {/* phần control page */}
+
+        {DataProduct?.pages>1 &&
+
         <div
         style={{
             display:"flex",
@@ -211,6 +223,23 @@ export default function MainMenu(tap){
                 }}
             className="ctrolPage">Next</div>
         </div>
+        
+        
+        }
+        {/* ///////////////////////////////// */}
+        {
+            DataProduct.items===0 && <p
+            style={{
+                color:"rgb(0, 0, 0,0.5)",
+                fontStyle:"italic",
+                margin:"0 auto"
+                
+            }}
+        >Hiện chưa có sản phẩm nào cho mục này</p>
+        }
+        
+
+        
 
 
         

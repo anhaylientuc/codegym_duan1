@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { data } from "react-router-dom";
 
+import {getAllBill} from '../../services/BillServices';
+
 export default function Body(){
     const apiData = import.meta.env.VITE_API_URL;
     const [listNewFood,setlistNewFood] = useState([]);
@@ -46,11 +48,11 @@ for(let i=0; i< data.length;i++){
            
                 setlistNewFood(dataNewFood.data.data);
             }
-            const dataTopFood = await axios.get(`${apiData}/bill`);
+            const dataTopFood = await getAllBill();
             console.log("top 5 món");
             
-            console.log(dataTopFood.data);
-            getTop5(dataTopFood.data);
+            console.log(dataTopFood);
+            getTop5(dataTopFood);
         }catch(err){
             console.log("erro get data new food : " +err);
             

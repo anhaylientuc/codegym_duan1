@@ -3,18 +3,26 @@ import Sidebar from "../component/Sidebar";
 import axios from "axios";
 import MainMenu from "../component/MainMenu";
 
+import { FoodGroupsServices } from "../../services/FoodGroupsServices";
+
 export default function(){
 
     const api = import.meta.env.VITE_API_URL;
 
     const [listFoodGroup,setlistFoodGroup]=useState([]);
+
+
     const getFoodGroup=async()=>{
         try{
-            const data= await axios.get(`${api}/foodGroups`);
+            console.log("123");
+            
+            const data= await FoodGroupsServices.getAll();
+            console.log(data);
+            
             setlistFoodGroup([{
             id:"All",
             name:"All"
-        },...data.data])
+        },...data])
         }catch(err){
             console.log("get data false: "+err)
         }
