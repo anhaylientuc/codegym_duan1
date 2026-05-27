@@ -16,26 +16,13 @@ import HomeComponent from "./components/HomeComponent.jsx";
 import { ModalTypeProvider } from "./staff/context/ModalType.jsx";
 import FoodManagementComponent from "./staff/components/food/FoodManagementComponent.jsx";
 import { ModalFoodProvider } from "./staff/context/ModalFood.jsx";
+import App from "./App.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeComponent />} />
-        <Route path="/login" element={<LoginComponent />} />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/admin/staff" element={<StaffListComponent />} />
-        <Route path="/admin/staff/add" element={<StaffFormComponent />} />
-        <Route path="/admin/staff/edit" element={<StaffFormComponent />} />
-        <Route path="/staff" element={<StaffMenu />} />
-        <Route path="/staff/food-groups" element={<FoodGroupsManagement />} />
-        <Route path="/profile" element={<ProfileComponent />} />
-        <Route path="/change-password" element={<ChangePasswordComponent />} />
-      </Routes>
-    </BrowserRouter> */}
-    <ModalFoodProvider>
-      <FoodManagementComponent />
-
-    </ModalFoodProvider>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </StrictMode>,
 );
 

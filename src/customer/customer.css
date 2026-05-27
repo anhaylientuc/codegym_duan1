@@ -5,5 +5,31 @@
 .header_menu{
     width: 30px;
     height: 3px;
-    background-color:#e3cc6f ;
+    background-color:#DCA237 ;
+}  
+.sidebar_p{
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    transition: all ease 0.3s;
+}
+.ctrolPage{
+    width: 50px;
+    height: 50px;
+    background-color: #efefef;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.ctrolPage:hover{
+    color: rgba(0, 0, 0);
 }
