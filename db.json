@@ -111,9 +111,10 @@
     {
       "id": "SV011",
       "name": "Cà phê bạc xỉu",
-      "unit": "SVT001",
+      "unit": "SVT002",
       "price": 30000,
-      "type": "Cà phê"
+      "type": "Nước ép",
+      "image": {}
     },
     {
       "id": "SV012",

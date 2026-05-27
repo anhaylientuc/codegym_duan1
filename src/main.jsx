@@ -7,16 +7,18 @@ import "./styles/theme.css";
 import { LoginComponent } from "./components/LoginComponent.jsx";
 import { AdminPage } from "./admin/AdminPage.jsx";
 import { StaffMenu } from "./staff/StaffMenu.jsx";
-import { FoodGroupsManagement } from "./staff/components/FoodGroupsManagement.jsx";
+import { FoodGroupsManagement } from "./staff/components/type/FoodGroupsManagement.jsx";
 import { ProfileComponent } from "./components/ProfileComponent.jsx";
 import { ChangePasswordComponent } from "./components/ChangePasswordComponent.jsx";
 import { StaffListComponent } from "./admin/components/StaffListComponent.jsx";
 import { StaffFormComponent } from "./admin/components/StaffFormComponent.jsx";
 import HomeComponent from "./components/HomeComponent.jsx";
-
+import { ModalTypeProvider } from "./staff/context/ModalType.jsx";
+import FoodManagementComponent from "./staff/components/food/FoodManagementComponent.jsx";
+import { ModalFoodProvider } from "./staff/context/ModalFood.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeComponent />} />
         <Route path="/login" element={<LoginComponent />} />
@@ -29,7 +31,11 @@ createRoot(document.getElementById("root")).render(
         <Route path="/profile" element={<ProfileComponent />} />
         <Route path="/change-password" element={<ChangePasswordComponent />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <ModalFoodProvider>
+      <FoodManagementComponent />
+
+    </ModalFoodProvider>
   </StrictMode>,
 );
 

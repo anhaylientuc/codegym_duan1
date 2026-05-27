@@ -1,22 +1,23 @@
 import { Button, Container, Stack, Col, Row } from "react-bootstrap"
-import FormSearchFoodGroupsManagement from "./FormSearchFoodGroupsManagement"
-import { FoodGroupsControllers } from "../controllers/FoodGroupsControllers"
+import FormSearchFoodGroupsManagement from "./SearchFoodGroupsManagement"
+import { FoodGroupsControllers } from "../../controllers/FoodGroupsControllers"
 
 import ListFoodGroupsComponent from "./ListFoodGroupsComponent"
 import { useState, useEffect } from "react"
-import CustomPagination from "./custom/CustomPagination"
-import ModalAddFoodGroupsComponent from "./ModalAddFoodGroupsComponent"
-import CustomModal from "./custom/CustomModal"
+import CustomPagination from "../custom/CustomPagination"
+import ModalAddFoodGroupsComponent from "./ModalFoodGroupsComponent"
+import { ModalTypeProvider, useModalType } from "../../context/ModalType"
+
 export const FoodGroupsManagement = () => {
     const [list, setlist] = useState([])
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    const [show, setshow] = useState(false)
+    const { show, setshow, setid,id } = useModalType()
     useEffect(() => {
         const fetchData = async () => {
             const res = await FoodGroupsControllers.handleGetByPage(page);
-            setlist(res)
-            setnumPages(Math.ceil(res.length / 6));
+            setlist(res.data)
+            setnumPages(Math.ceil(res.headers["x-total-count"]/6));
         }
         fetchData();
     }, [page, show])
@@ -27,8 +28,10 @@ export const FoodGroupsManagement = () => {
                     <h3>Danh sách nhóm món</h3>
                 </Col>
             </Row>
-             <ModalAddFoodGroupsComponent show={show} setshow={setshow} /> 
-          
+            <ModalAddFoodGroupsComponent
+
+            />
+
             <Row className="justify-content-center mb-3">
                 <Col md={8}>
                     <FormSearchFoodGroupsManagement
@@ -39,8 +42,10 @@ export const FoodGroupsManagement = () => {
             </Row>
             <Row className="mb-3">
                 <Col>
-                    <Button variant="primary" onClick={() => { setshow(!show) }}>Thêm</Button>
-
+                    <Button variant="primary" onClick={() => {
+                        setshow(true)
+                        console.log(id)
+                    }}>Thêm</Button>
                 </Col>
             </Row>
             <Row>
@@ -54,5 +59,6 @@ export const FoodGroupsManagement = () => {
                 </Col>
             </Row>
         </Container>
+
     )
 }
