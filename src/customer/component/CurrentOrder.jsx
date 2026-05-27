@@ -3,13 +3,30 @@ import OrderTable from "./OrderTable"
 import { Dropdown } from "react-bootstrap"
 import DropDown from "./DropDow"
 import { useState } from "react"
+import { addOrder } from "../../services/OrderServices"
 
-export default function CurrentOrder({ selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
+export default function CurrentOrder({resetOrder, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
     const day= new Date().toLocaleDateString('vi-VN')
 
     
 
-
+    const postOrder=async()=>{
+        const time = new Date().toLocaleString('vi-VN');
+        try{
+            const newOrder ={
+                id: Date.now().toString(),
+                idTable:currentTable.id,
+                time:time,
+                foodOrder:[...listOrder]
+            }
+             const res = await addOrder(newOrder);
+             if(res){
+                resetOrder();
+             }
+        }catch(err){
+            console.log("add Order false : " +err);
+        }
+    }
 
 
 
@@ -121,7 +138,11 @@ export default function CurrentOrder({ selectTable, listOrder,controlQuantity,re
             borderBottom:"0.5px solid rgb(0, 0, 0,0.2)"
         }}
         >
-            <button style={{fontWeight:"bold"}} className="btn btn-primary" >Order</button>
+            <button
+                onClick={()=>{
+                    postOrder();
+                }}
+            style={{fontWeight:"bold"}} className="btn btn-primary" >Order</button>
             <button style={{fontWeight:"bold"}}  class="btn btn-success">Checkout</button>
             <button style={{
                 backgroundColor:"#dca237",
