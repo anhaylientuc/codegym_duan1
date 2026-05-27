@@ -4,14 +4,72 @@ import axios from "axios";
 import MainMenu from "../component/MainMenu";
 
 import { FoodGroupsServices } from "../../services/FoodGroupsServices";
+import CurrentOrder from "../component/CurrentOrder";
+import { getAllTable } from "../../services/TableServices"
 
 export default function(){
 
     const api = import.meta.env.VITE_API_URL;
+    
+
+    // danh sách order 
+   const [listOrder,setlistOrder] = useState([]);
+
+   const controlQuantity=(index,quantity)=>{
+    if(quantity>=1){
+            setlistOrder((prev)=>{
+        const copyData = [...prev];
+        copyData[index]= {
+        ...copyData[index],
+        quantity : quantity
+    }
+    return copyData;
+    })
+    }    
+}
+
+
+ const removeOrder=(id)=>{
+    setlistOrder((prev)=>{
+        const copyData =[...prev].filter(item=>item.id !==id);
+        return copyData
+    })
+ }
+   
+
+   const addOrder=(id,name,price,waitingTime)=>{
+    
+    setlistOrder((prev)=>{
+        const check = prev.findIndex(item => item.id === id);
+        console.log(check);
+        if(check !== -1){
+            const copyData = [...prev];
+            copyData[check]= {
+            ...copyData[check],
+            quantity : copyData[check].quantity + 1
+            }
+            return copyData
+        }else{ 
+            const newListOrder ={
+            id: id,
+            name:name,
+            price:price,
+            waitingTime:waitingTime,
+            quantity:1
+            }
+            return [...prev,newListOrder];
+        }   
+        }
+    )
+
+
+   }
+//    ////////////////////////////////////
+
+
+//  lấy danh sách từ bảng Foood
 
     const [listFoodGroup,setlistFoodGroup]=useState([]);
-
-
     const getFoodGroup=async()=>{
         try{
             console.log("123");
@@ -36,8 +94,25 @@ export default function(){
         settap(item)
     }
 
+    ////////////////////////////////////////////////
+
+    //  lấy danh sách bàn
+    const [listDropDow,setlistDropDow]=useState([]);
+    const [currentTable,setcurrentTable]= useState({})
+    
+        const getTable=async()=>{
+            const dataTable =await getAllTable();
+            setlistDropDow(dataTable)
+            setcurrentTable(dataTable[0]);
+        }
+
+    const selectTable=(item)=>{
+        setcurrentTable(item);
+    }
+
     useEffect(()=>{
         getFoodGroup()
+        getTable()
     },[])
 
     return<section
@@ -51,15 +126,8 @@ export default function(){
     }}
     >
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
-    <MainMenu tap={tap}/>
-    <section
-    style={{
-        width:"100%",
-        backgroundColor:"#000000"
-    }}
-    >
-
-    </section>
+    <MainMenu addOrder={addOrder} tap={tap}/>
+    <CurrentOrder selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrder} listOrder={listOrder} controlQuantity={controlQuantity}/>
 
     </section>
 }
