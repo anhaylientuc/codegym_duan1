@@ -9,7 +9,7 @@ import { useModalFood } from '../../context/ModalFood';
 import { FoodsServices } from '../../../services/FoodServices';
 import DropdownType from '../custom/DropdownType';
 const SearchFoodComponent = (props) => {
-    const { handleSearch, setlist, types,page,setnumPages } = props;
+    const { handleSearch, setlist, types,page,setnumPages,setpage } = props;
     const {setkeyword}=useModalFood();
     const Schema = Yup.object().shape({
         id: Yup.string(),
@@ -28,8 +28,10 @@ const SearchFoodComponent = (props) => {
             }}
             validationSchema={Schema}
             onSubmit={async (values) => {
+                console.log(values)
                 const res = await FoodsServices.search(page,values);
-                setlist(res.data);
+                setpage(1)
+                setlist(res.data);   
                 setkeyword(values);
                 setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
 

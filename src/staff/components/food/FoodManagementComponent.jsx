@@ -43,6 +43,7 @@ const FoodManagementComponent = () => {
                         setlist={setlist}
                         types={types}
                         page={page}
+                        setpage={setpage}
                         setnumPages={setnumPages}
                     // handleSearch={FoodGroupsControllers.handleSearch} 
                     />
