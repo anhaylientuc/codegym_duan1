@@ -4,15 +4,8 @@ import { MdEditNote, MdDelete } from "react-icons/md";
 import { useModalFood } from '../../context/ModalFood';
 import Form from 'react-bootstrap/Form';
 import { TableServices } from '../../../services/TableServices';
-const ListTableComponent = ({ list, page }) => {
+const ListTableComponent = ({ list, page, toggles, settoggles }) => {
     const { setshow, setid, action, setaction } = useModalFood();
-    const [toggles, settoggles] = useState([])
-    useEffect(() => {
-        const fetchData = () => {
-            settoggles(list.map(item => on))
-        }
-        fetchData();
-    }, [])
     return (
         <Table bordered className='text-center'>
             <thead>
@@ -35,19 +28,20 @@ const ListTableComponent = ({ list, page }) => {
                                 <th>
                                     <Form.Check
                                         type="switch"
-                                        checked={toggles[index]}
+                                        checked={toggles[index]||false}
                                         onChange={async () => {
                                             await TableServices.update(
                                                 item.id,
                                                 {
                                                     ...item,
-                                                    on: !item.on
+                                                    on: !toggles[index]
                                                 }
                                             )
-                                            settoggles(toggles.map((item, i) => {
-                                                if (i == index)
-                                                    return !toggles[i];
-                                            }))
+                                            settoggles(
+                                                toggles.map((item, i) => {
+                                                    return i === index ? !item : item
+                                                })
+                                            )
                                         }}
                                     />
                                 </th>

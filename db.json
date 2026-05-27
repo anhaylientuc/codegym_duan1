@@ -510,8 +510,8 @@
   ],
   "bill": [
     {
-      "id": "b001",
-      "table": "tb001",
+      "id": "B001",
+      "table": "TB001",
       "totalAmount": 100000,
       "ordered": [
         {
@@ -535,8 +535,8 @@
       ]
     },
     {
-      "id": "b002",
-      "table": "tb002",
+      "id": "B002",
+      "table": "TB002",
       "totalAmount": 52000,
       "ordered": [
         {
@@ -551,8 +551,8 @@
       ]
     },
     {
-      "id": "b003",
-      "table": "tb003",
+      "id": "B003",
+      "table": "TB003",
       "totalAmount": 52000,
       "ordered": [
         {
@@ -576,8 +576,8 @@
       ]
     },
     {
-      "id": "b004",
-      "table": "tb004",
+      "id": "B004",
+      "table": "TB004",
       "totalAmount": 52000,
       "ordered": [
         {
@@ -605,7 +605,7 @@
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB002",
@@ -615,7 +615,7 @@
     {
       "id": "TB003",
       "state": "Lỗi",
-      "on": true
+      "on": false
     },
     {
       "id": "TB004",
@@ -625,7 +625,7 @@
     {
       "id": "TB005",
       "state": "Lỗi",
-      "on": true
+      "on": false
     },
     {
       "id": "TB006",
@@ -640,7 +640,7 @@
     {
       "id": "TB008",
       "state": "Lỗi",
-      "on": true
+      "on": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
