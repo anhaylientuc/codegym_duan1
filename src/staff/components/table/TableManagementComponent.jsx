@@ -11,7 +11,9 @@ const TableManagementComponent = () => {
     //const [types, settypes] = useState(null)
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    const { show, setshow, setid, id, keyword } = useModalFood()
+    const [toggles, settoggles] = useState([])
+
+    const { show, setshow, setid, id, keyword,setkeyword } = useModalFood()
     const fieldFormSearch = [
         { label: 'Mã', value: 'id' },
         { label: 'Trạng thái', value: 'state' }
@@ -19,12 +21,9 @@ const TableManagementComponent = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await TableServices.search(page, keyword);
-            //const res1 = await FoodGroupsServices.getAll();
+            console.log(keyword)
             setlist(res.data)
-            // const newData = res1.map(item => {
-            //     return [item.id, item.name]
-            // })
-            // settypes(new Map(newData))
+            settoggles(res.data.map(item=>item.on))
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
         }
         fetchData();
@@ -67,7 +66,7 @@ const TableManagementComponent = () => {
             </Row>
             <Row>
                 <ListTableComponent
-                    list={list} page={page} />
+                    list={list} page={page} toggles={toggles} settoggles={settoggles} />
             </Row>
             <Row >
                 <Col xs="auto" className="ms-auto">
