@@ -33,3 +33,9 @@
 .ctrolPage:hover{
     color: rgba(0, 0, 0);
 }
+.OrderTable{
+    font-weight: normal;
+   vertical-align: middle;
+   text-align: start;
+}
+
