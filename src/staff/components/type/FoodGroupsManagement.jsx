@@ -22,7 +22,6 @@ export const FoodGroupsManagement = () => {
         fetchData();
     }, [page, show])
     return (
-        <ModalTypeProvider>
             <Container>
                 <Row className="justify-content-center mb-3">
                     <Col xs="auto">
@@ -60,7 +59,6 @@ export const FoodGroupsManagement = () => {
                     </Col>
                 </Row>
             </Container>
-        </ModalTypeProvider>
 
 
     )

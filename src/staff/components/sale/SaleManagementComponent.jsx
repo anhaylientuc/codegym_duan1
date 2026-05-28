@@ -19,7 +19,6 @@ const SaleManagementComponent = () => {
         fetchData();
     }, [page])
     return (
-        <ModalFoodProvider>
             <Container>
                 <Row>
                     <Col>
@@ -44,7 +43,6 @@ const SaleManagementComponent = () => {
                     </Col>
                 </Row>
             </Container>
-        </ModalFoodProvider>
 
     )
 }

@@ -33,7 +33,6 @@ const BillManagementComponent = () => {
         fetchData();
     }, [page, show])
     return (
-        <ModalFoodProvider>
             <Container>
                 <Row className="justify-content-center mb-3">
                     <Col xs="auto">
@@ -67,7 +66,6 @@ const BillManagementComponent = () => {
                     </Col>
                 </Row>
             </Container>
-        </ModalFoodProvider>
 
     )
 }
