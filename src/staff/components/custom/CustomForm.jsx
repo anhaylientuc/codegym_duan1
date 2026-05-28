@@ -26,7 +26,7 @@ const CustomForm = ({ fields, onSubmit }) => {
 
         >
             {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
-                <Form 
+                <Form
                     onSubmit={handleSubmit}
                 // id='form-food-group'
                 >
@@ -50,9 +50,6 @@ const CustomForm = ({ fields, onSubmit }) => {
                                                 ></Form.Control>
                                             </Col>
 
-                                            {/* <Form.Control.Feedback type='invalid'>
-                                                Some of fields are invalid!
-                                            </Form.Control.Feedback> */}
                                         </Row>
 
                                     </Form.Group>
@@ -66,34 +63,6 @@ const CustomForm = ({ fields, onSubmit }) => {
                         </Col>
 
                     </Row>
-                    {/* <Form.Group>
-                        <Form.Label>Mã:</Form.Label>
-                        <Form.Control name='id'
-                            value={values.id}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            isInvalid={
-                                touched.id && errors.id
-                            }
-                        ></Form.Control>
-                        <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
-                        </Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Tên:</Form.Label>
-                        <Form.Control name='name'
-                            value={values.name}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            isInvalid={
-                                touched.name && errors.name
-                            }
-                        ></Form.Control>
-                        <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
-                        </Form.Control.Feedback>
-                    </Form.Group> */}
 
                 </Form>
             )
