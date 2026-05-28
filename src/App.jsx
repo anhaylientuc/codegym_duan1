@@ -35,6 +35,7 @@ function App() {
         {/* toàn */}
          <Route path={`customer/home`} element={<HomePage />} />
          <Route path={`customer/menu`} element={<MenuPage />} />
+         
          <Route path={`customer/test`} element={<Test />} />
          <Route path={`/admin/NewsManagement`} element={<AdminNewsManagement/>}/>
          {/* ///////////////////// */}
