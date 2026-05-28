@@ -1,34 +1,30 @@
+import React from 'react'
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import React from 'react'
 import Form from 'react-bootstrap/Form';
-import { FoodGroupsServices } from '../../services/FoodGroupsServices';
-const FormAddFoodGroupsComponent = ({onSubmit}) => {
+import { Row, Col } from 'react-bootstrap';
+const FormTableComponent = ({ onSubmit, initialValues }) => {
     const Schema = Yup.object().shape({
         id: Yup.string()
             .required(),
-        name: Yup.string()
+        state: Yup.string()
             .required(),
     });
     return (
         <Formik
             validationSchema={Schema}
-
-            initialValues={{
-                id: '',
-                name: ''
-            }}
+            initialValues={initialValues}
             onSubmit={onSubmit}
-         
+            enableReinitialize
 
 
         >
-            {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
-                <Form onSubmit={handleSubmit} id='form-food-group'>
+            {({ handleSubmit, handleChange, handleBlur, setFieldValue, errors, touched, values }) => (
+                <Form onSubmit={handleSubmit} id='form-food'>
                     <Form.Group>
                         <Form.Label>Mã:</Form.Label>
                         <Form.Control name='id'
-                            value={values.id}
+                            value={values.id||''}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             isInvalid={
@@ -39,20 +35,27 @@ const FormAddFoodGroupsComponent = ({onSubmit}) => {
                             Some of fields are invalid!
                         </Form.Control.Feedback>
                     </Form.Group>
+
                     <Form.Group>
-                        <Form.Label>Tên:</Form.Label>
-                        <Form.Control name='name'
-                            value={values.name}
+                        <Form.Label>Trạng thái:</Form.Label>
+                        <Form.Control name='state'
+                            value={values.state||''}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             isInvalid={
-                                touched.name && errors.name
+                                touched.state && errors.state
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
                             Some of fields are invalid!
                         </Form.Control.Feedback>
                     </Form.Group>
+
+                    
+
+
+
+
                 </Form>
             )
 
@@ -61,4 +64,4 @@ const FormAddFoodGroupsComponent = ({onSubmit}) => {
     )
 }
 
-export default FormAddFoodGroupsComponent
+export default FormTableComponent

@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap";
 import { HeaderComponent } from "../AdminHeaderComponent";
 import { UserServices } from "../../services/UserServices";
+import { useToast } from "../../components/toast/ToastContext";
 
 const PAGE_SIZE = 10;
 
@@ -20,6 +21,7 @@ export const StaffListComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const user = location.state?.user;
+  const { showToast } = useToast();
 
   const [staffList, setStaffList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
@@ -31,6 +33,16 @@ export const StaffListComponent = () => {
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [staffToDelete, setStaffToDelete] = useState(null);
+
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [staffToView, setStaffToView] = useState(null);
+
+  const formatDateDMY = (dateStr) => {
+    if (!dateStr) return "—";
+    const [y, m, d] = String(dateStr).split("-");
+    if (!y || !m || !d) return String(dateStr);
+    return `${d}-${m}-${y}`;
+  };
 
   if (!user) {
     navigate("/login");
@@ -74,12 +86,22 @@ export const StaffListComponent = () => {
     setShowDeleteModal(true);
   };
 
+  const handleViewDetail = (staff) => {
+    setStaffToView(staff);
+    setShowDetailModal(true);
+  };
+
   const handleConfirmDelete = async () => {
     if (staffToDelete) {
-      await UserServices.remove(staffToDelete.id);
+      const result = await UserServices.remove(staffToDelete.id);
       setShowDeleteModal(false);
       setStaffToDelete(null);
       fetchStaff();
+      if (result) {
+        showToast("Xóa nhân viên thành công!", "success");
+      } else {
+        showToast("Xóa nhân viên thất bại!", "danger");
+      }
     }
   };
 
@@ -243,13 +265,8 @@ export const StaffListComponent = () => {
                   <th>#</th>
                   <th>Username</th>
                   <th>Tên</th>
-                  <th>Địa chỉ</th>
                   <th>SĐT</th>
-                  <th>Giới tính</th>
-                  <th>Chức vụ</th>
-                  <th>Ngày sinh</th>
-                  <th>Lương</th>
-                  <th>Thao tác</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -257,38 +274,21 @@ export const StaffListComponent = () => {
                   <tr key={staff.id}>
                     <td>{(page - 1) * PAGE_SIZE + index + 1}</td>
                     <td>
-                      <strong style={{ color: "#DCA237" }}>
+                      <strong style={{ color: "#000000" }}>
                         {staff.username}
                       </strong>
                     </td>
-                    <td style={{ color: "#784b10" }}>{staff.name}</td>
-                    <td>{staff.address}</td>
+                    <td style={{ color: "#000000" }}>{staff.name}</td>
                     <td>{staff.tel}</td>
-                    <td>{staff.gender}</td>
-                    <td>
-                      <span
-                        style={{
-                          background:
-                            staff.role === "Admin"
-                              ? "rgba(220,162,55,0.15)"
-                              : "rgba(76,175,80,0.15)",
-                          color: staff.role === "Admin" ? "#DCA237" : "#4CAF50",
-                          padding: "0.2rem 0.6rem",
-                          borderRadius: "12px",
-                          fontSize: "0.8rem",
-                          fontWeight: 600,
-                          border: `1px solid ${staff.role === "Admin" ? "rgba(220,162,55,0.3)" : "rgba(76,175,80,0.3)"}`,
-                        }}
-                      >
-                        {staff.role}
-                      </span>
-                    </td>
-                    <td>{staff.birthday}</td>
-                    <td>
-                      {new Intl.NumberFormat("vi-VN").format(staff.salary)} đ
-                    </td>
                     <td>
                       <div className="d-flex gap-1">
+                        <Button
+                          className="btn-cafe-secondary"
+                          size="sm"
+                          onClick={() => handleViewDetail(staff)}
+                        >
+                          Chi tiết
+                        </Button>
                         <Button
                           className="btn-cafe-success"
                           size="sm"
@@ -310,7 +310,7 @@ export const StaffListComponent = () => {
                 {pagedList.length === 0 && !notFound && (
                   <tr>
                     <td
-                      colSpan="10"
+                      colSpan="5"
                       className="text-center py-4"
                       style={{ color: "#999" }}
                     >
@@ -351,6 +351,67 @@ export const StaffListComponent = () => {
           </Button>
           <Button className="btn-cafe-danger" onClick={handleConfirmDelete}>
             Xóa
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={showDetailModal}
+        onHide={() => {
+          setShowDetailModal(false);
+          setStaffToView(null);
+        }}
+        centered
+        className="cafe-modal"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Chi tiết nhân viên</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="py-4">
+          {staffToView && (
+            <div className="d-flex flex-column gap-2">
+              <div>
+                <strong>Username:</strong>{" "}
+                <span style={{ color: "#DCA237" }}>{staffToView.username}</span>
+              </div>
+              <div>
+                <strong>Họ và tên:</strong> {staffToView.name}
+              </div>
+              <div>
+                <strong>SĐT:</strong> {staffToView.tel}
+              </div>
+              <div>
+                <strong>Địa chỉ:</strong> {staffToView.address || "—"}
+              </div>
+              <div>
+                <strong>Giới tính:</strong> {staffToView.gender || "—"}
+              </div>
+              <div>
+                <strong>Chức vụ:</strong> {staffToView.role || "—"}
+              </div>
+              <div>
+                <strong>Ngày sinh:</strong>{" "}
+                {formatDateDMY(staffToView.birthday)}
+              </div>
+              <div>
+                <strong>Lương:</strong>{" "}
+                {new Intl.NumberFormat("vi-VN").format(
+                  Number(staffToView.salary) || 0,
+                )}{" "}
+                VND
+              </div>
+            </div>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="btn-cafe-secondary"
+            onClick={() => {
+              setShowDetailModal(false);
+              setStaffToView(null);
+            }}
+          >
+            Đóng
           </Button>
         </Modal.Footer>
       </Modal>

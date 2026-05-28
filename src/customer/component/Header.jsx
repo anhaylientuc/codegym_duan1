@@ -4,16 +4,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../customer.css'
+import { useNavigate } from 'react-router-dom';
 
-export default function Header(){
 
+
+export default function Header({scrollProduck}){
+
+    const navigate = useNavigate();
 
     return  <header style={{
         width:"100%",
         overflow:"hidden",
         position:"relative",
         display:"flex",
-        justifyItems:"center"
+        justifyItems:"center",
+        justifyContent:"center"
     }} >
         
     <img
@@ -24,6 +29,9 @@ export default function Header(){
     }}
     src="/header_img.png" alt="header_img" />
     <div 
+    onClick={()=>{
+    navigate(`/customer/menu`)
+    }}
     style={{
         position:"absolute",
         zIndex:"2",
@@ -34,8 +42,10 @@ export default function Header(){
         fontSize:"20px",
         fontWeight:"bold",
         justifyItems:"center",
+        justifyContent:"center",
         color:"#DCA237",
-        alignItems:"center"
+        alignItems:"center",
+        cursor:"pointer",
     }}
     >
         <div
@@ -57,27 +67,27 @@ export default function Header(){
             fontFamily:'"Arvo", serif'
         }} >MENU</p>
     </div>
-    <button
-     style={{
-        width:"50px",
-        height:"50px",
-        backgroundImage: "linear-gradient(to top, #ce9626, #dccb6d)",
+    
+    <img
+    onClick={()=>{
+        console.log("ád");
+        scrollProduck()
+        
+        
+    }}
+    style={{
+        width:"120px",
+        flexShrink:"0",
         border:"none",
-       borderRadius:"50%",
+        cursor:"pointer",
        position:"absolute",
-       top:"85%",
-       left:"50%",
-       right:"50%",
+       top:"80%",
+    //    left:"50%",
+    //    right:"50%",
+    //    transform:"translateX(-50%);"
        
      }}
-    >
-        <img
-            style={{
-                width:"60%",
-                height:"60%",
-                objectFit:"cover"
-            }}
-        src="https://img.icons8.com/?size=100&id=1Seey3cVgd3z&format=png&color=ffffff" alt="" />
-    </button>
+    src="/home_btn.png" alt="" />
+    
     </header>
 }

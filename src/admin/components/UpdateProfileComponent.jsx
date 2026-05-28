@@ -3,11 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Container, Row, Col, Form, Alert } from "react-bootstrap";
 import { HeaderComponent } from "../AdminHeaderComponent";
 import { UserServices } from "../../services/UserServices";
+import { useToast } from "../../components/toast/ToastContext";
 
 export const UpdateProfileComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const user = location.state?.user;
+  const { showToast } = useToast();
 
   const [formData, setFormData] = useState({
     username: "",
@@ -62,13 +64,14 @@ export const UpdateProfileComponent = () => {
       tel: formData.tel,
       gender: formData.gender,
       birthday: formData.birthday,
-      salary: Number(formData.salary) || 0,
+      salary:
+        user.role === "Staff" ? Number(user.salary) || 0 : Number(formData.salary) || 0,
     };
 
     const result = await UserServices.update(user.id, dataToSave);
     if (result) {
       const updatedUser = { ...user, ...dataToSave };
-      alert("Cập nhật thông tin thành công!");
+      showToast("Cập nhật thông tin thành công!", "success");
       navigate("/profile", { state: { user: updatedUser } });
     } else {
       setMessage({ text: "Cập nhật thất bại!", type: "danger" });
@@ -189,6 +192,7 @@ export const UpdateProfileComponent = () => {
                       placeholder="Nhập lương"
                       value={formData.salary}
                       onChange={handleChange}
+                      disabled={user.role === "Staff"}
                     />
                   </Form.Group>
 
