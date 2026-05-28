@@ -17,17 +17,25 @@ import { ChangePasswordComponent } from './components/ChangePasswordComponent'
 import MenuPage from './customer/page/MenuPage'
 import ListTableComponent from './staff/components/table/ListTableComponent'
 import TableManagementComponent from './staff/components/table/TableManagementComponent'
+import { ToastContainer } from 'react-toastify'
+import toast, { Toaster } from 'react-hot-toast';
+import 'react-toastify/dist/ReactToastify.css'; 
+import Test from './customer/page/test'
+import { AdminHeaderComponent } from './admin/AdminHeaderComponent'
+import AdminNewsManagement from './admin/AdminNewsManagement'
 
 function App() {
 
 
   return (
     <>
-
+       <ToastContainer />
       <Routes>
         {/* toàn */}
          <Route path={`customer/home`} element={<HomePage />} />
          <Route path={`customer/menu`} element={<MenuPage />} />
+         <Route path={`customer/test`} element={<Test />} />
+         <Route path={`/admin/NewsManagement`} element={<AdminNewsManagement/>}/>
          {/* ///////////////////// */}
          {/* kiên */}
          <Route path="/" element={<HomeComponent />} />
