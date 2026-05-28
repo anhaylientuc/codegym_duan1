@@ -36,7 +36,10 @@ function App() {
           <Route path="/staff" element={<StaffMenu />} />
           <Route path="/staff/food-groups" element={<FoodGroupsManagement />} />
           <Route path="/profile" element={<ProfileComponent />} />
-          <Route path="/change-password" element={<ChangePasswordComponent />} />
+          <Route
+            path="/change-password"
+            element={<ChangePasswordComponent />}
+          />
           <Route path="/admin/update" element={<UpdateProfileComponent />} />
           <Route path="/update-profile" element={<UpdateProfileComponent />} />
           {/* ////////////////////////////// */}
