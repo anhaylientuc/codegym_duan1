@@ -862,6 +862,7 @@
       "id": "OD001",
       "idTable": "TB001",
       "time": "27/05/2026 4:04",
+      "status": "Unpaid",
       "foodOrder": [
         {
           "id": "SV011",
@@ -880,27 +881,37 @@
       ]
     },
     {
-      "idTable": "TB005",
-      "time": "17:08:01 27/5/2026",
+      "id": "4rFfKD_TMNs",
+      "idTable": "TB001",
+      "time": "10:51:14 28/5/2026",
+      "status": "Paid",
       "foodOrder": [
         {
           "id": "SV012",
           "name": "Cà phê muối",
           "price": 35000,
           "waitingTime": 5,
-          "quantity": 5
-        },
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "waitingTime": 5,
-          "quantity": 9
+          "quantity": 1
         },
         {
           "id": "SV013",
           "name": "Cà phê đá xay",
           "price": 45000,
+          "waitingTime": 5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "cn5z6QPv8gs",
+      "idTable": "TB001",
+      "time": "13:26:52 28/5/2026",
+      "status": "Unpaid",
+      "foodOrder": [
+        {
+          "id": "SV014",
+          "name": "Cappuccino",
+          "price": 50000,
           "waitingTime": 5,
           "quantity": 1
         },
@@ -909,80 +920,41 @@
           "name": "Latte",
           "price": 52000,
           "waitingTime": 5,
-          "quantity": 7
+          "quantity": 1
         }
-      ],
-      "id": "LD6uuQ7mKDc"
-    },
+      ]
+    }
+  ],
+  "CustomerRequests": [
     {
-      "id": "i-4hJLpCUuQ",
+      "id": "CR001",
       "idTable": "TB001",
-      "time": "17:11:00 27/5/2026",
-      "foodOrder": [
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "waitingTime": 5,
-          "quantity": 1
-        },
-        {
-          "id": "SV031",
-          "name": "Bánh kem dâu",
-          "price": 55000,
-          "waitingTime": 3,
-          "quantity": 1
-        }
-      ]
+      "time": "27/05/2026 4:04",
+      "type": "pay",
+      "status": "processed"
     },
     {
-      "id": "QOgxOxmd-d4",
+      "id": "A2iZsxoMEKM",
       "idTable": "TB001",
-      "time": "17:14:33 27/5/2026",
-      "foodOrder": [
-        {
-          "id": "SV012",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "waitingTime": 5,
-          "quantity": 1
-        }
-      ]
+      "time": "13:27:12 28/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
     },
     {
-      "id": "T_i4SowKGdc",
-      "idTable": "TB004",
-      "time": "17:14:53 27/5/2026",
-      "foodOrder": [
-        {
-          "id": "SV012",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "waitingTime": 5,
-          "quantity": 1
-        }
-      ]
-    },
+      "id": "HGDkXUbmG5s",
+      "idTable": "TB001",
+      "time": "14:01:37 28/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    }
+  ],
+  "news": [
     {
-      "id": "ZPrKuMltm_Q",
-      "idTable": "TB008",
-      "time": "09:50:36 28/5/2026",
-      "foodOrder": [
-        {
-          "id": "SV017",
-          "name": "Nước ép dứa",
-          "price": 32000,
-          "waitingTime": 7,
-          "quantity": 1
-        },
-        {
-          "id": "SV018",
-          "name": "Nước ép cà rốt",
-          "price": 35000,
-          "waitingTime": 7,
-          "quantity": 1
-        }
-      ]
+      "title": "ádfsadf",
+      "content": "ádfasdfsadfsadfasdfasdfasdf",
+      "img": "ádfsadf",
+      "time": "28/5/2026",
+      "id": "tCHgoO8oyh0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
