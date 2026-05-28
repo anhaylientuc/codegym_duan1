@@ -104,7 +104,7 @@ export default function(){
     const [currentTable,setcurrentTable]= useState({})
     
         const getTable=async()=>{
-            const dataTable =await TableServices.getAllTable();
+            const dataTable =await TableServices.getAll();
             setlistDropDow(dataTable)
             setcurrentTable(dataTable[0]);
         }

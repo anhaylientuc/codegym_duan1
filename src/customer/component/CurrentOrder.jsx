@@ -68,36 +68,36 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
             
             <th style={{
                 textAlign:"start"
-            }} scope="col">dish name</th>
+            }} scope="col">Tên món</th>
             <th scope="col"
             style={{
                 width:"0%"
             }}
-            >Qty</th>
+            >Sl</th>
             <th
             style={{
                 width:"17%",
                
             }}
-            scope="col">price</th>
+            scope="col">Giá</th>
             <th
             style={{
                 width:"17%",
                
             }}
-            scope="col">total</th>
+            scope="col">Tổng</th>
             <th
             style={{
                 width:"18%",
                
             }}
-            scope="col">waiting time</th>
+            scope="col">tg chờ</th>
             <th 
             style={{
                 width:"0%",
                 textAlign:"center"
             }}
-            scope="col">Func</th>
+            scope="col"></th>
             </tr>
         </thead>
         <tbody
@@ -142,14 +142,14 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
                 onClick={()=>{
                     postOrder();
                 }}
-            style={{fontWeight:"bold"}} className="btn btn-primary" >Order</button>
-            <button style={{fontWeight:"bold"}}  class="btn btn-success">Checkout</button>
+            style={{fontWeight:"bold"}} className="btn btn-primary" >Gọi món</button>
+            <button style={{fontWeight:"bold"}}  class="btn btn-success">Thanh toán</button>
             <button style={{
                 backgroundColor:"#dca237",
                 fontFamily:"'Montserrat', sans-serif",
                 fontWeight:"bold",
                 color:"white"
-            }} class="btn">Call Staff</button>
+            }} class="btn">Gọi nhân viên</button>
         </div>
         {/* ////////////////////////// */}
         {/* phần thông tin */}
