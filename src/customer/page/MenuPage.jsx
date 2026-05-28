@@ -5,8 +5,7 @@ import MainMenu from "../component/MainMenu";
 
 import { FoodGroupsServices } from "../../services/FoodGroupsServices";
 import CurrentOrder from "../component/CurrentOrder";
-import { getAllTable } from "../../services/TableServices"
-
+import { TableServices } from "../../services/TableServices";
 export default function(){
 
     const api = import.meta.env.VITE_API_URL;
@@ -101,7 +100,7 @@ export default function(){
     const [currentTable,setcurrentTable]= useState({})
     
         const getTable=async()=>{
-            const dataTable =await getAllTable();
+            const dataTable =await TableServices.getAllTable();
             setlistDropDow(dataTable)
             setcurrentTable(dataTable[0]);
         }
