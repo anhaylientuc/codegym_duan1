@@ -30,4 +30,26 @@ const getById = async (id) => {
 
     }
 }
-export const BillServices={getAllBill,getByPage,getById}
+const search = async (page,keyword) => {
+
+    try {
+        const params = new URLSearchParams();
+        const {id,from,to}=keyword
+        if(id)
+            params.append('id',id);
+        if(from)
+            params.append('createdAt_gte',from)
+        if(to)
+            params.append('createdAt_lte',to)
+        params.append('_page', page);
+        params.append('_limit', 6);
+        const url = BASE_URL + `?${params}`
+        console.log(url)
+        const res = await axios.get(url);
+
+        return res;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const BillServices={getAllBill,getByPage,getById,search}

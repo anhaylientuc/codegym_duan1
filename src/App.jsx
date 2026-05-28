@@ -17,6 +17,7 @@ import { ChangePasswordComponent } from './components/ChangePasswordComponent'
 import MenuPage from './customer/page/MenuPage'
 import ListTableComponent from './staff/components/table/ListTableComponent'
 import TableManagementComponent from './staff/components/table/TableManagementComponent'
+import TypeComponent from './staff/components/type/TypeComponent'
 import { ToastContainer } from 'react-toastify'
 import toast, { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -45,7 +46,7 @@ function App() {
         <Route path="/admin/staff/add" element={<StaffFormComponent />} />
         <Route path="/admin/staff/edit" element={<StaffFormComponent />} />
         <Route path="/staff" element={<StaffMenu />} />
-        <Route path="/staff/food-groups" element={<FoodGroupsManagement />} />
+        <Route path="/staff/food-groups" element={<TypeComponent />} />
         <Route path="/profile" element={<ProfileComponent />} />
         <Route path="/change-password" element={<ChangePasswordComponent />} />
         {/* ////////////////////////////// */}
