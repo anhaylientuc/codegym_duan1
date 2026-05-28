@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import '../customer.css'
 import { data } from "react-router-dom";
 
-export default function MainMenu(tap){
-    console.log(tap.tap.id);
+
+export default function MainMenu({tap , addOrder}){
+    
+    console.log(tap.id);
 
     const scroll = useRef();
 
@@ -22,7 +24,7 @@ export default function MainMenu(tap){
 
     const getListProduct =async()=>{
         try{
-            if(tap.tap.id==="All"){
+            if(tap.id==="All"){
                 const data = await axios.get(`${api}/foods?_page=${numberPage}&_per_page=10`);
                 console.log(data.data);
                 
@@ -30,7 +32,7 @@ export default function MainMenu(tap){
                 setlistProduct(data.data.data)
 
             }else{
-                const data = await axios.get(`${api}/foods?unit=${tap.tap.id}&_page=${numberPage}&_per_page=10`);
+                const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_per_page=10`);
                 console.log(data.data);
                 setDataProduct(data.data);
                 setlistProduct(data.data.data)
@@ -44,11 +46,7 @@ export default function MainMenu(tap){
         }
     }
 
-    useEffect(()=>{
-        getListProduct();
-    },[])
-
-    const plusPage=()=>{
+        const plusPage=()=>{
         if(DataProduct?.next !==null){
             setnumberPage(numberPage+1);
         }
@@ -62,6 +60,13 @@ export default function MainMenu(tap){
     const skipPage=(item)=>{
         setnumberPage(item);
     }
+
+    useEffect(()=>{
+        getListProduct();
+     
+    },[])
+
+
     useEffect(()=>{
         getListProduct();
         scrollOnTop()
@@ -71,7 +76,7 @@ export default function MainMenu(tap){
         getListProduct();
         setnumberPage(1);
         scrollOnTop()
-    },[tap.tap.id])
+    },[tap.id])
 
     // //////////////////////////////////////////////////////////////////
 
@@ -152,7 +157,11 @@ export default function MainMenu(tap){
                     margin:"0"
                 }}
                 >{e.price.toLocaleString("vi-VN")} Vnd</p>
+
                 <button
+                onClick={()=>{
+                    addOrder(e.id , e.name , e.price, e.waitTime)
+                }}
                 style={{
                     padding:"5px 10px",
                     borderRadius:"5px",
@@ -235,7 +244,7 @@ export default function MainMenu(tap){
                 margin:"0 auto"
                 
             }}
-        >Hiện chưa có sản phẩm nào cho mục này</p>
+        >There are currently no products available for this category.</p>
         }
         
 
