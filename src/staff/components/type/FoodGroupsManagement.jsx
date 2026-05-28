@@ -12,53 +12,56 @@ export const FoodGroupsManagement = () => {
     const [list, setlist] = useState([])
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    const { show, setshow, setid,id } = useModalType()
+    const { show, setshow, setid, id } = useModalType()
     useEffect(() => {
         const fetchData = async () => {
             const res = await FoodGroupsControllers.handleGetByPage(page);
             setlist(res.data)
-            setnumPages(Math.ceil(res.headers["x-total-count"]/6));
+            setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
         }
         fetchData();
     }, [page, show])
     return (
-        <Container>
-            <Row className="justify-content-center mb-3">
-                <Col xs="auto">
-                    <h3>Danh sách nhóm món</h3>
-                </Col>
-            </Row>
-            <ModalAddFoodGroupsComponent
+        <ModalTypeProvider>
+            <Container>
+                <Row className="justify-content-center mb-3">
+                    <Col xs="auto">
+                        <h3>Danh sách nhóm món</h3>
+                    </Col>
+                </Row>
+                <ModalAddFoodGroupsComponent
 
-            />
+                />
 
-            <Row className="justify-content-center mb-3">
-                <Col md={8}>
-                    <FormSearchFoodGroupsManagement
-                        setlist={setlist}
-                        handleSearch={FoodGroupsControllers.handleSearch} />
-                </Col>
+                <Row className="justify-content-center mb-3">
+                    <Col md={8}>
+                        <FormSearchFoodGroupsManagement
+                            setlist={setlist}
+                            handleSearch={FoodGroupsControllers.handleSearch} />
+                    </Col>
 
-            </Row>
-            <Row className="mb-3">
-                <Col>
-                    <Button variant="primary" onClick={() => {
-                        setshow(true)
-                        console.log(id)
-                    }}>Thêm</Button>
-                </Col>
-            </Row>
-            <Row>
-                <ListFoodGroupsComponent
-                    list={list} setshow={setshow} />
-            </Row>
-            <Row >
-                <Col xs="auto" className="ms-auto">
-                    <CustomPagination as={Col} numPages={numPages} setpage={setpage} page={page} />
+                </Row>
+                <Row className="mb-3">
+                    <Col>
+                        <Button variant="primary" onClick={() => {
+                            setshow(true)
+                            console.log(id)
+                        }}>Thêm</Button>
+                    </Col>
+                </Row>
+                <Row>
+                    <ListFoodGroupsComponent
+                        list={list} setshow={setshow} />
+                </Row>
+                <Row >
+                    <Col xs="auto" className="ms-auto">
+                        <CustomPagination as={Col} numPages={numPages} setpage={setpage} page={page} />
 
-                </Col>
-            </Row>
-        </Container>
+                    </Col>
+                </Row>
+            </Container>
+        </ModalTypeProvider>
+
 
     )
 }

@@ -28,7 +28,6 @@ const SearchFoodComponent = (props) => {
             }}
             validationSchema={Schema}
             onSubmit={async (values) => {
-                console.log(values)
                 const res = await FoodsServices.search(page,values);
                 setpage(1)
                 setlist(res.data);   
