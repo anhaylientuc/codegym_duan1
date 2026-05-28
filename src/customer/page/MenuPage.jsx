@@ -28,11 +28,15 @@ export default function(){
 }
 
 
- const removeOrder=(id)=>{
+ const removeOrderByID=(id)=>{
     setlistOrder((prev)=>{
         const copyData =[...prev].filter(item=>item.id !==id);
         return copyData
     })
+ }
+
+ const resetOrder=()=>{
+    setlistOrder([]);
  }
    
 
@@ -100,7 +104,7 @@ export default function(){
     const [currentTable,setcurrentTable]= useState({})
     
         const getTable=async()=>{
-            const dataTable =await TableServices.getAllTable();
+            const dataTable =await TableServices.getAll();
             setlistDropDow(dataTable)
             setcurrentTable(dataTable[0]);
         }
@@ -126,7 +130,7 @@ export default function(){
     >
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
     <MainMenu addOrder={addOrder} tap={tap}/>
-    <CurrentOrder selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrder} listOrder={listOrder} controlQuantity={controlQuantity}/>
+    <CurrentOrder resetOrder={resetOrder} selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrderByID} listOrder={listOrder} controlQuantity={controlQuantity}/>
 
     </section>
 }

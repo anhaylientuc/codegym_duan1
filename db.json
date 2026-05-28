@@ -693,5 +693,133 @@
       "on": false
     }
   ],
+  "order": [
+    {
+      "id": "OD001",
+      "idTable": "TB001",
+      "time": "27/05/2026 4:04",
+      "foodOrder": [
+        {
+          "id": "SV011",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "quantity": 1,
+          "waitTime": 5
+        },
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "quantity": 1,
+          "waitTime": 5
+        }
+      ]
+    },
+    {
+      "idTable": "TB005",
+      "time": "17:08:01 27/5/2026",
+      "foodOrder": [
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": 5,
+          "quantity": 5
+        },
+        {
+          "id": "SV011",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "waitingTime": 5,
+          "quantity": 9
+        },
+        {
+          "id": "SV013",
+          "name": "Cà phê đá xay",
+          "price": 45000,
+          "waitingTime": 5,
+          "quantity": 1
+        },
+        {
+          "id": "SV015",
+          "name": "Latte",
+          "price": 52000,
+          "waitingTime": 5,
+          "quantity": 7
+        }
+      ],
+      "id": "LD6uuQ7mKDc"
+    },
+    {
+      "id": "i-4hJLpCUuQ",
+      "idTable": "TB001",
+      "time": "17:11:00 27/5/2026",
+      "foodOrder": [
+        {
+          "id": "SV011",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "waitingTime": 5,
+          "quantity": 1
+        },
+        {
+          "id": "SV031",
+          "name": "Bánh kem dâu",
+          "price": 55000,
+          "waitingTime": 3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "QOgxOxmd-d4",
+      "idTable": "TB001",
+      "time": "17:14:33 27/5/2026",
+      "foodOrder": [
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": 5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "T_i4SowKGdc",
+      "idTable": "TB004",
+      "time": "17:14:53 27/5/2026",
+      "foodOrder": [
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": 5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ZPrKuMltm_Q",
+      "idTable": "TB008",
+      "time": "09:50:36 28/5/2026",
+      "foodOrder": [
+        {
+          "id": "SV017",
+          "name": "Nước ép dứa",
+          "price": 32000,
+          "waitingTime": 7,
+          "quantity": 1
+        },
+        {
+          "id": "SV018",
+          "name": "Nước ép cà rốt",
+          "price": 35000,
+          "waitingTime": 7,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
