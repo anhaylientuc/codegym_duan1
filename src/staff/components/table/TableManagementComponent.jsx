@@ -37,7 +37,7 @@ const TableManagementComponent = () => {
         setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
     }
     return (
-        <ModalFoodProvider>
+        
             <Container>
                 <Row className="justify-content-center mb-3">
                     <Col xs="auto">
@@ -80,7 +80,7 @@ const TableManagementComponent = () => {
                     </Col>
                 </Row>
             </Container>
-        </ModalFoodProvider>
+       
 
     )
 }

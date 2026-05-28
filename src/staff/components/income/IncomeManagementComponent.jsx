@@ -49,7 +49,6 @@ const IncomeManagementComponent = () => {
         fetchData();
     }, [])
     return (
-        <ModalFoodProvider>
             <Container>
                 <h3>Quản lý thu nhập</h3>
                 <h6>Tổng thu nhập: {totalAmount}</h6>
@@ -85,7 +84,6 @@ const IncomeManagementComponent = () => {
                 <h6>Tháng này:{income3}</h6>
                 <h6>Năm này:{income4}</h6>
             </Container>
-        </ModalFoodProvider>
 
     )
 }

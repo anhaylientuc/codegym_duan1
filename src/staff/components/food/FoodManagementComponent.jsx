@@ -27,7 +27,6 @@ const FoodManagementComponent = () => {
         fetchData();
     }, [page, show])
     return (
-        <ModalFoodProvider>
             <Container>
                 <Row className="justify-content-center mb-3">
                     <Col xs="auto">
@@ -73,7 +72,7 @@ const FoodManagementComponent = () => {
                     </Col>
                 </Row>
             </Container>
-        </ModalFoodProvider>
+     
 
     )
 }
