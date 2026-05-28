@@ -16,7 +16,7 @@
       "id": "U002",
       "username": "staff1",
       "password": "staff123",
-      "name": "Nguyễn Nuôi Gà",
+      "name": "Nguyễn Minh Nguyên",
       "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
       "tel": "0912345678",
       "role": "Staff",
@@ -47,6 +47,42 @@
       "birthday": "2004-12-08",
       "salary": 40000000,
       "id": "sQcT2a22C9o"
+    },
+    {
+      "username": "kien2852026",
+      "password": "kienkien",
+      "name": "Nguyen Van Moi",
+      "address": "12/5 Hoang Hoa Tham",
+      "tel": "0931092112",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-12-08",
+      "salary": 20000000,
+      "id": "b8w8l11l5pM"
+    },
+    {
+      "username": "hello",
+      "password": "kienkien",
+      "name": "Tuyết Loan",
+      "address": "Trong tim",
+      "tel": "0931041719",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-10-23",
+      "salary": 10000000000,
+      "id": "hScIaSdgfr4"
+    },
+    {
+      "username": "kien.nguyenlovefamily12",
+      "password": "121212",
+      "name": "Nguyen trung kien",
+      "address": "189/26/6A Hoàng Hoa Thám",
+      "tel": "0912345678",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-12-08",
+      "salary": 1100000,
+      "id": "G6U7o2nK5D0"
     }
   ],
   "foodGroups": [
@@ -87,7 +123,7 @@
     {
       "id": "SV011",
       "name": "Cà phê bạc xỉu",
-      "unit": "SVT001",
+      "unit": "SVT002",
       "price": 30000,
       "type": "Cà phê",
       "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg"

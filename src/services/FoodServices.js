@@ -1,20 +1,13 @@
 import axios from "axios";
-const BASE_URL = import.meta.env.VITE_API_URL + '/foodGroups';
-
-
-// lấy toàn bộ danh sách món
-export const getAll = async () => {
+const BASE_URL = import.meta.env.VITE_API_URL + '/foods';
+const getAll = async () => {
     try {
-        console.log("vào hàm get all");
-        
         const res = await axios.get(BASE_URL);
         return res.data;
     } catch (error) {
         console.log(error)
     }
 }
-
-// lấy theo theo số page
 const getByPage = async (page) => {
     try {
         const url = BASE_URL + `?_page=${page}&_limit=${6}`
@@ -22,28 +15,26 @@ const getByPage = async (page) => {
         return res;
     } catch (error) {
         console.log(error)
-        return false;
     }
 }
-
-
-// tìm kiếm
-const search = async (keyword) => {
+const search = async (page,keyword) => {
 
     try {
         const params = new URLSearchParams();
         Object.entries(keyword).forEach(([key, value]) => {
-            params.append(key, value)
+            params.append(key + '_like', value)
         })
+        params.append('_page', page);
+        params.append('_limit', 6);
         const url = BASE_URL + `?${params}`
+        console.log(url)
         const res = await axios.get(url);
-        return res.data;
+
+        return res;
     } catch (error) {
         console.log(error)
     }
 }
-
-// thêm danh sách món
 const insert = async (data) => {
     try {
         const res = await axios.post(BASE_URL, data);
@@ -74,7 +65,7 @@ const remove = async (id) => {
 
     }
 }
-const getById = async(id) => {
+const getById = async (id) => {
     try {
         const url = BASE_URL + `/${id}`;
         const res = await axios.get(url);
@@ -84,4 +75,4 @@ const getById = async(id) => {
 
     }
 }
-export const FoodGroupsServices = { getAll, search, getByPage, insert, update, remove,getById }
+export const FoodsServices = { getAll, search, getByPage, insert, update, remove, getById }

@@ -1,8 +1,17 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Container, Form, Button, Row, Col, Alert } from "react-bootstrap";
+import {
+  Container,
+  Form,
+  Button,
+  Row,
+  Col,
+  Alert,
+  InputGroup,
+} from "react-bootstrap";
 import { HeaderComponent } from "../AdminHeaderComponent";
 import { UserServices } from "../../services/UserServices";
+import { useToast } from "../../components/toast/ToastContext";
 
 export const StaffFormComponent = () => {
   const location = useLocation();
@@ -10,10 +19,12 @@ export const StaffFormComponent = () => {
   const user = location.state?.user;
   const editStaff = location.state?.staff;
   const isEdit = !!editStaff;
+  const { showToast } = useToast();
 
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    confirmPassword: "",
     name: "",
     address: "",
     tel: "",
@@ -23,12 +34,15 @@ export const StaffFormComponent = () => {
     salary: "",
   });
   const [message, setMessage] = useState({ text: "", type: "" });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
     if (editStaff) {
       setFormData({
         username: editStaff.username || "",
-        password: editStaff.password || "",
+        password: "",
+        confirmPassword: "",
         name: editStaff.name || "",
         address: editStaff.address || "",
         tel: editStaff.tel || "",
@@ -66,6 +80,11 @@ export const StaffFormComponent = () => {
       return;
     }
 
+    if (!isEdit && formData.password !== formData.confirmPassword) {
+      setMessage({ text: "Confirm password không khớp!", type: "danger" });
+      return;
+    }
+
     if (!isEdit) {
       const usernameExists = await UserServices.checkUsernameExists(
         formData.username,
@@ -83,11 +102,13 @@ export const StaffFormComponent = () => {
       ...formData,
       salary: Number(formData.salary) || 0,
     };
+    delete dataToSave.confirmPassword;
+    if (isEdit) delete dataToSave.password;
 
     if (isEdit) {
       const result = await UserServices.update(editStaff.id, dataToSave);
       if (result) {
-        alert("Cập nhật nhân viên thành công!");
+        showToast("Cập nhật nhân viên thành công!", "success");
         navigate("/admin/staff", { state: { user } });
       } else {
         setMessage({ text: "Cập nhật thất bại!", type: "danger" });
@@ -102,7 +123,7 @@ export const StaffFormComponent = () => {
 
       const result = await UserServices.insert(dataToSave);
       if (result) {
-        alert("Thêm nhân viên thành công!");
+        showToast("Thêm nhân viên thành công!", "success");
         navigate("/admin/staff", { state: { user } });
       } else {
         setMessage({ text: "Thêm nhân viên thất bại!", type: "danger" });
@@ -179,16 +200,48 @@ export const StaffFormComponent = () => {
                   </Form.Group>
 
                   {!isEdit && (
-                    <Form.Group className="mb-3">
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        name="password"
-                        placeholder="Nhập password"
-                        value={formData.password}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
+                    <>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Password</Form.Label>
+                        <InputGroup>
+                          <Form.Control
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Nhập password"
+                            value={formData.password}
+                            onChange={handleChange}
+                          />
+                          <Button
+                            variant="outline-secondary"
+                            onClick={() => setShowPassword((v) => !v)}
+                            aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+                          >
+                            {showPassword ? "Ẩn" : "Hiện"}
+                          </Button>
+                        </InputGroup>
+                      </Form.Group>
+                      <Form.Group className="mb-3">
+                        <Form.Label>Confirm password</Form.Label>
+                        <InputGroup>
+                          <Form.Control
+                            type={showConfirmPassword ? "text" : "password"}
+                            name="confirmPassword"
+                            placeholder="Nhập lại password"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                          />
+                          <Button
+                            variant="outline-secondary"
+                            onClick={() => setShowConfirmPassword((v) => !v)}
+                            aria-label={
+                              showConfirmPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"
+                            }
+                          >
+                            {showConfirmPassword ? "Ẩn" : "Hiện"}
+                          </Button>
+                        </InputGroup>
+                      </Form.Group>
+                    </>
                   )}
 
                   <Form.Group className="mb-3">

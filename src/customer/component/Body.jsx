@@ -1,5 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import { data } from "react-router-dom";
+
+import {getAllBill} from '../../services/BillServices';
 
 export default function Body(){
     const apiData = import.meta.env.VITE_API_URL;
@@ -7,47 +10,47 @@ export default function Body(){
     const [listTopFood,setlistTopFood] = useState([]);
 
 
-    const getTop5=(data)=>{
-    const countData=[];
-    for(let i=0; i< data.length;i++){
-        for(let j=0;j< data[i].ordered.length; j++){
-            let count =0;
-            for(let k=0;k<countData.length;k++){
-                if(data[i].ordered[j].id===countData[k].id){
-                    countData[k].quantity= countData[k].quantity+ data[i].ordered[j].quantity;
-                    count++;
-                }
-            }
-            if(count===0){
-                const newCoutData ={
-                    id : data[i].ordered[j].id,
-                    quantity:data[i].ordered[j].quantity
-                }
-                countData.push(newCoutData);
+const getTop5=(data)=>{
+    
+const countData=[];
+for(let i=0; i< data.length;i++){
+    for(let j=0;j< data[i].ordered.length; j++){
+        let count =0;
+        for(let k=0;k<countData.length;k++){
+            if(data[i].ordered[j].id===countData[k].id){
+                countData[k].quantity= countData[k].quantity+ data[i].ordered[j].quantity;
+                count++;
             }
         }
+        if(count===0){
+            
+            countData.push(data[i].ordered[j]);
         }
-        console.log(countData);
-        countData.sort((a,b)=>b.quantity - a.quantity);
-        const top5 =[];
-        for(let i=0;i<5;i++){
-            top5.push(countData[i]);
-        }
-        setlistTopFood(top5)
     }
+    }
+    console.log("phần đã thêm vào data để lọc");
+    
+    console.log(countData);
+    countData.sort((a,b)=>b.quantity - a.quantity);
+    const top5 =[];
+    for(let i=0;i<5;i++){
+        top5.push(countData[i]);
+    }
+    console.log("/////////////// phần đã lọc //////////////////");
+    
+    setlistTopFood(top5)
+}
 
     const getData=async()=>{
         try{
-            const dataNewFood= await axios.get(`${apiData}/foods?_sort=id&_order=desc&_limit=5`);
-
-            console.log(dataNewFood.data);
-            
+            const dataNewFood= await axios.get(`${apiData}/foods?_sort=-id&_page=1&_per_page=5`);
             if(dataNewFood){
-                console.log("ss new");
-                
-                setlistNewFood(dataNewFood);
+           
+                setlistNewFood(dataNewFood.data.data);
             }
-            const dataTopFood = axios.get(`${apiData}/bill`);
+            const dataTopFood = await getAllBill();
+            console.log("top 5 món");
+            
             console.log(dataTopFood);
             getTop5(dataTopFood);
         }catch(err){
@@ -65,10 +68,12 @@ export default function Body(){
     useEffect(()=>{
         if(tapList===1){
             setlistShow(listNewFood);
+            console.log(listNewFood);
+            
         }else{
             setlistShow(listTopFood);
         }
-    },[tapList])
+    })
 
     useEffect(()=>{
         getData();
@@ -171,7 +176,7 @@ export default function Body(){
                     margin:"5px",
                       cursor:"pointer"
                 }}
-            >Top 5 most ordered dishes</p>
+            >Top 5 Best Sellers</p>
             <div
                 style={{
                 width:"200px",
@@ -259,7 +264,7 @@ export default function Body(){
             overflow:"hidden",
             textOverflow:"ellipsis"
         }}
-        >{e.text}</p>
+        >{e.name}</p>
         <div
         style={{
             width:"15px",
