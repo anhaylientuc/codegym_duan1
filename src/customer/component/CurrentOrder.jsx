@@ -3,13 +3,30 @@ import OrderTable from "./OrderTable"
 import { Dropdown } from "react-bootstrap"
 import DropDown from "./DropDow"
 import { useState } from "react"
+import { addOrder } from "../../services/OrderServices"
 
-export default function CurrentOrder({ selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
+export default function CurrentOrder({resetOrder, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
     const day= new Date().toLocaleDateString('vi-VN')
 
     
 
-
+    const postOrder=async()=>{
+        const time = new Date().toLocaleString('vi-VN');
+        try{
+            const newOrder ={
+                id: Date.now().toString(),
+                idTable:currentTable.id,
+                time:time,
+                foodOrder:[...listOrder]
+            }
+             const res = await addOrder(newOrder);
+             if(res){
+                resetOrder();
+             }
+        }catch(err){
+            console.log("add Order false : " +err);
+        }
+    }
 
 
 
@@ -51,36 +68,36 @@ export default function CurrentOrder({ selectTable, listOrder,controlQuantity,re
             
             <th style={{
                 textAlign:"start"
-            }} scope="col">dish name</th>
+            }} scope="col">Tên món</th>
             <th scope="col"
             style={{
                 width:"0%"
             }}
-            >Qty</th>
+            >Sl</th>
             <th
             style={{
                 width:"17%",
                
             }}
-            scope="col">price</th>
+            scope="col">Giá</th>
             <th
             style={{
                 width:"17%",
                
             }}
-            scope="col">total</th>
+            scope="col">Tổng</th>
             <th
             style={{
                 width:"18%",
                
             }}
-            scope="col">waiting time</th>
+            scope="col">tg chờ</th>
             <th 
             style={{
                 width:"0%",
                 textAlign:"center"
             }}
-            scope="col">Func</th>
+            scope="col"></th>
             </tr>
         </thead>
         <tbody
@@ -121,14 +138,18 @@ export default function CurrentOrder({ selectTable, listOrder,controlQuantity,re
             borderBottom:"0.5px solid rgb(0, 0, 0,0.2)"
         }}
         >
-            <button style={{fontWeight:"bold"}} className="btn btn-primary" >Order</button>
-            <button style={{fontWeight:"bold"}}  class="btn btn-success">Checkout</button>
+            <button
+                onClick={()=>{
+                    postOrder();
+                }}
+            style={{fontWeight:"bold"}} className="btn btn-primary" >Gọi món</button>
+            <button style={{fontWeight:"bold"}}  class="btn btn-success">Thanh toán</button>
             <button style={{
                 backgroundColor:"#dca237",
                 fontFamily:"'Montserrat', sans-serif",
                 fontWeight:"bold",
                 color:"white"
-            }} class="btn">Call Staff</button>
+            }} class="btn">Gọi nhân viên</button>
         </div>
         {/* ////////////////////////// */}
         {/* phần thông tin */}

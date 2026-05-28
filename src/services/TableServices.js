@@ -1,5 +1,7 @@
 import axios from "axios";
 const BASE_URL = import.meta.env.VITE_API_URL + '/tables';
+
+
 const getAll = async () => {
     try {
         const res = await axios.get(BASE_URL);

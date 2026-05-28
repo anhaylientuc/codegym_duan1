@@ -9,7 +9,7 @@ function DropDow({listTable, currentTable, selectTable}) {
         
       }}
       variant="light" id="dropdown-basic">
-        {currentTable.name}
+        {currentTable.id}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
@@ -22,7 +22,7 @@ function DropDow({listTable, currentTable, selectTable}) {
                 }
                 selectTable(data)
             }}
-            href="#/action-1">{item.name}</Dropdown.Item>
+            href="#/action-1">{item.id}</Dropdown.Item>
         ))}
         
 

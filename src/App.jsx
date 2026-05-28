@@ -15,6 +15,8 @@ import { FoodGroupsManagement } from './staff/components/type/FoodGroupsManageme
 import { ProfileComponent } from './components/ProfileComponent'
 import { ChangePasswordComponent } from './components/ChangePasswordComponent'
 import MenuPage from './customer/page/MenuPage'
+import ListTableComponent from './staff/components/table/ListTableComponent'
+import TableManagementComponent from './staff/components/table/TableManagementComponent'
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
         <Route path="/profile" element={<ProfileComponent />} />
         <Route path="/change-password" element={<ChangePasswordComponent />} />
         {/* ////////////////////////////// */}
+        {/* thắng */}
+        <Route path='/staff/table' element={<TableManagementComponent/>}/>
       </Routes>
     </>
   )
