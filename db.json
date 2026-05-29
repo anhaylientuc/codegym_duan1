@@ -527,8 +527,9 @@
   "bill": [
     {
       "id": "B001",
-      "idTable": "TB001",
-      "status": "paid",
+      "table": "TB001",
+      "status": "doing",
+      "totalAmount": 100000,
       "createdAt": "2026-01-15T08:30:00Z",
       "paidAt": "2026-01-15T09:45:00Z",
       "totalPrice": 100000,
@@ -636,12 +637,12 @@
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB002",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB003",
@@ -651,7 +652,7 @@
     {
       "id": "TB004",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB005",
@@ -671,7 +672,17 @@
     {
       "id": "TB008",
       "state": "Lỗi",
+      "on": true
+    },
+    {
+      "id": "TB009",
+      "state": "Tốt",
       "on": false
+    },
+    {
+      "id": "TB010",
+      "state": "Tốt",
+      "on": true
     }
   ],
   "CustomerRequests": [
@@ -697,16 +708,23 @@
       "status": "unProcessed"
     },
     {
-      "id": "vcjELRzGqcQ",
+      "id": "1780046372857",
       "idTable": "TB001",
-      "time": "08:32:41 29/5/2026",
-      "type": "service",
+      "time": "16:19:32 29/5/2026",
+      "type": "pay",
       "status": "unProcessed"
     },
     {
-      "id": "XW8kxBSKljs",
+      "id": "1780046374760",
       "idTable": "TB001",
-      "time": "08:32:55 29/5/2026",
+      "time": "16:19:34 29/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780046375239",
+      "idTable": "TB001",
+      "time": "16:19:35 29/5/2026",
       "type": "service",
       "status": "unProcessed"
     },

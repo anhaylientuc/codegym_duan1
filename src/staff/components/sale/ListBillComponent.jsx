@@ -1,20 +1,20 @@
-import { React, useEffect,useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import { Table, Stack, Button } from 'react-bootstrap'
 import { useModalFood } from '../../context/ModalFood'
 import { BillServices } from '../../../services/BillServices'
 const ListBillComponent = () => {
-    const { setid, id } = useModalFood()
-    const [ordered, setordered] = useState([])
+    const { setid, id, keyword } = useModalFood()
+    const [detail, setdetail] = useState([])
     useEffect(() => {
         const fetchData = async () => {
-            if (id) {
-                const res=await BillServices.getById(id);
-                console.log(res)
-                setordered(res.ordered)
-            }
+
+            const res = await BillServices.search(null, keyword);
+            const newRes=res.data.find(item=>item.status=='doing'||item.status=='unpaid')
+            if(newRes)
+                setdetail(newRes.ordered)
         }
         fetchData();
-    }, [id])
+    }, [keyword])
     return (
         <Table bordered className='text-center'>
             <thead>
@@ -29,7 +29,7 @@ const ListBillComponent = () => {
             </thead>
             <tbody>
                 {
-                     ordered.map((item, index) => {
+                    detail&&detail.map((item, index) => {
                         const { name, quantity, price } = item
                         console.log('ok')
                         return (
@@ -66,7 +66,7 @@ const ListBillComponent = () => {
                                 </th> */}
                             </tr>
                         )
-                    }) 
+                    })
                 }
             </tbody>
 
