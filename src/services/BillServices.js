@@ -1,13 +1,13 @@
 import axios from "axios";
 const BASE_URL = import.meta.env.VITE_API_URL + '/bill'
 
-export const getAllBill =async()=>{
-    try{
-        const res= await axios.get(`${BASE_URL}`);
+export const getAllBill = async () => {
+    try {
+        const res = await axios.get(`${BASE_URL}`);
         return res.data
 
-    }catch(err){
-        console.log("get all bill false: "+err);
+    } catch (err) {
+        console.log("get all bill false: " + err);
         return false
     }
 }
@@ -30,18 +30,21 @@ const getById = async (id) => {
 
     }
 }
-const search = async (page,keyword) => {
-
+const search = async (page, keyword) => {
     try {
         const params = new URLSearchParams();
-        const {id,from,to}=keyword
-        if(id)
-            params.append('id',id);
-        if(from)
-            params.append('createdAt_gte',from)
-        if(to)
-            params.append('createdAt_lte',to)
-        params.append('_page', page);
+        const { id, from, to,table} = keyword
+        if (id)
+            params.append('id', id);
+        if (table){
+            params.append('table', table);
+        }
+        if (from)
+            params.append('createdAt_gte', from)
+        if (to)
+            params.append('createdAt_lte', to)
+        if (page)
+            params.append('_page', page);
         params.append('_limit', 6);
         const url = BASE_URL + `?${params}`
         console.log(url)
@@ -52,4 +55,4 @@ const search = async (page,keyword) => {
         console.log(error)
     }
 }
-export const BillServices={getAllBill,getByPage,getById,search}
+export const BillServices = { getAllBill, getByPage, getById, search }
