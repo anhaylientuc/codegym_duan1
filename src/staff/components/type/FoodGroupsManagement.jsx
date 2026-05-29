@@ -16,8 +16,14 @@ export const FoodGroupsManagement = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await FoodGroupsControllers.handleGetByPage(page);
-            setlist(res.data)
-            setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
+            if (!res) {
+                setlist([]);
+                return;
+            }
+            const payload = res.data;
+            const items = Array.isArray(payload) ? payload : (payload?.data ?? []);
+            setlist(items);
+            setnumPages(payload?.pages ?? 1);
         }
         fetchData();
     }, [page, show])

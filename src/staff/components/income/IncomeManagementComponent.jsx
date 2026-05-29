@@ -6,7 +6,6 @@ import * as Yup from 'yup';
 import { BillServices } from '../../../services/BillServices';
 import Form from 'react-bootstrap/Form';
 import { DateHelper } from '../../utilities/DateHelper';
-import { set } from '@cloudinary/url-gen/actions/variable';
 import { ModalFoodProvider } from '../../context/ModalFood';
 
 const IncomeManagementComponent = () => {

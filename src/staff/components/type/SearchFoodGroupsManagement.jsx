@@ -3,7 +3,6 @@ import { Formik, Field } from 'formik';
 import Form from 'react-bootstrap/Form';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { FoodGroupsControllers } from '../../controllers/FoodGroupsControllers';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -26,9 +25,10 @@ const FormSearchFoodGroupsManagement = (props) => {
             validationSchema={Schema}
 
             onSubmit={async (values) => {
-                const res = await FoodGroupsControllers.handleSearch(values);
-                console.log(res);
-                setlist(res);
+                const res = await handleSearch(values);
+                const payload = res?.data ?? res;
+                const items = Array.isArray(payload) ? payload : (payload?.data ?? []);
+                setlist(items);
             }}
         >
             {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
