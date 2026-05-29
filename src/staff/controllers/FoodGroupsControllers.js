@@ -22,6 +22,8 @@ const handleGetAll = async () => {
 const handleGetByPage = async (page) => {
     try {
         const res = await FoodGroupsServices.getByPage(page);
+        
+        
         return res;
     } catch (error) {
         console.log(error);

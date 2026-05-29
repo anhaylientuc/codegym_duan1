@@ -12,10 +12,14 @@ export const FoodGroupsManagement = () => {
     const [list, setlist] = useState([])
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
+    const [data,setData]= useState();
     const { show, setshow, setid, id } = useModalType()
+
     useEffect(() => {
         const fetchData = async () => {
             const res = await FoodGroupsControllers.handleGetByPage(page);
+            console.log(res);
+            setData(res)
             setlist(res.data)
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
         }
@@ -54,7 +58,7 @@ export const FoodGroupsManagement = () => {
                 </Row>
                 <Row >
                     <Col xs="auto" className="ms-auto">
-                        <CustomPagination as={Col} numPages={numPages} setpage={setpage} page={page} />
+                        <CustomPagination data={data} as={Col} numPages={numPages} setpage={setpage} page={page} />
 
                     </Col>
                 </Row>
