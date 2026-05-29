@@ -17,9 +17,10 @@ export const getAll = async () => {
 // lấy theo theo số page
 const getByPage = async (page) => {
   try {
-    const url = BASE_URL + `?_page=${page}&_limit=${PER_PAGE}`;
+    const url = BASE_URL + `?_page=${page}&_limit=6`;
+    console.log(url);
     const res = await axios.get(url);
-    return res;
+    return res.data;
   } catch (error) {
     console.log(error);
     return false;
@@ -27,13 +28,17 @@ const getByPage = async (page) => {
 };
 
 // tìm kiếm
-const search = async (keyword) => {
+const search = async (page, keyword) => {
   try {
     const params = new URLSearchParams();
     Object.entries(keyword).forEach(([key, value]) => {
-      if (value) params.append(`${key}:contains`, value);
+      if (value != "") params.append(key + "_like", value);
     });
+    params.append("_page", page);
+    params.append("_limit", 6);
+
     const url = BASE_URL + `?${params}`;
+    console.log(url);
     const res = await axios.get(url);
     return res;
   } catch (error) {
@@ -44,7 +49,8 @@ const search = async (keyword) => {
 // thêm danh sách món
 const insert = async (data) => {
   try {
-    const res = await axios.post(BASE_URL, data);
+    console.log(data);
+    const res = await axios.post(BASE_URL, { ...data });
     return res.data;
   } catch (error) {
     console.log(error);

@@ -43,6 +43,12 @@ export const AdminPage = () => {
       icon: "🧾",
       onClick: () => navigate("/staff/bills", { state: { user } }),
     },
+    {
+      title: "Quản lý bài đăng",
+      desc: "quản lý dánh sách bài đăng",
+      icon: "📰",
+      onClick: () => {navigate("/admin/NewsManagement", { state: { user } })},
+    },
   ];
 
   return (

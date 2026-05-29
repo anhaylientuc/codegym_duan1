@@ -4,6 +4,10 @@ import { Dropdown } from "react-bootstrap"
 import DropDown from "./DropDow"
 import { useState } from "react"
 import { addOrder } from "../../services/OrderServices"
+import { addCustomerRequests } from "../../services/CustomerRequestsServices";
+
+import toast, { Toaster } from 'react-hot-toast';
+import DishOrdered from "../../admin/components/AddNews"
 
 export default function CurrentOrder({resetOrder, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
     const day= new Date().toLocaleDateString('vi-VN')
@@ -17,14 +21,43 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
                 id: Date.now().toString(),
                 idTable:currentTable.id,
                 time:time,
+                status:"Unpaid",
                 foodOrder:[...listOrder]
             }
+            toast.success("đả gửi order");
              const res = await addOrder(newOrder);
              if(res){
                 resetOrder();
              }
         }catch(err){
             console.log("add Order false : " +err);
+        }
+    }
+
+
+    const sendCustomerRequest = async(type)=>{
+        const time = new Date().toLocaleString('vi-VN');
+        try{
+            const newReq ={
+                id: Date.now().toString(),
+                idTable:currentTable.id,
+                time:time,
+                type:type,
+                status:"unProcessed"
+            }
+            if(type === "pay"){
+                toast.success("Đã gửi yêu cầu thanh toán");
+                
+             }else{
+                toast.success("Đã gửi yêu cầu gọi nhân viên");
+             }
+            
+             const res = await addCustomerRequests(newReq);
+             
+             
+             
+        }catch(err){
+            console.log("send Customer Request false : " +err);
         }
     }
 
@@ -41,6 +74,8 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
         top:"10px"
     }}
     >
+         <Toaster position="top-right" reverseOrder={false} />
+         
         {/* phần bảng */}
         <div
         style={{
@@ -143,13 +178,29 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
                     postOrder();
                 }}
             style={{fontWeight:"bold"}} className="btn btn-primary" >Gọi món</button>
-            <button style={{fontWeight:"bold"}}  class="btn btn-success">Thanh toán</button>
-            <button style={{
+            <button
+            onClick={()=>{
+                    sendCustomerRequest("pay");
+                }}
+            style={{fontWeight:"bold"}}  class="btn btn-success">Thanh toán</button>
+            <button
+            onClick={()=>{
+                    sendCustomerRequest("service");
+                }}
+            style={{
                 backgroundColor:"#dca237",
                 fontFamily:"'Montserrat', sans-serif",
                 fontWeight:"bold",
                 color:"white"
             }} class="btn">Gọi nhân viên</button>
+
+            {/* <button
+            style={{
+                backgroundColor:"#92531b",
+                fontFamily:"'Montserrat', sans-serif",
+                fontWeight:"bold",
+                color:"white"
+            }} class="btn">Món đã gọi</button> */}
         </div>
         {/* ////////////////////////// */}
         {/* phần thông tin */}
