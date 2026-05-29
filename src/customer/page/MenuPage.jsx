@@ -130,7 +130,7 @@ export default function(){
         gap:"10px"
     }}
     >
-    <DishOrdered idTable={currentTable}/>
+    {/* <DishOrdered idTable={currentTable}/> */}
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
     <MainMenu addOrder={addOrder} tap={tap}/>
     <CurrentOrder resetOrder={resetOrder} selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrderByID} listOrder={listOrder} controlQuantity={controlQuantity}/>
