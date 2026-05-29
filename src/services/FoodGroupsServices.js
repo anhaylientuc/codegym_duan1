@@ -1,18 +1,18 @@
 import axios from "axios";
-const BASE_URL = import.meta.env.VITE_API_URL + '/foodGroups';
-
+const BASE_URL = import.meta.env.VITE_API_URL + "/foodGroups";
+const PER_PAGE = 6;
 
 // lấy toàn bộ danh sách món
 export const getAll = async () => {
-    try {
-        console.log("vào hàm get all");
-        
-        const res = await axios.get(BASE_URL);
-        return res.data;
-    } catch (error) {
-        console.log(error)
-    }
-}
+  try {
+    console.log("vào hàm get all");
+
+    const res = await axios.get(BASE_URL);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // lấy theo theo số page
 const getByPage = async (page) => {
@@ -61,34 +61,39 @@ const insert = async (data) => {
     }
 }
 const update = async (id, data) => {
-    try {
-        const url = BASE_URL + `/${id}`;
-        const res = await axios.put(url, data);
-        console.log(res)
-        return res.data
-
-    } catch (error) {
-        console.log(error)
-    }
-}
+  try {
+    const url = BASE_URL + `/${id}`;
+    const res = await axios.put(url, data);
+    console.log(res);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 const remove = async (id) => {
-    try {
-        const url = BASE_URL + `/${id}`;
-        const res = await axios.delete(url);
-        return res.data
-    } catch (error) {
-        console.log(error)
-
-    }
-}
-const getById = async(id) => {
-    try {
-        const url = BASE_URL + `/${id}`;
-        const res = await axios.get(url);
-        return res.data
-    } catch (error) {
-        console.log(error)
-
-    }
-}
-export const FoodGroupsServices = { getAll, search, getByPage, insert, update, remove,getById }
+  try {
+    const url = BASE_URL + `/${id}`;
+    const res = await axios.delete(url);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+const getById = async (id) => {
+  try {
+    const url = BASE_URL + `/${id}`;
+    const res = await axios.get(url);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const FoodGroupsServices = {
+  getAll,
+  search,
+  getByPage,
+  insert,
+  update,
+  remove,
+  getById,
+};

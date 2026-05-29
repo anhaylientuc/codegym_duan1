@@ -1,9 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import HomePage from './customer/page/HomePage'
+import "./App.css";
+import HomePage from "./customer/page/HomePage";
 import { Route, Routes } from "react-router-dom";
 import HomeComponent from './components/HomeComponent'
 import { LoginComponent } from './components/LoginComponent'
@@ -27,7 +23,26 @@ import AdminNewsManagement from './admin/AdminNewsManagement'
 
 function App() {
 
+import HomeComponent from "./components/HomeComponent";
+import { LoginComponent } from "./components/LoginComponent";
+import { AdminPage } from "./admin/AdminPage";
+import { StaffListComponent } from "./admin/components/StaffListComponent";
+import { StaffFormComponent } from "./admin/components/StaffFormComponent";
+import { StaffMenu } from "./staff/StaffMenu";
+import { StaffLayout } from "./staff/StaffLayout";
+import { ProfileComponent } from "./components/ProfileComponent";
+import { ChangePasswordComponent } from "./components/ChangePasswordComponent";
+import { UpdateProfileComponent } from "./admin/components/UpdateProfileComponent";
+import MenuPage from "./customer/page/MenuPage";
+import { ToastProvider } from "./components/toast/ToastContext";
+import TypeComponent from "./staff/components/type/TypeComponent";
+import FoodComponent from "./staff/components/food/FoodComponent";
+import TableComponent from "./staff/components/table/TableComponent";
+import BillComponent from "./staff/components/bill/BillComponent";
+import SaleComponent from "./staff/components/sale/SaleComponent";
+import IncomeComponent from "./staff/components/income/IncomeComponent";
 
+function App() {
   return (
     <>
        <ToastContainer />
@@ -54,7 +69,7 @@ function App() {
         <Route path='/staff/table' element={<TableManagementComponent/>}/>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

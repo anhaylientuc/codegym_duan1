@@ -60,15 +60,22 @@ const search = async (keyword) => {
     }
 
     const filtered = users.filter((u) => {
-      const matchUsername =
-        username && u.username.toLowerCase().includes(username.toLowerCase());
-      const matchName =
-        name && u.name.toLowerCase().includes(name.toLowerCase());
-      const matchTel = tel && u.tel.includes(tel);
-      return matchUsername || matchName || matchTel;
+      const uUsername = (u.username || "").toLowerCase();
+      const uName = (u.name || "").toLowerCase();
+      const uTel = String(u.tel || "");
+
+      const matchUsername = username
+        ? uUsername.includes(username.toLowerCase())
+        : true;
+      const matchName = name ? uName.includes(name.toLowerCase()) : true;
+      const matchTel = tel ? uTel.includes(tel) : true;
+
+      return matchUsername && matchName && matchTel;
     });
 
-    return filtered.sort((a, b) => a.username.localeCompare(b.username));
+    return filtered
+      .filter((f) => f.role === "Staff")
+      .sort((a, b) => a.username.localeCompare(b.username));
   } catch (error) {
     console.log(error);
     return [];

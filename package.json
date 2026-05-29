@@ -13,7 +13,7 @@
     "@cloudinary/react": "^1.14.4",
     "@cloudinary/url-gen": "^1.22.0",
     "axios": "^1.16.1",
-    "bootstrap": "^5.3.8",
+    "bootstrap": "^5.2.3",
     "formik": "^2.4.9",
     "json-server": "0.17.4",
     "react": "^19.2.6",
