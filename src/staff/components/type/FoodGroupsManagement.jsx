@@ -7,26 +7,23 @@ import { useState, useEffect } from "react"
 import CustomPagination from "../custom/CustomPagination"
 import ModalAddFoodGroupsComponent from "./ModalFoodGroupsComponent"
 import { ModalTypeProvider, useModalType } from "../../context/ModalType"
+import { FoodGroupsServices } from "../../../services/FoodGroupsServices"
 
 export const FoodGroupsManagement = () => {
     const [list, setlist] = useState([])
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    const { show, setshow, setid, id } = useModalType()
+    const { show, setshow, setid, id,keyword,setkeyword } = useModalType()
     useEffect(() => {
         const fetchData = async () => {
-            const res = await FoodGroupsControllers.handleGetByPage(page);
-            if (!res) {
-                setlist([]);
-                return;
-            }
-            const payload = res.data;
-            const items = Array.isArray(payload) ? payload : (payload?.data ?? []);
-            setlist(items);
-            setnumPages(payload?.pages ?? 1);
+            const res = await FoodGroupsServices.search(page,keyword);
+            console.log(res)
+            setlist(res.data)
+            
+            setnumPages( Math.ceil(res.headers['x-total-count'] / 6));
         }
         fetchData();
-    }, [page, show])
+    }, [page,show,keyword])
     return (
             <Container>
                 <Row className="justify-content-center mb-3">
@@ -41,6 +38,8 @@ export const FoodGroupsManagement = () => {
                 <Row className="justify-content-center mb-3">
                     <Col md={8}>
                         <FormSearchFoodGroupsManagement
+                            page={page}
+                            setpage={setpage}
                             setlist={setlist}
                             handleSearch={FoodGroupsControllers.handleSearch} />
                     </Col>

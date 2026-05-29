@@ -1,6 +1,7 @@
 // Chỗ này nè Kiên!!!!!!!!!!!!!!!
 import React from 'react'
 import { ModalTypeProvider } from '../../context/ModalType'
+import { ModalFoodProvider } from '../../context/ModalFood'
 import { FoodGroupsManagement } from './FoodGroupsManagement'
 const TypeComponent = () => {
   return (

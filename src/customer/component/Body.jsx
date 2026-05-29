@@ -8,6 +8,7 @@ export default function Body(){
     const apiData = import.meta.env.VITE_API_URL;
     const [listNewFood,setlistNewFood] = useState([]);
     const [listTopFood,setlistTopFood] = useState([]);
+    
 
 
 const getTop5=(data)=>{
@@ -28,15 +29,15 @@ for(let i=0; i< data.length;i++){
         }
     }
     }
-    console.log("phần đã thêm vào data để lọc");
+
     
-    console.log(countData);
+
     countData.sort((a,b)=>b.quantity - a.quantity);
     const top5 =[];
     for(let i=0;i<5;i++){
         top5.push(countData[i]);
     }
-    console.log("/////////////// phần đã lọc //////////////////");
+
     
     setlistTopFood(top5)
 }
@@ -49,9 +50,7 @@ for(let i=0; i< data.length;i++){
                 setlistNewFood(dataNewFood.data.data);
             }
             const dataTopFood = await getAllBill();
-            console.log("top 5 món");
-            
-            console.log(dataTopFood);
+           
             getTop5(dataTopFood);
         }catch(err){
             console.log("erro get data new food : " +err);
@@ -68,7 +67,7 @@ for(let i=0; i< data.length;i++){
     useEffect(()=>{
         if(tapList===1){
             setlistShow(listNewFood);
-            console.log(listNewFood);
+           
             
         }else{
             setlistShow(listTopFood);

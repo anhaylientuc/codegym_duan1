@@ -7,28 +7,32 @@ import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { FoodGroupsServices } from '../../../services/FoodGroupsServices';
+import { useModalFood } from '../../context/ModalFood';
+import { useModalType } from '../../context/ModalType';
 
-const Schema = Yup.object().shape({
-    id: Yup.string()
-        .required('Please enter a keyword!'),
-    name: Yup.string()
-        .required('Please enter a keyword!'),
-});
+// const Schema = Yup.object().shape({
+//     id: Yup.string()
+//         .required('Please enter a keyword!'),
+//     name: Yup.string()
+//         .required('Please enter a keyword!'),
+// });
 const FormSearchFoodGroupsManagement = (props) => {
-    const { handleSearch, setlist } = props;
+    const { handleSearch, setlist,setpage,page } = props;
+    const {setkeyword}=useModalType();
     return (
         <Formik
             initialValues={{
                 id: '',
                 name: ''
             }}
-            validationSchema={Schema}
+            //validationSchema={Schema}
 
             onSubmit={async (values) => {
-                const res = await handleSearch(values);
-                const payload = res?.data ?? res;
-                const items = Array.isArray(payload) ? payload : (payload?.data ?? []);
-                setlist(items);
+                // const res = await FoodGroupsServices.search(page,values);
+                // setlist(res.data);
+                setpage(1)
+                setkeyword(values)
             }}
         >
             {({ handleSubmit, handleChange, handleBlur, errors, touched, values }) => (
@@ -50,9 +54,9 @@ const FormSearchFoodGroupsManagement = (props) => {
                                                     touched.id && errors.id
                                                 }
                                             ></Form.Control>
-                                            <Form.Control.Feedback type='invalid'>
+                                            {/* <Form.Control.Feedback type='invalid'>
                                                 Some of fields are invalid!
-                                            </Form.Control.Feedback>
+                                            </Form.Control.Feedback> */}
                                         </Col>
                                    
 
@@ -75,9 +79,9 @@ const FormSearchFoodGroupsManagement = (props) => {
                                                     touched.name && errors.name
                                                 }
                                             ></Form.Control>
-                                            <Form.Control.Feedback type='invalid'>
+                                            {/* <Form.Control.Feedback type='invalid'>
                                                 Some of fields are invalid!
-                                            </Form.Control.Feedback>
+                                            </Form.Control.Feedback> */}
                                         </Col>
                                  
 

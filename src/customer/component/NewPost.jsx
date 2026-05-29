@@ -1,22 +1,54 @@
+import { useEffect, useState } from "react"
+import { getAllNews } from "../../services/NewsServices";
+
 export default function NewPost(){
 
-    const listNewPost = [
-        {
-            img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
-            title: "Restaurants win big on election night",
-            content :"Third party delivery players, chains expect election Third party delivery players, chains expect election"
-        },
-        {
-            img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
-            title: "Chiles add more than heat to menus",
-            content :"Third party delivery players, chains expect election Third party delivery players, chains expect election"
-        },
-        {
-            img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
-            title: "The quiet, early indicator of restaurant-industry problems",
-            content :"Third party delivery players, chains expect election Third party delivery players, chains expect election Third party delivery players, chains expect election Third party delivery players, chains expect election"
+
+    const [listNewPost, setlistNewPost]= useState([]);
+
+    const getAllDataNews =async()=>{
+            try{
+                
+            const data= await getAllNews();
+            console.log(data);
+            
+            const fiterData=[];
+            let cout=0;
+            for(let i=data.length;i>=0;i--){
+                fiterData.push(data[i-1]);
+                cout++;
+                if(cout===3) break
+            }
+            console.log(fiterData);
+            
+            setlistNewPost(fiterData)
+            }catch(err){
+                console.log("get all data new false : "+err);
+                
+            }
         }
-    ]
+
+        useEffect(()=>{
+            getAllDataNews();
+        },[])
+
+    // const listNewPost = [
+    //     {
+    //         img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
+    //         title: "Restaurants win big on election night",
+    //         content :"Third party delivery players, chains expect election Third party delivery players, chains expect election"
+    //     },
+    //     {
+    //         img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
+    //         title: "Chiles add more than heat to menus",
+    //         content :"Third party delivery players, chains expect election Third party delivery players, chains expect election"
+    //     },
+    //     {
+    //         img:"https://noithatkendesign.vn/storage/app/media/uploaded-files/50-mau-nha-hang-hot-nhat-2025-39.jpg",
+    //         title: "The quiet, early indicator of restaurant-industry problems",
+    //         content :"Third party delivery players, chains expect election Third party delivery players, chains expect election Third party delivery players, chains expect election Third party delivery players, chains expect election"
+    //     }
+    // ]
 
     return <section
     style={{
@@ -103,7 +135,7 @@ export default function NewPost(){
         ></div>
         <p
         style={{
-            fontFamily:"'Arvo', serif",
+            fontFamily:"'Montserrat', sans-serif",
             color:"rgb(0, 0, 0,0.5)",
             
             fontSize:"18px",
