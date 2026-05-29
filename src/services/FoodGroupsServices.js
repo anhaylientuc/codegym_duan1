@@ -17,9 +17,12 @@ export const getAll = async () => {
 // lấy theo theo số page
 const getByPage = async (page) => {
     try {
-        const url = BASE_URL + `?_page=${page}&_limit=${6}`
+        const url = BASE_URL + `?_page=${page}&_per_page=6`;
+        // /foods?unit=${tap.id}&_page=${numberPage}&_per_page=10`
+        console.log(url);
+        
         const res = await axios.get(url);
-        return res;
+        return res.data;
     } catch (error) {
         console.log(error)
         return false;

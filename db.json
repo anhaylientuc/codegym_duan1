@@ -16,9 +16,9 @@
       "id": "U002",
       "username": "staff1",
       "password": "staff123",
-      "name": "Nguyễn Nuôi Gà",
+      "name": "Nguyễn Nuôi Gà 1",
       "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
-      "tel": "0912345678",
+      "tel": "0123456789",
       "role": "Staff",
       "birthday": "1995-08-20",
       "gender": "Nam",
@@ -923,6 +923,28 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "Mu9qkzvIuOA",
+      "idTable": "TB001",
+      "time": "08:32:20 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": [
+        {
+          "id": "SV011",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "waitingTime": 5,
+          "quantity": 1
+        },
+        {
+          "id": "SV012",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": 5,
+          "quantity": 4
+        }
+      ]
     }
   ],
   "CustomerRequests": [
@@ -946,6 +968,20 @@
       "time": "14:01:37 28/5/2026",
       "type": "pay",
       "status": "unProcessed"
+    },
+    {
+      "id": "vcjELRzGqcQ",
+      "idTable": "TB001",
+      "time": "08:32:41 29/5/2026",
+      "type": "service",
+      "status": "unProcessed"
+    },
+    {
+      "id": "XW8kxBSKljs",
+      "idTable": "TB001",
+      "time": "08:32:55 29/5/2026",
+      "type": "service",
+      "status": "unProcessed"
     }
   ],
   "news": [
@@ -955,7 +991,39 @@
       "img": "ádfsadf",
       "time": "28/5/2026",
       "id": "tCHgoO8oyh0"
+    },
+    {
+      "title": "13 lợi ích sức khỏe của cà phê dựa trên khoa học",
+      "content": "Cà phê là một thức uống được pha chế bằng hạt cà phê rang được lấy từ các loại quả mọng của cây Coffea. Tác dụng có lợi của cà phê đối với cơ thể con người đã được nhiều nghiên cứu chứng minh, nhưng nói chung, cà phê là một loại đồ uống phức tạp với hàng ngàn chất khác nhau.",
+      "img": "https://www.vinmec.com/static/uploads/medium_20200319_142454_870000_ca_phe_anh_huong_de_max_1800x1800_jpg_7fc2386715.jpg",
+      "time": "29/5/2026",
+      "id": "q6JibIzpFRo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
+}
+{
+  "id": "OD001",
+  "idTable": "TB001",
+  "status": "Unpaid",
+  "createdAt": "2026-05-29T10:15:00Z",
+  "totalPrice": 0,
+  "items": [
+    {
+      "id": "SV011",
+      "name": "Cà phê bạc xỉu",
+      "price": 30000,
+      "quantity": 1,
+      "img": "https://...",
+      "waitTime": 5
+    },
+    {
+      "id": "SV012",
+      "name": "Cà phê muối",
+      "price": 35000,
+      "quantity": 2,
+      "img": "https://...",
+      "waitTime": 5
+    }
+  ]
 }

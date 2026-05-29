@@ -6,7 +6,8 @@ import MainMenu from "../component/MainMenu";
 import { FoodGroupsServices } from "../../services/FoodGroupsServices";
 import CurrentOrder from "../component/CurrentOrder";
 import { TableServices } from "../../services/TableServices";
-import DishOrdered from "../../admin/components/AddNews";
+import DishOrdered from "../component/DishOrdered";
+
 export default function(){
 
     const api = import.meta.env.VITE_API_URL;
@@ -129,7 +130,7 @@ export default function(){
         gap:"10px"
     }}
     >
-    {/* <DishOrdered/> */}
+    <DishOrdered idTable={currentTable}/>
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
     <MainMenu addOrder={addOrder} tap={tap}/>
     <CurrentOrder resetOrder={resetOrder} selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrderByID} listOrder={listOrder} controlQuantity={controlQuantity}/>
