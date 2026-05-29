@@ -1,6 +1,7 @@
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { getOrderUnpain } from '../../services/OrderServices';
+import { getBillByTable } from '../../services/BillServices';
 
 
 
@@ -8,7 +9,7 @@ export default function Test() {
 
     const tesst= async()=>{
         try{
-            const data = await getOrderUnpain();
+            const data = await getBillByTable();
             console.log(data);
             
         }catch(err){

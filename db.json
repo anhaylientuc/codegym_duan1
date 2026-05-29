@@ -528,7 +528,7 @@
     {
       "id": "B001",
       "idTable": "TB001",
-      "status": "Paid",
+      "status": "paid",
       "createdAt": "2026-01-15T08:30:00Z",
       "paidAt": "2026-01-15T09:45:00Z",
       "totalPrice": 100000,
@@ -538,223 +538,96 @@
           "name": "Cà phê bạc xỉu",
           "price": 30000,
           "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
-          "quantity": 1
+          "quantity": 1,
+          "waitTime": "03:00"
         },
         {
           "id": "SV012",
           "name": "Cà phê muối",
           "price": 35000,
           "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "quantity": 2
+          "quantity": 2,
+          "waitTime": "03:00"
         }
       ]
     },
     {
-      "id": "B002",
+      "id": "YNi3WlwTmdI",
+      "idTable": "TB001",
+      "status": "unpaid",
+      "createdAt": "22:26:23 29/5/2026",
+      "paidAt": null,
+      "totalPrice": 210000,
+      "items": [
+        {
+          "id": "SV011",
+          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "waitingTime": "03:00",
+          "quantity": 1,
+          "status": "ordered"
+        },
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": "03:00",
+          "quantity": 1,
+          "status": "ordered"
+        },
+        {
+          "id": "SV014",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
+          "name": "Cappuccino",
+          "price": 50000,
+          "waitingTime": "03:00",
+          "quantity": 1,
+          "status": "ordered"
+        },
+        {
+          "id": "SV016",
+          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
+          "name": "Nước ép táo",
+          "price": 30000,
+          "waitingTime": "03:00",
+          "quantity": 2,
+          "status": "ordered"
+        },
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "waitingTime": "03:00",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "wFTHUc12L2c",
       "idTable": "TB002",
-      "status": "Paid",
-      "createdAt": "2026-03-22T14:10:00Z",
-      "paidAt": "2026-03-22T15:00:00Z",
-      "totalPrice": 52000,
-      "items": [
-        {
-          "id": "SV015",
-          "name": "Latte",
-          "price": 52000,
-          "img": "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "B003",
-      "idTable": "TB003",
-      "status": "Paid",
-      "createdAt": "2026-05-08T19:45:00Z",
-      "paidAt": "2026-05-08T21:10:00Z",
-      "totalPrice": 190000,
-      "items": [
-        {
-          "id": "SV022",
-          "name": "Trà vải",
-          "price": 35000,
-          "img": "https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2023/10/cach-lam-tra-vai-thumbnail.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "SV021",
-          "name": "Trà sữa trân châu",
-          "price": 40000,
-          "img": "https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg",
-          "quantity": 3
-        }
-      ]
-    },
-    {
-      "id": "B004",
-      "idTable": "TB004",
-      "status": "Paid",
-      "createdAt": "2026-08-30T11:20:00Z",
-      "paidAt": "2026-08-30T12:05:00Z",
-      "totalPrice": 75000,
-      "items": [
-        {
-          "id": "SV032",
-          "name": "Bánh flan",
-          "price": 25000,
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
-          "price": 50000,
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "B005",
-      "idTable": "TB005",
-      "status": "Paid",
-      "createdAt": "2026-01-12T09:20:00Z",
-      "paidAt": "2026-01-12T10:30:00Z",
-      "totalPrice": 112000,
-      "items": [
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "SV015",
-          "name": "Latte",
-          "price": 52000,
-          "img": "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "B006",
-      "idTable": "TB006",
-      "status": "Paid",
-      "createdAt": "2026-02-05T14:10:00Z",
-      "paidAt": "2026-02-05T15:20:00Z",
-      "totalPrice": 80000,
-      "items": [
-        {
-          "id": "SV021",
-          "name": "Trà sữa trân châu",
-          "price": 40000,
-          "img": "https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg",
-          "quantity": 2
-        }
-      ]
-    },
-    {
-      "id": "B007",
-      "idTable": "TB007",
-      "status": "Paid",
-      "createdAt": "2026-02-18T18:00:00Z",
-      "paidAt": "2026-02-18T19:30:00Z",
-      "totalPrice": 110000,
-      "items": [
-        {
-          "id": "SV032",
-          "name": "Bánh flan",
-          "price": 25000,
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
-          "price": 50000,
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "SV022",
-          "name": "Trà vải",
-          "price": 35000,
-          "img": "https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2023/10/cach-lam-tra-vai-thumbnail.jpg",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "B008",
-      "idTable": "TB008",
-      "status": "Paid",
-      "createdAt": "2026-03-01T11:45:00Z",
-      "paidAt": "2026-03-01T12:55:00Z",
-      "totalPrice": 70000,
+      "status": "unpaid",
+      "createdAt": "23:06:39 29/5/2026",
+      "paidAt": null,
+      "totalPrice": 335000,
       "items": [
         {
           "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
           "name": "Cà phê muối",
           "price": 35000,
-          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "quantity": 2
-        }
-      ]
-    },
-    {
-      "id": "B009",
-      "idTable": "TB009",
-      "status": "Paid",
-      "createdAt": "2026-03-10T20:30:00Z",
-      "paidAt": "2026-03-10T21:45:00Z",
-      "totalPrice": 129000,
-      "items": [
-        {
-          "id": "SV015",
-          "name": "Latte",
-          "price": 52000,
-          "img": "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "SV032",
-          "name": "Bánh flan",
-          "price": 25000,
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "B010",
-      "idTable": "TB010",
-      "status": "Paid",
-      "createdAt": "2026-03-25T16:40:00Z",
-      "paidAt": "2026-03-25T18:10:00Z",
-      "totalPrice": 160000,
-      "items": [
-        {
-          "id": "SV021",
-          "name": "Trà sữa trân châu",
-          "price": 40000,
-          "img": "https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
+          "waitingTime": "03:00",
           "quantity": 1
         },
         {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
+          "id": "SV014",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
+          "name": "Cappuccino",
           "price": 50000,
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
+          "waitingTime": "03:00",
+          "quantity": 6
         }
       ]
     }
@@ -835,6 +708,13 @@
       "idTable": "TB001",
       "time": "08:32:55 29/5/2026",
       "type": "service",
+      "status": "unProcessed"
+    },
+    {
+      "id": "tOSdMIsPD2c",
+      "idTable": "TB001",
+      "time": "17:03:05 29/5/2026",
+      "type": "pay",
       "status": "unProcessed"
     }
   ],

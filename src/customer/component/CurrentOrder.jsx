@@ -2,33 +2,63 @@ import { date } from "yup"
 import OrderTable from "./OrderTable"
 import { Dropdown } from "react-bootstrap"
 import DropDown from "./DropDow"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { addOrder } from "../../services/OrderServices"
 import { addCustomerRequests } from "../../services/CustomerRequestsServices";
 
 import toast, { Toaster } from 'react-hot-toast';
 import DishOrdered from "../../admin/components/AddNews"
+import { addBillClient, updateBillOrder } from "../../services/BillServices"
 
-export default function CurrentOrder({resetOrder, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
-    const day= new Date().toLocaleDateString('vi-VN')
+export default function CurrentOrder({idBill , getDataBillByTable, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
+    const day= new Date().toLocaleDateString('vi-VN');
+    const [totalPrice,settotalPrice]=useState(0);
+
+    const coutnTotalPrice =()=>{
+        let cout=0;
+        listOrder?.map(items=>{
+            cout=cout + (items.price * items.quantity);
+        });
+        settotalPrice(cout);
+    }
 
     
 
     const postOrder=async()=>{
         const time = new Date().toLocaleString('vi-VN');
+
         try{
-            const newOrder ={
+            
+
+             if(idBill===""){
+                const newOrder ={
                 id: Date.now().toString(),
                 idTable:currentTable.id,
-                time:time,
-                status:"Unpaid",
-                foodOrder:[...listOrder]
-            }
-            toast.success("đả gửi order");
-             const res = await addOrder(newOrder);
-             if(res){
-                resetOrder();
+                status: "unpaid",
+                createdAt: time,
+                paidAt : null,
+                totalPrice :totalPrice,
+                items:[...listOrder]
+                 }
+                const res = await addBillClient(newOrder);
+                if(res){
+                    getDataBillByTable(currentTable);
+                    toast.success("đả gửi order");
+                }
+             }else{
+                const updeteItem={
+                    totalPrice:totalPrice,
+                    items:[...listOrder]
+                }
+                const res = await updateBillOrder(idBill,updeteItem);
+                if(res){
+                    getDataBillByTable(currentTable);
+                    toast.success("đả gửi order mới");
+                }
+
              }
+
+             
         }catch(err){
             console.log("add Order false : " +err);
         }
@@ -62,7 +92,9 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
     }
 
 
-
+    useEffect(()=>{
+        coutnTotalPrice()
+    },[listOrder])
 
 
     return <section
@@ -106,7 +138,8 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
             }} scope="col">Tên món</th>
             <th scope="col"
             style={{
-                width:"0%"
+                width:"10%",
+                textAlign:"center"
             }}
             >Sl</th>
             <th
@@ -123,8 +156,8 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
             scope="col">Tổng</th>
             <th
             style={{
-                width:"18%",
-               
+                width:"10%",
+               textAlign:"center"
             }}
             scope="col">tg chờ</th>
             <th 
@@ -163,6 +196,24 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
         }
         
         </div>
+        <div style={{
+            marginTop:"10px",
+            fontWeight:"bold",
+            fontSize:"20px",
+            display:"flex",
+            justifyContent:"space-between",
+            alignItems:"center",
+            paddingBottom:"10px",
+            borderBottom:"0.5px solid rgb(0, 0, 0,0.2)"
+        }}>
+           <p style={{margin:"0"}}> Tổng tiền: </p>
+           <p style={{
+            color:"#dca237",
+            fontSize:"30px",
+            fontFamily:" 'Montserrat', sans-serif",
+            margin:"0"
+           }} > {totalPrice.toLocaleString("vi-VN")} vnđ</p>
+        </div>
         {/* ///////////////// */}
         {/* phần nút gọi món và tính tiền */}
         <div
@@ -194,13 +245,13 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
                 color:"white"
             }} class="btn">Gọi nhân viên</button>
 
-            <button
+            {/* <button
             style={{
                 backgroundColor:"#92531b",
                 fontFamily:"'Montserrat', sans-serif",
                 fontWeight:"bold",
                 color:"white"
-            }} class="btn">Món đã gọi</button>
+            }} class="btn">Món đã gọi</button> */}
         </div>
         {/* ////////////////////////// */}
         {/* phần thông tin */}
