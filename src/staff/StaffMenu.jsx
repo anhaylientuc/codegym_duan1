@@ -23,19 +23,31 @@ export const StaffMenu = () => {
       title: "Quản lý Món ăn",
       desc: "Thực đơn quán cafe",
       icon: "🍴",
-      onClick: () => {},
+      onClick: () => navigate("/staff/food", { state: { user } }),
     },
     {
       title: "Quản lý Bàn",
       desc: "Sơ đồ bàn phục vụ",
       icon: "💺",
-      onClick: () => {},
+      onClick: () => navigate("/staff/tables", { state: { user } }),
     },
     {
       title: "Quản lý Hóa đơn",
       desc: "Thanh toán & doanh thu",
       icon: "🧾",
-      onClick: () => {},
+      onClick: () => navigate("/staff/bills", { state: { user } }),
+    },
+    {
+      title: "Bán hàng",
+      desc: "Phục vụ & tính tiền",
+      icon: "🛒",
+      onClick: () => navigate("/staff/sale", { state: { user } }),
+    },
+    {
+      title: "Doanh thu",
+      desc: "Thống kê theo thời gian",
+      icon: "📊",
+      onClick: () => navigate("/staff/income", { state: { user } }),
     },
   ];
 

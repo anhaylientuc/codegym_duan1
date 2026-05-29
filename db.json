@@ -16,7 +16,7 @@
       "id": "U002",
       "username": "staff1",
       "password": "staff123",
-      "name": "Nguyễn Nuôi Gà 1",
+      "name": "Nguyễn Minh Nguyên",
       "address": "456 Nguyễn Huệ, Quận 1, TP.HCM",
       "tel": "0123456789",
       "role": "Staff",
@@ -38,30 +38,6 @@
     },
     {
       "username": "kien.nguyenlovefamily",
-      "password": "nhannghiakienbk",
-      "name": "Nguyen Trung Kien",
-      "address": "189/26/6A Hoàng Hoa Thám",
-      "tel": "0912345678",
-      "gender": "Nam",
-      "role": "Admin",
-      "birthday": "2004-12-08",
-      "salary": 50000000,
-      "id": "uYQuuis4840"
-    },
-    {
-      "username": "kien.nguyenlovefamily",
-      "password": "kienkien",
-      "name": "Nguyen Trung Kien",
-      "address": "189/26/6A Hoàng Hoa Thám",
-      "tel": "0901234567",
-      "gender": "Nam",
-      "role": "Staff",
-      "birthday": "2004-12-08",
-      "salary": 500000000,
-      "id": "lTYuMLGIXuE"
-    },
-    {
-      "username": "kien.nguyenlovefamily",
       "password": "kienkien",
       "name": "Nguyen Trung Kien",
       "address": "189/26/6A Hoàng Hoa Thám",
@@ -71,6 +47,42 @@
       "birthday": "2004-12-08",
       "salary": 40000000,
       "id": "sQcT2a22C9o"
+    },
+    {
+      "username": "kien2852026",
+      "password": "kienkien",
+      "name": "Nguyen Van Moi",
+      "address": "12/5 Hoang Hoa Tham",
+      "tel": "0931092112",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-12-08",
+      "salary": 20000000,
+      "id": "b8w8l11l5pM"
+    },
+    {
+      "username": "hello",
+      "password": "kienkien",
+      "name": "Tuyết Loan",
+      "address": "Trong tim",
+      "tel": "0931041719",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-10-23",
+      "salary": 10000000000,
+      "id": "hScIaSdgfr4"
+    },
+    {
+      "username": "kien.nguyenlovefamily12",
+      "password": "121212",
+      "name": "Nguyen trung kien",
+      "address": "189/26/6A Hoàng Hoa Thám",
+      "tel": "0912345678",
+      "gender": "Nam",
+      "role": "Staff",
+      "birthday": "2004-12-08",
+      "salary": 1100000,
+      "id": "G6U7o2nK5D0"
     }
   ],
   "foodGroups": [
@@ -107,8 +119,8 @@
       "name": "Phở"
     },
     {
-      "id": "KIEN",
-      "name": "NGU"
+      "id": "THANG",
+      "name": "1234"
     }
   ],
   "foods": [
@@ -1001,29 +1013,4 @@
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
-}
-{
-  "id": "OD001",
-  "idTable": "TB001",
-  "status": "Unpaid",
-  "createdAt": "2026-05-29T10:15:00Z",
-  "totalPrice": 0,
-  "items": [
-    {
-      "id": "SV011",
-      "name": "Cà phê bạc xỉu",
-      "price": 30000,
-      "quantity": 1,
-      "img": "https://...",
-      "waitTime": 5
-    },
-    {
-      "id": "SV012",
-      "name": "Cà phê muối",
-      "price": 35000,
-      "quantity": 2,
-      "img": "https://...",
-      "waitTime": 5
-    }
-  ]
 }

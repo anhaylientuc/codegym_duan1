@@ -19,16 +19,24 @@ export const ProfileComponent = () => {
     }).format(salary);
   };
 
+  const formatDateDMY = (dateStr) => {
+    if (!dateStr) return "";
+    // expected storage: yyyy-mm-dd
+    const [y, m, d] = String(dateStr).split("-");
+    if (!y || !m || !d) return String(dateStr);
+    return `${d}-${m}-${y}`;
+  };
+
   const handleChangePass = () => {
     navigate("/change-password", { state: { user } });
   };
 
   const handleUpdate = () => {
-    navigate("/update-user", { state: { user } });
+    navigate("/update-profile", { state: { user } });
   };
 
   const handleBack = () => {
-    const path = user.role === "Admin" ? "/admin" : "/staff";
+    const path = user.role === "Admin" ? "/admin/staff" : "/staff";
     navigate(path, { state: { user } });
   };
 
@@ -41,7 +49,7 @@ export const ProfileComponent = () => {
       label: "Chức vụ",
       value: user.role === "Admin" ? "Quản lý" : "Nhân viên",
     },
-    { label: "Ngày sinh", value: user.birthday },
+    { label: "Ngày sinh", value: formatDateDMY(user.birthday) },
     { label: "Giới tính", value: user.gender },
     { label: "Lương", value: formatSalary(user.salary) },
   ];
@@ -92,10 +100,10 @@ export const ProfileComponent = () => {
 
                 <div
                   style={{
-                    background: "#2C2C2C",
+                    background: "var(--color-bg-lighter)",
                     borderRadius: "12px",
                     padding: "1rem 1.5rem",
-                    border: "1px solid #3A3A3A",
+                    border: "1px solid var(--color-border)",
                   }}
                 >
                   {infoItems.map((item, idx) => (
@@ -123,11 +131,9 @@ export const ProfileComponent = () => {
                     </svg>
                     Đổi mật khẩu
                   </Button>
-                  {user.role === "Admin" && (
-                    <Button className="btn-cafe-primary" onClick={handleUpdate}>
-                      Cập nhật
-                    </Button>
-                  )}
+                  <Button className="btn-cafe-primary" onClick={handleUpdate}>
+                    Cập nhật
+                  </Button>
                   <Button className="btn-cafe-secondary" onClick={handleBack}>
                     Quay lại
                   </Button>

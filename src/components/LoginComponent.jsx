@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Form, Alert } from "react-bootstrap";
+import { Button, Form, Alert, InputGroup } from "react-bootstrap";
 import { UserServices } from "../services/UserServices";
 
 export const LoginComponent = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -74,13 +75,22 @@ export const LoginComponent = () => {
                 </svg>
                 Password
               </Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Nhập password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyDown={handleKeyDown}
-              />
+              <InputGroup>
+                <Form.Control
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Nhập password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                />
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+                >
+                  {showPassword ? "Ẩn" : "Hiện"}
+                </Button>
+              </InputGroup>
             </Form.Group>
 
             <div className="d-grid gap-2">
