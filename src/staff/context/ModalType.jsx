@@ -4,10 +4,11 @@ export const ModalTypeProvider=({children})=>{
     const [show, setshow] = useState(false)
     const [id, setid] = useState(null)
     const [action, setaction] = useState(0)
+    const [keyword, setkeyword] = useState({})
     return (
         <ModalTypeContext.Provider
             value={{
-                show,setshow,id,setid,action,setaction
+                show,setshow,id,setid,action,setaction,setkeyword,keyword
             }}
         >
             {children}
