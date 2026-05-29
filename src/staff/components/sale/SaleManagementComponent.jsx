@@ -5,14 +5,17 @@ import { BillServices } from '../../../services/BillServices'
 import ListTableComponent from './ListTableComponent'
 import ListBillComponent from './ListBillComponent'
 import { ModalFoodProvider } from '../../context/ModalFood'
+import { TableServices } from '../../../services/TableServices'
+ import { useNavigate } from 'react-router-dom'
 const SaleManagementComponent = () => {
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
     const [list, setlist] = useState([])
-
+     const [tables, settables] = useState([])
+    const navigate=useNavigate()
     useEffect(() => {
         const fetchData = async () => {
-            const res = await BillServices.getByPage(page);
+            const res = await TableServices.getByPage(page);
             setlist(res.data)
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
         }
@@ -28,9 +31,13 @@ const SaleManagementComponent = () => {
                         <ListBillComponent list={list} page={page} />
                         <Stack direction='horizontal'
                             className='justify-content-end gap-2' >
+                            <h6>Trạng thái:</h6>
+                            <Button variant='success' onClick={()=>{
+                                navigate('/customer/menu')
+                            }}
+                            >Đặt</Button>
                             <Button variant='primary'>Tính tiền</Button>
                             <Button variant='warning'>Làm mới bảng</Button>
-
                         </Stack>
                     </Col>
                 </Row>

@@ -578,6 +578,7 @@
     {
       "id": "B001",
       "table": "TB001",
+      "status": "doing",
       "totalAmount": 100000,
       "createdAt": "2026-01-15T08:30:00Z",
       "ordered": [
@@ -604,6 +605,7 @@
     {
       "id": "B002",
       "table": "TB002",
+      "status": "paid",
       "totalAmount": 52000,
       "createdAt": "2026-03-22T14:10:00Z",
       "ordered": [
@@ -621,6 +623,7 @@
     {
       "id": "B003",
       "table": "TB003",
+      "status": "unpaid",
       "totalAmount": 52000,
       "createdAt": "2026-05-08T19:45:00Z",
       "ordered": [
@@ -647,6 +650,7 @@
     {
       "id": "B004",
       "table": "TB004",
+      "status": "paid",
       "totalAmount": 52000,
       "createdAt": "2026-08-30T11:20:00Z",
       "ordered": [
@@ -658,21 +662,13 @@
           "type": "Bánh",
           "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
           "quantity": 1
-        },
-        {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
-          "unit": "SVT005",
-          "price": 50000,
-          "type": "Bánh",
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
         }
       ]
     },
     {
       "id": "B005",
       "table": "TB005",
+      "status": "doing",
       "totalAmount": 145000,
       "createdAt": "2026-01-12T09:20:00Z",
       "ordered": [
@@ -684,21 +680,13 @@
           "type": "Cà phê",
           "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
           "quantity": 2
-        },
-        {
-          "id": "SV015",
-          "name": "Latte",
-          "unit": "SVT001",
-          "price": 52000,
-          "type": "Cà phê",
-          "img": "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
-          "quantity": 1
         }
       ]
     },
     {
       "id": "B006",
       "table": "TB006",
+      "status": "paid",
       "totalAmount": 80000,
       "createdAt": "2026-02-05T14:10:00Z",
       "ordered": [
@@ -716,6 +704,7 @@
     {
       "id": "B007",
       "table": "TB007",
+      "status": "unpaid",
       "totalAmount": 105000,
       "createdAt": "2026-02-18T18:00:00Z",
       "ordered": [
@@ -727,30 +716,13 @@
           "type": "Bánh",
           "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
           "quantity": 1
-        },
-        {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
-          "unit": "SVT005",
-          "price": 50000,
-          "type": "Bánh",
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "SV022",
-          "name": "Trà vải",
-          "unit": "SVT003",
-          "price": 35000,
-          "type": "Trà",
-          "img": "https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2023/10/cach-lam-tra-vai-thumbnail.jpg",
-          "quantity": 1
         }
       ]
     },
     {
       "id": "B008",
       "table": "TB008",
+      "status": "paid",
       "totalAmount": 70000,
       "createdAt": "2026-03-01T11:45:00Z",
       "ordered": [
@@ -768,6 +740,7 @@
     {
       "id": "B009",
       "table": "TB009",
+      "status": "doing",
       "totalAmount": 120000,
       "createdAt": "2026-03-10T20:30:00Z",
       "ordered": [
@@ -779,21 +752,13 @@
           "type": "Cà phê",
           "img": "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163537/Originals/latte%206.jpg",
           "quantity": 2
-        },
-        {
-          "id": "SV032",
-          "name": "Bánh flan",
-          "unit": "SVT005",
-          "price": 25000,
-          "type": "Bánh",
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "quantity": 1
         }
       ]
     },
     {
       "id": "B010",
       "table": "TB010",
+      "status": "paid",
       "totalAmount": 150000,
       "createdAt": "2026-03-25T16:40:00Z",
       "ordered": [
@@ -805,24 +770,6 @@
           "type": "Trà",
           "img": "https://www.cet.edu.vn/wp-content/uploads/2018/04/tra-sua-tu-lam.jpg",
           "quantity": 2
-        },
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "unit": "SVT001",
-          "price": 30000,
-          "type": "Cà phê",
-          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "SV033",
-          "name": "Bánh mousse chanh dây",
-          "unit": "SVT005",
-          "price": 50000,
-          "type": "Bánh",
-          "img": "https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/thanh-pham-2132.jpg",
-          "quantity": 1
         }
       ]
     }
@@ -831,12 +778,12 @@
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB002",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB003",
@@ -846,7 +793,7 @@
     {
       "id": "TB004",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB005",
@@ -866,7 +813,17 @@
     {
       "id": "TB008",
       "state": "Lỗi",
+      "on": true
+    },
+    {
+      "id": "TB009",
+      "state": "Tốt",
       "on": false
+    },
+    {
+      "id": "TB010",
+      "state": "Tốt",
+      "on": true
     }
   ],
   "order": [
@@ -935,6 +892,195 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "1780046372456",
+      "idTable": "TB001",
+      "time": "16:19:32 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046374418",
+      "idTable": "TB001",
+      "time": "16:19:34 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046376363",
+      "idTable": "TB001",
+      "time": "16:19:36 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046376614",
+      "idTable": "TB001",
+      "time": "16:19:36 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046376804",
+      "idTable": "TB001",
+      "time": "16:19:36 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046376973",
+      "idTable": "TB001",
+      "time": "16:19:36 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046377128",
+      "idTable": "TB001",
+      "time": "16:19:37 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046377296",
+      "idTable": "TB001",
+      "time": "16:19:37 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046377465",
+      "idTable": "TB001",
+      "time": "16:19:37 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046377714",
+      "idTable": "TB001",
+      "time": "16:19:37 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046378297",
+      "idTable": "TB001",
+      "time": "16:19:38 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046378534",
+      "idTable": "TB001",
+      "time": "16:19:38 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046378742",
+      "idTable": "TB001",
+      "time": "16:19:38 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046378958",
+      "idTable": "TB001",
+      "time": "16:19:38 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046379169",
+      "idTable": "TB001",
+      "time": "16:19:39 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046379372",
+      "idTable": "TB001",
+      "time": "16:19:39 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046379559",
+      "idTable": "TB001",
+      "time": "16:19:39 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046379744",
+      "idTable": "TB001",
+      "time": "16:19:39 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046379924",
+      "idTable": "TB001",
+      "time": "16:19:39 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046380114",
+      "idTable": "TB001",
+      "time": "16:19:40 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046380330",
+      "idTable": "TB001",
+      "time": "16:19:40 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046380517",
+      "idTable": "TB001",
+      "time": "16:19:40 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046380710",
+      "idTable": "TB001",
+      "time": "16:19:40 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046380926",
+      "idTable": "TB001",
+      "time": "16:19:40 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046381139",
+      "idTable": "TB001",
+      "time": "16:19:41 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046381330",
+      "idTable": "TB001",
+      "time": "16:19:41 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
+    },
+    {
+      "id": "1780046381495",
+      "idTable": "TB001",
+      "time": "16:19:41 29/5/2026",
+      "status": "Unpaid",
+      "foodOrder": []
     }
   ],
   "CustomerRequests": [
@@ -956,6 +1102,34 @@
       "id": "HGDkXUbmG5s",
       "idTable": "TB001",
       "time": "14:01:37 28/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780046372857",
+      "idTable": "TB001",
+      "time": "16:19:32 29/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780046374760",
+      "idTable": "TB001",
+      "time": "16:19:34 29/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780046375239",
+      "idTable": "TB001",
+      "time": "16:19:35 29/5/2026",
+      "type": "service",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780046376006",
+      "idTable": "TB001",
+      "time": "16:19:36 29/5/2026",
       "type": "pay",
       "status": "unProcessed"
     }
