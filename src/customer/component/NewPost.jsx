@@ -10,15 +10,19 @@ export default function NewPost(){
             try{
                 
             const data= await getAllNews();
+            console.log("//////////// mảng khi lấy về /////////////");
+            
             console.log(data);
             
             const fiterData=[];
             let cout=0;
-            for(let i=data.length;i>=0;i--){
+            for(let i=data.length;i>0;i--){
                 fiterData.push(data[i-1]);
                 cout++;
                 if(cout===3) break
             }
+            console.log("//////////// mảng khi ĐÃ LỌC /////////////");
+
             console.log(fiterData);
             
             setlistNewPost(fiterData)

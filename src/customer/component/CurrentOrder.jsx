@@ -194,13 +194,13 @@ export default function CurrentOrder({resetOrder, selectTable, listOrder,control
                 color:"white"
             }} class="btn">Gọi nhân viên</button>
 
-            {/* <button
+            <button
             style={{
                 backgroundColor:"#92531b",
                 fontFamily:"'Montserrat', sans-serif",
                 fontWeight:"bold",
                 color:"white"
-            }} class="btn">Món đã gọi</button> */}
+            }} class="btn">Món đã gọi</button>
         </div>
         {/* ////////////////////////// */}
         {/* phần thông tin */}
