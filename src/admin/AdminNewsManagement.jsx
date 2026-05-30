@@ -83,6 +83,7 @@ export default function AdminNewsManagement (){
   },[])
 
     return <>
+    
         <AdminHeaderComponent />
         <Toaster position="top-right" reverseOrder={false} />
 

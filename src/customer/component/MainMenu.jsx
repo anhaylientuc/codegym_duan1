@@ -37,9 +37,6 @@ export default function MainMenu({tap , addOrder}){
                 setDataProduct(data.data);
                 setlistProduct(data.data.data)
             }
-            
-            
- 
         }catch(err){
             console.log("get data product false : "+err);
             
@@ -160,7 +157,7 @@ export default function MainMenu({tap , addOrder}){
 
                 <button
                 onClick={()=>{
-                    addOrder(e.id , e.name , e.price, e.waitTime)
+                    addOrder(e.id,e.img , e.name , e.price, e.waitTime)
                 }}
                 style={{
                     padding:"5px 10px",

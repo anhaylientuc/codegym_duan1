@@ -15,6 +15,8 @@ export default function OrderTable({e,index,controlQuantity,removeOrder}){
         fontWeight:"200",
         fontfamily: "'Montserrat', sans-serif",
         textAlign: "center",
+
+
         height:"fit-content"
 
     }}
@@ -24,7 +26,12 @@ export default function OrderTable({e,index,controlQuantity,removeOrder}){
                         className="OrderTable"  scope="col">{index+1}</th>
                         
                         <th  className="OrderTable" scope="col">{e?.name}</th>
-                        <th className="OrderTable" scope="col">
+                        <th
+                        style={{
+                            textAlign:"center"
+                        }}
+                        className="OrderTable" scope="col">
+                            {!e.status ? 
                             <input
                             key={index}
                             type="number"
@@ -37,10 +44,26 @@ export default function OrderTable({e,index,controlQuantity,removeOrder}){
                                 border:"0.5px solid rgb(0, 0, 0,0.2)"
                             }}
                             />
+                            :
+                            <p
+                            style={{
+
+                                margin:"0"
+                            }}
+                            >
+                                {quantity}
+                            </p>
+                        }
+                            
                         </th>
-                        <th className="OrderTable" scope="col">{e?.price.toLocaleString(`vi-VN`)} vnđ</th>
+                        <th className="OrderTable" scope="col">{e?.price.toLocaleString("vi-VN")} vnđ</th>
                         <th className="OrderTable" scope="col">{total.toLocaleString("vi-VN")} vnđ</th>
-                        <th className="OrderTable" scope="col">{e?.waitingTime * quantity} minute</th>
+                        <th
+                        style={{
+                            textAlign:"center",
+                            color:`${e.status && `red`}`,
+                            fontWeight:`${e.status && `bold`}`
+                        }}  className="OrderTable" scope="col"> {e.waitingTime}</th>
                         <th style={{
                             textAlign:"center"
                         }}  className="OrderTable" scope="col">

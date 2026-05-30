@@ -20,6 +20,9 @@ import TableComponent from "./staff/components/table/TableComponent";
 import BillComponent from "./staff/components/bill/BillComponent";
 import SaleComponent from "./staff/components/sale/SaleComponent";
 import IncomeComponent from "./staff/components/income/IncomeComponent";
+import { AdminHeaderComponent } from './admin/AdminHeaderComponent'
+import Test from './customer/page/test'
+import AdminNewsManagement from './admin/AdminNewsManagement'
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
 
           <Route path={`customer/home`} element={<HomePage />} />
           <Route path={`customer/menu`} element={<MenuPage />} />
+           <Route path={`customer/test`} element={<Test />} />
+         <Route path={`/admin/NewsManagement`} element={<AdminNewsManagement/>}/>
+         
           {/* ///////////////////// */}
           {/* kiên */}
           <Route path="/" element={<HomeComponent />} />
