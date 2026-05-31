@@ -1,0 +1,12 @@
+.custom-form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.custom-form-group label{
+    margin: 0;
+    white-space: nowrap;
+}
+.custom-form-group input{
+    width: 250px;
+}

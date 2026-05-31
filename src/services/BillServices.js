@@ -87,11 +87,11 @@ const search = async (page,keyword) => {
 
     try {
         const params = new URLSearchParams();
-        const { id, from, to,table} = keyword
+        const { id, from, to,idTable} = keyword
         if (id)
             params.append('id', id);
-        if (table){
-            params.append('table', table);
+        if (idTable){
+            params.append('idTable', idTable);
         }
         if (from)
             params.append('createdAt_gte', from)

@@ -7,6 +7,7 @@ import CustomPagination from '../custom/CustomPagination'
 import { ModalFoodProvider, useModalFood } from '../../context/ModalFood'
 import { FoodsServices } from '../../../services/FoodServices'
 import { FoodGroupsServices } from '../../../services/FoodGroupsServices'
+import '../../style/management.css'
 const FoodManagementComponent = () => {
     const [list, setlist] = useState([])
     const [types, settypes] = useState(null)
@@ -16,6 +17,7 @@ const FoodManagementComponent = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await FoodsServices.search(page, keyword);
+            console.log(res)
             const res1 = await FoodGroupsServices.getAll();
             setlist(res.data)
             const newData = res1.map(item => {

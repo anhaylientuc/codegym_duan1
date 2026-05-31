@@ -7,11 +7,14 @@ const ListBillComponent = () => {
     const [detail, setdetail] = useState([])
     useEffect(() => {
         const fetchData = async () => {
+                const res = await BillServices.search(null, keyword);
+                const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
+                if (newRes)
+                    setdetail(newRes.items)
+                else
+                    setdetail([])
+            
 
-            const res = await BillServices.search(null, keyword);
-            const newRes=res.data.find(item=>item.status=='doing'||item.status=='unpaid')
-            if(newRes)
-                setdetail(newRes.ordered)
         }
         fetchData();
     }, [keyword])
@@ -29,9 +32,8 @@ const ListBillComponent = () => {
             </thead>
             <tbody>
                 {
-                    detail&&detail.map((item, index) => {
+                    detail && detail.map((item, index) => {
                         const { name, quantity, price } = item
-                        console.log('ok')
                         return (
                             <tr key={index}>
                                 <th>{index + 1}</th>

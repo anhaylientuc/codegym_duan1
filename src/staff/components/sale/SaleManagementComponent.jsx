@@ -4,7 +4,7 @@ import CustomPagination from '../custom/CustomPagination'
 import { BillServices } from '../../../services/BillServices'
 import ListTableComponent from './ListTableComponent'
 import ListBillComponent from './ListBillComponent'
-import { ModalFoodProvider } from '../../context/ModalFood'
+import { ModalFoodProvider, useModalFood } from '../../context/ModalFood'
 import { TableServices } from '../../../services/TableServices'
  import { useNavigate } from 'react-router-dom'
 const SaleManagementComponent = () => {
@@ -12,12 +12,19 @@ const SaleManagementComponent = () => {
     const [page, setpage] = useState(1)
     const [list, setlist] = useState([])
      const [tables, settables] = useState([])
+    const {keyword,setkeyword}=useModalFood();
     const navigate=useNavigate()
     useEffect(() => {
         const fetchData = async () => {
             const res = await TableServices.getByPage(page);
             setlist(res.data)
+            const arr=res.data
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
+            if(Array.isArray(arr)&&arr.length>0){
+                console.log(arr[0])
+                setkeyword({...keyword, idTable:arr[0].id})
+
+            }
         }
         fetchData();
     }, [page])

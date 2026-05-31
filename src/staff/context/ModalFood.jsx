@@ -4,7 +4,7 @@ export const ModalFoodProvider=({children})=>{
     const [show, setshow] = useState(false)
     const [id, setid] = useState(null)
     const [action, setaction] = useState(0)
-    const [keyword, setkeyword] = useState({})
+    const [keyword, setkeyword] = useState(undefined)
     return (
         <ModalFoodContext.Provider
             value={{
