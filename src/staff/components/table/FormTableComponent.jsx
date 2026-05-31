@@ -20,8 +20,8 @@ const FormTableComponent = ({ onSubmit, initialValues }) => {
 
         >
             {({ handleSubmit, handleChange, handleBlur, setFieldValue, errors, touched, values }) => (
-                <Form onSubmit={handleSubmit} id='form-food'>
-                    <Form.Group>
+                <Form onSubmit={handleSubmit} id='form-food' >
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Mã:</Form.Label>
                         <Form.Control name='id'
                             value={values.id||''}
@@ -32,11 +32,11 @@ const FormTableComponent = ({ onSubmit, initialValues }) => {
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
+                            Vui lòng nhập!
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    <Form.Group>
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Trạng thái:</Form.Label>
                         <Form.Control name='state'
                             value={values.state||''}
@@ -47,7 +47,7 @@ const FormTableComponent = ({ onSubmit, initialValues }) => {
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
+                            Vui lòng nhập!
                         </Form.Control.Feedback>
                     </Form.Group>
 

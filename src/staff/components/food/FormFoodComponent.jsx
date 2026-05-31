@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { React, useState,useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form';
 import { Image, Row, Col } from 'react-bootstrap';
 import { FoodGroupsServices } from '../../../services/FoodGroupsServices';
@@ -9,17 +9,17 @@ import { uploadCloudinary } from '../../utilities/UploadCloudinary';
 import { useModalFood } from '../../context/ModalFood';
 
 const FormFoodComponent = ({ onSubmit, initialValues }) => {
-    
+
     const [preview, setpreview] = useState(null)
-    useEffect(()=>{
-        
-        const fetchData=()=>{
+    useEffect(() => {
+
+        const fetchData = () => {
             console.log(initialValues)
-            if(initialValues.image)
+            if (initialValues.image)
                 setpreview(initialValues.image)
         }
         fetchData()
-    },[initialValues])
+    }, [initialValues])
     const Schema = Yup.object().shape({
         id: Yup.string()
             .required(),
@@ -32,7 +32,7 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
             .required('Please choose image'),
         unit: Yup.string()
             .required('Please choose type'),
-        type:''
+        type: ''
     });
     return (
         <Formik
@@ -44,8 +44,8 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
 
         >
             {({ handleSubmit, handleChange, handleBlur, setFieldValue, errors, touched, values }) => (
-                <Form onSubmit={handleSubmit} id='form-food'>
-                    <Form.Group>
+                <Form onSubmit={handleSubmit} id='form-food' >
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Mã:</Form.Label>
                         <Form.Control name='id'
                             value={values.id}
@@ -56,11 +56,11 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
+                            Vui lòng nhập!
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    <Form.Group>
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Tên:</Form.Label>
                         <Form.Control name='name'
                             value={values.name}
@@ -71,11 +71,11 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
+                            Vui lòng nhập!
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    <Form.Group>
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Giá:</Form.Label>
                         <Form.Control name='price'
                             value={values.price}
@@ -86,11 +86,11 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
                             }
                         ></Form.Control>
                         <Form.Control.Feedback type='invalid'>
-                            Some of fields are invalid!
+                           Vui lòng nhập!
                         </Form.Control.Feedback>
                     </Form.Group>
 
-                    <DropdownType
+                    <DropdownType 
                         handleSubmit={handleSubmit}
                         handleChange={handleChange}
                         handleBlur={handleBlur}
@@ -98,10 +98,10 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
                         errors={errors}
                         touched={touched}
                         values={values}
-                      
+
                     />
 
-                    <Form.Group>
+                    <Form.Group className='custom-form-group'>
                         <Form.Label>Hình ảnh:</Form.Label>
                         <Row>
                             <Col>
@@ -109,7 +109,7 @@ const FormFoodComponent = ({ onSubmit, initialValues }) => {
                             </Col>
                             <Col>
                                 <Form.Control
-                                    
+
                                     type='file'
                                     name="image"
                                     onChange={async (e) => {

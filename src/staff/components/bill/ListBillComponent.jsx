@@ -7,7 +7,7 @@ const ListBillComponent = ({ list, page }) => {
     const { show, setshow, id, setid, action } = useModalFood();
 
     return (
-        <Table bordered className='text-center'>
+        <Table bordered className='custom-table'>
             <thead>
                 <tr>
                     <th >STT</th>

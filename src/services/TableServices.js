@@ -19,7 +19,7 @@ const getByPage = async (page) => {
         console.log(error)
     }
 }
-const search = async (page,keyword) => {
+const search = async (page,keyword={}) => {
 
     try {
         const params = new URLSearchParams();
