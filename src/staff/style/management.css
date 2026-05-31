@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 8px;
 }
 .custom-form-group label{
     margin: 0;
@@ -9,4 +10,17 @@
 }
 .custom-form-group input{
     width: 250px;
+}
+.custom-form-group.vertical{
+    flex-direction: column;
+}
+
+.custom-table thead th{
+    background-color: #d6ecff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-table tbody tr th{
+    font-weight: 400;
 }

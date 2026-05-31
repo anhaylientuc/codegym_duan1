@@ -34,31 +34,30 @@ const CustomForm = ({ fields, onSubmit }) => {
                         {
                             fields && fields.map((item, index) => {
                                 return (
-                                    <Form.Group as={Col} key={index} >
-                                        <Row className="align-items-center">
+                                    <Form.Group as={Col} key={index} className='custom-form-group'>
 
-                                            <Form.Label md={2} as={Col}>{item.label}:</Form.Label>
-                                            <Col md={8}>
-                                                <Form.Control name={item.value}
+                                        <Form.Label >{item.label}:</Form.Label>
 
-                                                    value={values[item.value]}
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    isInvalid={
-                                                        touched[item.value] && errors[item.value]
-                                                    }
-                                                ></Form.Control>
-                                            </Col>
+                                        <Form.Control name={item.value}
 
-                                        </Row>
+                                            value={values[item.value]}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            isInvalid={
+                                                touched[item.value] && errors[item.value]
+                                            }
+                                        ></Form.Control>
+
+
+
 
                                     </Form.Group>
                                 )
                             })
                         }
-                        <Col md={2}>
+                        <Col >
                             <Button type="submit">
-                                SEARCH
+                                Tìm kiếm
                             </Button>
                         </Col>
 

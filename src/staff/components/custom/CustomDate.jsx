@@ -4,12 +4,11 @@ import { Row, Col, Stack } from 'react-bootstrap'
 
 const CustomDate = ({ values, setFieldValue }) => {
     return (
-        <Stack direction='horizontal' as={Col}>
-            
+
+        <>
+            <Col>
                 <Form.Group
-                    as={Stack}
-                    direction="horizontal"
-                    gap={2}
+                    className='custom-form-group'
                 >
                     <Form.Label >Từ ngày:</Form.Label>
                     <Form.Control
@@ -23,11 +22,11 @@ const CustomDate = ({ values, setFieldValue }) => {
 
                     </Form.Control>
                 </Form.Group>
-           
+            </Col>
+
+            <Col>
                 <Form.Group
-                    as={Stack}
-                    direction="horizontal"
-                    gap={2}
+                    className='custom-form-group'
                 >
                     <Form.Label>Đến ngày:</Form.Label>
                     <Form.Control
@@ -40,8 +39,10 @@ const CustomDate = ({ values, setFieldValue }) => {
 
                     </Form.Control>
                 </Form.Group>
-           
-        </Stack>
+            </Col>
+
+
+        </>
 
 
     )

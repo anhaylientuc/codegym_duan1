@@ -611,7 +611,7 @@
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB002",
