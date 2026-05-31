@@ -30,7 +30,7 @@ export default function Header({scrollProduck}){
     src="/header_img.png" alt="header_img" />
     <div 
     onClick={()=>{
-    navigate(`/customer/menu`)
+    navigate(`/customer/menu/TB001`)
     }}
     style={{
         position:"absolute",

@@ -2,12 +2,14 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react"
 
 import '../customer.css'
-import { data } from "react-router-dom";
+import { data, useParams } from "react-router-dom";
 
 
 export default function MainMenu({tap , addOrder}){
+
     
-    console.log(tap.id);
+    
+    
 
     const scroll = useRef();
 
@@ -29,16 +31,14 @@ export default function MainMenu({tap , addOrder}){
             if(tap.id==="All"){
                 const data = await axios.get(`${api}/foods?_page=${numberPage}&_limit=10`);
                 const urlTest = `${api}/foods?_page=${numberPage}&_limit=5`;
-                console.log("Link API đang gọi là:", urlTest);
-                console.log(data.data);
-                console.log("////////// list food //////////////");
+
                 
                 setDataProduct(data);
                 setlistProduct(data.data)
 
             }else{
                 const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_limit=10`);
-                console.log(data.data);
+
                 setDataProduct(data);
                 setlistProduct(data.data)
             }

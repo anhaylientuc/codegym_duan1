@@ -522,12 +522,12 @@
   ],
   "bill": [
     {
-      "id": "YNi3WlwTmdI",
+      "id": "1780218115503",
       "idTable": "TB001",
-      "status": "paid",
-      "createdAt": "2026-05-31T07:58:16.129Z",
+      "status": "doing",
+      "createdAt": "2026-05-31T09:01:55.503Z",
       "paidAt": null,
-      "totalPrice": 35000,
+      "totalPrice": 85000,
       "items": [
         {
           "id": "SV012",
@@ -535,15 +535,24 @@
           "name": "Cà phê muối",
           "price": 35000,
           "quantity": 1,
-          "waitingTime": "2026-05-31T07:58:16.129Z"
+          "waitingTime": "2026-05-31T09:01:55.503Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV014",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
+          "name": "Cappuccino",
+          "price": 50000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:43:53.452Z"
         }
       ]
     },
     {
-      "id": "1780214334745",
-      "idTable": "TB006",
-      "status": "unpaid",
-      "createdAt": "2026-05-31T07:58:54.745Z",
+      "id": "1780238445781",
+      "idTable": "TB005",
+      "status": "doing",
+      "createdAt": "2026-05-31T14:40:45.781Z",
       "paidAt": null,
       "totalPrice": 50000,
       "items": [
@@ -553,7 +562,69 @@
           "name": "Cappuccino",
           "price": 50000,
           "quantity": 1,
-          "waitingTime": "2026-05-31T07:58:54.745Z"
+          "waitingTime": "2026-05-31T14:40:45.781Z"
+        }
+      ]
+    },
+    {
+      "id": "1780239229837",
+      "idTable": "TB001",
+      "status": "paid",
+      "createdAt": "2026-05-31T14:53:49.837Z",
+      "paidAt": null,
+      "totalPrice": 80000,
+      "items": [
+        {
+          "id": "SV031",
+          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
+          "name": "Bánh kem dâu",
+          "price": 55000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:53:49.837Z"
+        },
+        {
+          "id": "SV032",
+          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
+          "name": "Bánh flan",
+          "price": 25000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:53:49.837Z"
+        }
+      ]
+    },
+    {
+      "id": "1780239258648",
+      "idTable": "TB001",
+      "status": "unpaid",
+      "createdAt": "2026-05-31T14:54:18.648Z",
+      "paidAt": null,
+      "totalPrice": 111000,
+      "items": [
+        {
+          "id": "SV029",
+          "img": "https://cdn.tgdd.vn/2020/10/CookProduct/6-1200x676.jpg",
+          "name": "Sinh tố mãng cầu",
+          "price": 46000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:54:18.648Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV018",
+          "img": "https://bizweb.dktcdn.net/100/421/036/files/nguyen-lieu-che-bien-nuoc-ep-carot.jpg?v=1617093099366",
+          "name": "Nước ép cà rốt",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:54:45.725Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV016",
+          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
+          "name": "Nước ép táo",
+          "price": 30000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:55:08.161Z"
         }
       ]
     },
@@ -741,10 +812,10 @@
   ],
   "news": [
     {
-      "title": "ádfsadf",
+      "title": "ádfsadf123456",
       "content": "ádfasdfsadfsadfasdfasdfasdf",
       "img": "ádfsadf",
-      "time": "28/5/2026",
+      "time": "31/5/2026",
       "id": "tCHgoO8oyh0"
     },
     {
