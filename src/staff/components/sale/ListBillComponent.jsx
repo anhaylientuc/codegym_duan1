@@ -2,22 +2,26 @@ import { React, useEffect, useState } from 'react'
 import { Table, Stack, Button } from 'react-bootstrap'
 import { useModalFood } from '../../context/ModalFood'
 import { BillServices } from '../../../services/BillServices'
-const ListBillComponent = () => {
+const ListBillComponent = ({bill=[]}) => {
     const { setid, id, keyword } = useModalFood()
-    const [detail, setdetail] = useState([])
-    useEffect(() => {
-        const fetchData = async () => {
-                const res = await BillServices.search(null, keyword);
-                const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
-                if (newRes)
-                    setdetail(newRes.items)
-                else
-                    setdetail([])
-            
 
-        }
-        fetchData();
-    }, [keyword])
+    const {items}=bill
+    //const [bill, setbill] = useState(undefined)
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const res = await BillServices.search(null, keyword);
+    //         const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
+    //         if (newRes) {
+    //            setbill(newRes)
+
+    //         }
+    //         else
+    //             setdetail([])
+
+
+    //     }
+    //     fetchData();
+    // }, [keyword])
     return (
         <Table bordered className='text-center'>
             <thead>
@@ -32,7 +36,7 @@ const ListBillComponent = () => {
             </thead>
             <tbody>
                 {
-                    detail && detail.map((item, index) => {
+                    items && items.map((item, index) => {
                         const { name, quantity, price } = item
                         return (
                             <tr key={index}>

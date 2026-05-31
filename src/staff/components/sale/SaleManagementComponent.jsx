@@ -6,57 +6,103 @@ import ListTableComponent from './ListTableComponent'
 import ListBillComponent from './ListBillComponent'
 import { ModalFoodProvider, useModalFood } from '../../context/ModalFood'
 import { TableServices } from '../../../services/TableServices'
- import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const SaleManagementComponent = () => {
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    const [list, setlist] = useState([])
-     const [tables, settables] = useState([])
-    const {keyword,setkeyword}=useModalFood();
-    const navigate=useNavigate()
+    //const [list, setlist] = useState([])
+    const [tables, settables] = useState([])
+    const { keyword, setkeyword, id, setid } = useModalFood();
+    const [bill, setbill] = useState(undefined)
+    const [status, setstatus] = useState(undefined)
+    const navigate = useNavigate()
+    const handleCheckout = async () => {
+        try {
+            console.log('api',id)
+            const res = await BillServices.update(id, { ...bill, status: 'paid' });
+            setstatus('Đã thanh toán')
+        } catch (error) {
+            
+        }
+    }
     useEffect(() => {
         const fetchData = async () => {
             const res = await TableServices.getByPage(page);
-            setlist(res.data)
-            const arr=res.data
+            settables(res.data)
+            const arr = res.data
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
-            if(Array.isArray(arr)&&arr.length>0){
-                console.log(arr[0])
-                setkeyword({...keyword, idTable:arr[0].id})
-
+            if (Array.isArray(arr) && arr.length > 0) {
+                setkeyword({ ...keyword, idTable: arr[0].id })
             }
         }
         fetchData();
     }, [page])
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await BillServices.search(null, keyword);
+            const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
+            if (newRes) {
+                setid(newRes.id);
+                console.log(newRes.id);
+                //setlist(newRes.items)
+                setbill(newRes)
+                switch (newRes.status) {
+                    case 'doing':
+                        setstatus('Đang làm món')
+                        break;
+                    case 'unpaid':
+                        setstatus('Chưa thanh toán')
+                        break;
+                    case 'paid':
+                        setstatus('Đã thanh toán')
+                        break;
+                    default:
+                }
+            }
+            else {
+                setbill([])
+                setstatus('CÒN TRỐNG')
+            }
+        }
+        fetchData()
+    }, [keyword])
     return (
-            <Container>
-                <Row>
-                    <Col>
-                        <ListTableComponent list={list} />
-                    </Col>
-                    <Col>
-                        <ListBillComponent list={list} page={page} />
-                        <Stack direction='horizontal'
-                            className='justify-content-end gap-2' >
-                            <h6>Trạng thái:</h6>
-                            <Button variant='success' onClick={()=>{
-                                navigate(`/customer/menu/${keyword.idTable}`)
-                            }}
-                            >Đặt</Button>
-                            <Button variant='primary'>Tính tiền</Button>
-                            <Button variant='warning'>Làm mới bảng</Button>
-                        </Stack>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs="auto" >
-                        <CustomPagination
-                            as={Col} numPages={numPages} setpage={setpage} page={page}
-                        />
+        <Container>
+            <Row>
+                <Col>
+                    <ListTableComponent list={tables} />
+                </Col>
 
-                    </Col>
-                </Row>
-            </Container>
+                <Col>
+                    <ListBillComponent bill={bill} page={page} />
+                    <h6>Trạng thái:{status}</h6>
+                    <Stack direction='horizontal'
+                        className='justify-content-end gap-2' >
+
+                        <Button variant='success' onClick={() => {
+                            const state = { idTable: keyword.idTable || '' }
+                            navigate('/customer/menu', { state })
+                        }}
+                        >Đặt tiếp món</Button>
+                        {status!='Đã thanh toán'&&<Button variant='primary'
+                            onClick={() => { handleCheckout() }}
+                        >Tính tiền</Button>}
+                        {status=='Đã thanh toán'&&<Button variant='secondary'
+                        // onClick={()=>{handleCheckout(id,bill)}}
+                        >In hóa đơn</Button>}
+                        <Button variant='warning'>Làm mới bảng</Button>
+                    </Stack>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs="auto" >
+                    <CustomPagination
+                        as={Col} numPages={numPages} setpage={setpage} page={page}
+                    />
+
+                </Col>
+            </Row>
+        </Container>
 
     )
 }
