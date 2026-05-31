@@ -589,7 +589,7 @@
       "status": "unpaid",
       "createdAt": "2026-05-31T14:54:18.648Z",
       "paidAt": null,
-      "totalPrice": 111000,
+      "totalPrice": 166000,
       "items": [
         {
           "id": "SV029",
@@ -615,7 +615,16 @@
           "name": "Nước ép táo",
           "price": 30000,
           "quantity": 1,
-          "waitingTime": "2026-05-31T14:55:08.161Z"
+          "waitingTime": "2026-05-31T14:55:08.161Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV031",
+          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
+          "name": "Bánh kem dâu",
+          "price": 55000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T15:04:45.859Z"
         }
       ]
     }
@@ -719,6 +728,13 @@
       "id": "tOSdMIsPD2c",
       "idTable": "TB001",
       "time": "17:03:05 29/5/2026",
+      "type": "pay",
+      "status": "unProcessed"
+    },
+    {
+      "id": "1780239596377",
+      "idTable": "TB001",
+      "time": "21:59:56 31/5/2026",
       "type": "pay",
       "status": "unProcessed"
     }
