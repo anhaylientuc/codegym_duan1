@@ -57,6 +57,23 @@ const update = async (id, data) => {
         console.log(error)
     }
 }
+
+const updateStatus =async(id,data)=>{
+    try {
+        console.log("update");
+        console.log(id);
+        console.log("///// log id //////////");
+        
+        const res = await axios.patch(`${BASE_URL}/${id}`,data);
+      
+        return res.data
+
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+
 const remove = async (id) => {
     try {
         const url = BASE_URL + `/${id}`;
@@ -77,4 +94,4 @@ const getById = async (id) => {
 
     }
 }
-export const TableServices = { getAll, search, getByPage, insert, update, remove, getById }
+export const TableServices = { updateStatus, getAll, search, getByPage, insert, update, remove, getById }

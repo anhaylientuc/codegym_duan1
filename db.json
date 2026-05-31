@@ -521,13 +521,31 @@
     }
   ],
   "bill": [
-
+    {
+      "id": "1780218115503",
+      "idTable": "TB001",
+      "status": "doing",
+      "createdAt": "2026-05-31T09:01:55.503Z",
+      "paidAt": null,
+      "totalPrice": 35000,
+      "items": [
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T09:01:55.503Z",
+          "status": "ordered"
+        }
+      ]
+    }
   ],
   "tables": [
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB002",
@@ -537,7 +555,7 @@
     {
       "id": "TB003",
       "state": "Lỗi",
-      "on": false
+      "on": true
     },
     {
       "id": "TB004",
