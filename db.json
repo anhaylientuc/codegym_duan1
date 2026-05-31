@@ -527,7 +527,7 @@
       "status": "doing",
       "createdAt": "2026-05-31T09:01:55.503Z",
       "paidAt": null,
-      "totalPrice": 35000,
+      "totalPrice": 85000,
       "items": [
         {
           "id": "SV012",
@@ -537,6 +537,32 @@
           "quantity": 1,
           "waitingTime": "2026-05-31T09:01:55.503Z",
           "status": "ordered"
+        },
+        {
+          "id": "SV014",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
+          "name": "Cappuccino",
+          "price": 50000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:43:53.452Z"
+        }
+      ]
+    },
+    {
+      "id": "1780238445781",
+      "idTable": "TB005",
+      "status": "doing",
+      "createdAt": "2026-05-31T14:40:45.781Z",
+      "paidAt": null,
+      "totalPrice": 50000,
+      "items": [
+        {
+          "id": "SV014",
+          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
+          "name": "Cappuccino",
+          "price": 50000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:40:45.781Z"
         }
       ]
     }
@@ -545,7 +571,7 @@
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB002",
@@ -565,7 +591,7 @@
     {
       "id": "TB005",
       "state": "Lỗi",
-      "on": true
+      "on": false
     },
     {
       "id": "TB006",
@@ -646,10 +672,10 @@
   ],
   "news": [
     {
-      "title": "ádfsadf",
+      "title": "ádfsadf123456",
       "content": "ádfasdfsadfsadfasdfasdfasdf",
       "img": "ádfsadf",
-      "time": "28/5/2026",
+      "time": "31/5/2026",
       "id": "tCHgoO8oyh0"
     },
     {

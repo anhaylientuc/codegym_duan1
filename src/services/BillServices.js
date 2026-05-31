@@ -50,6 +50,9 @@ export const updateBillOrder=async(id,items)=>{
 export const getAllBill =async()=>{
     try{
         const res= await axios.get(`${BASE_URL}`);
+
+        
+        
         return res.data
 
     } catch (err) {
