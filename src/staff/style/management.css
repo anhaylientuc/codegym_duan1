@@ -24,3 +24,17 @@
 .custom-table tbody tr th{
     font-weight: 400;
 }
+.receipt{
+    width: 300px;
+    padding: 10px;
+    font-size: 14px;
+}
+@media print{
+    body{
+        margin: 0;
+    }
+
+    .receipt{
+        width: 300px;
+    }
+}

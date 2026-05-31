@@ -5,23 +5,7 @@ import { BillServices } from '../../../services/BillServices'
 const ListBillComponent = ({bill=[]}) => {
     const { setid, id, keyword } = useModalFood()
 
-    const {items}=bill
-    //const [bill, setbill] = useState(undefined)
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const res = await BillServices.search(null, keyword);
-    //         const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
-    //         if (newRes) {
-    //            setbill(newRes)
-
-    //         }
-    //         else
-    //             setdetail([])
-
-
-    //     }
-    //     fetchData();
-    // }, [keyword])
+   const items = bill?.items || []
     return (
         <Table bordered className='text-center'>
             <thead>
@@ -46,30 +30,7 @@ const ListBillComponent = ({bill=[]}) => {
                                 <th>{price || ''}vnd</th>
                                 <th>{id}</th>
                                 <th>{price * quantity || ''}</th>
-                                {/* <th>
-                                    <Stack direction='horizontal'
-                                        className='justify-content-evenly'>
-
-
-                                        <Button variant='warning' onClick={() => {
-                                            console.log(item.id)
-                                            setaction(1)
-                                            setid(item.id)
-                                            setshow(true);
-                                        }}>
-                                            <MdEditNote size={20} />
-                                        </Button>
-
-                                        <Button variant='danger' onClick={() => {
-                                            setaction(2)
-                                            setid(item.id)
-                                            setshow(true)
-                                        }}>
-                                            <MdDelete />
-
-                                        </Button>
-                                    </Stack>
-                                </th> */}
+                              
                             </tr>
                         )
                     })
