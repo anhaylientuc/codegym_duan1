@@ -524,7 +524,7 @@
     {
       "id": "1780218115503",
       "idTable": "TB001",
-      "status": "doing",
+      "status": "paid",
       "createdAt": "2026-05-31T09:01:55.503Z",
       "paidAt": null,
       "totalPrice": 85000,
@@ -725,6 +725,42 @@
           "waitingTime": "2026-05-31T15:24:43.366Z"
         }
       ]
+    },
+    {
+      "id": "1780241473808",
+      "idTable": "TB004",
+      "status": "doing",
+      "createdAt": "2026-05-31T15:31:13.808Z",
+      "paidAt": null,
+      "totalPrice": 35000,
+      "items": [
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T15:31:13.808Z"
+        }
+      ]
+    },
+    {
+      "id": "1780241710900",
+      "idTable": "TB003",
+      "status": "paid",
+      "createdAt": "2026-05-31T15:35:10.900Z",
+      "paidAt": null,
+      "totalPrice": 35000,
+      "items": [
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T15:35:10.900Z"
+        }
+      ]
     }
   ],
   "tables": [
@@ -739,14 +775,12 @@
       "on": false
     },
     {
-      "id": "TB003",
-      "state": "Lỗi",
-      "on": true
+      "on": false,
+      "id": "TB003"
     },
     {
-      "id": "TB004",
-      "state": "Tốt",
-      "on": true
+      "on": false,
+      "id": "TB004"
     },
     {
       "id": "TB005",
