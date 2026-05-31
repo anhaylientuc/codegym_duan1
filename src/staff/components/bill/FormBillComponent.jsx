@@ -24,39 +24,38 @@ const FormBillComponent = ({ onSubmit }) => {
                     onSubmit={handleSubmit}
                 // id='form-food-group'
                 >
-
                     <Row>
-
-
-
-                        <Form.Group as={Col} md={3}  >
-                            <Stack direction='horizontal' gap={2} >
+                        <Col>
+                            <Form.Group className='custom-form-group'>
                                 <Form.Label >Số hóa đơn:</Form.Label>
-                               
-                                    <Form.Control name={'id'}
-                                        value={values.id}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        isInvalid={
-                                            touched.id && errors.id
-                                        }
-                                    ></Form.Control>
-
-                            </Stack>
-
-                        </Form.Group>
-                        <Col md={5}>
-                            <CustomDate values={values} setFieldValue={setFieldValue} />
-
+                                <Form.Control name={'id'}
+                                    value={values.id}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    isInvalid={
+                                        touched.id && errors.id
+                                    }
+                                ></Form.Control>
+                            </Form.Group>
                         </Col>
+                        <CustomDate values={values} setFieldValue={setFieldValue} />
 
-                        <Col md={2}>
+                        <Col>
                             <Button type="submit">
-                                SEARCH
+                                Tìm kiếm
                             </Button>
                         </Col>
-
                     </Row>
+
+
+
+
+
+
+
+
+
+
 
                 </Form>
             )

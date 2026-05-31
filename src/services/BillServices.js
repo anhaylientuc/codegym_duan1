@@ -83,7 +83,7 @@ const getById = async (id) => {
 
 
 // tìm kiếm bill
-const search = async (page,keyword) => {
+const search = async (page,keyword={}) => {
 
     try {
         const params = new URLSearchParams();

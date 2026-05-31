@@ -13,45 +13,45 @@ const DropdownType = ({ handleSubmit, handleChange, setFieldValue, handleBlur, e
         fetchData();
     }, [show])
     return (
-        <Form.Group as={Row} className="align-items-center">
-            <Col md="2">
-                <Form.Label>Nhóm món:</Form.Label>
-            </Col>
-            <Col md="8">
-                <Form.Select name='unit'
-                    value={values.unit}
-                    onChange={(e) => {
-                        handleChange(e)
-                        const selected = types.find(item => item.id == e.target.value)
-                        setFieldValue('type',selected.name)
-                    }
+        <Form.Group className='custom-form-group'>
 
-                    }
-                    onBlur={handleBlur}
-                    isInvalid={
-                        touched.unit && errors.unit
-                    }
+            <Form.Label>Nhóm món:</Form.Label>
 
 
-                >
-                    <option value="">
-                        Chọn loại món
-                    </option>
-                    {
+            <Form.Select name='unit'
+                value={values.unit}
+                onChange={(e) => {
+                    handleChange(e)
+                    const selected = types.find(item => item.id == e.target.value)
+                    setFieldValue('type', selected.name)
+                }
 
-                        types.map((item, index) => {
-                            return (
-                                <option key={index} value={item.id}>
-                                    {item.name}
-                                </option>
-                            )
-                        })
-                    }
-                </Form.Select>
-                <Form.Control.Feedback type='invalid'>
-                    Some of fields are invalid!
-                </Form.Control.Feedback>
-            </Col>
+                }
+                onBlur={handleBlur}
+                isInvalid={
+                    touched.unit && errors.unit
+                }
+
+
+            >
+                <option value="">
+                    Chọn loại món
+                </option>
+                {
+
+                    types.map((item, index) => {
+                        return (
+                            <option key={index} value={item.id}>
+                                {item.name}
+                            </option>
+                        )
+                    })
+                }
+            </Form.Select>
+            <Form.Control.Feedback type='invalid'>
+                Vui lòng nhập!
+            </Form.Control.Feedback>
+
 
 
 
