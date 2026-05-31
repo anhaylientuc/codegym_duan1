@@ -40,8 +40,7 @@ const SaleManagementComponent = () => {
                             className='justify-content-end gap-2' >
                             <h6>Trạng thái:</h6>
                             <Button variant='success' onClick={()=>{
-                                const state={idTable:keyword.idTable||''}
-                                navigate('/customer/menu',{state})
+                                navigate(`/customer/menu/${keyword.idTable}`)
                             }}
                             >Đặt</Button>
                             <Button variant='primary'>Tính tiền</Button>

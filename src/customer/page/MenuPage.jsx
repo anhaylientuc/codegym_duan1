@@ -9,10 +9,12 @@ import { TableServices } from "../../services/TableServices";
 import DishOrdered from "../component/DishOrdered";
 import { getBillByTable, updateBillOrder } from "../../services/BillServices";
 import toast, { Toaster } from 'react-hot-toast';
+import { useParams } from "react-router-dom";
 
 export default function(){
 
     const api = import.meta.env.VITE_API_URL;
+    const {idTable} = useParams();
     
 
     // danh sách order 
@@ -44,18 +46,18 @@ export default function(){
  
     if(!listOrder[index1].status){
 
-        console.log("l1");
+
         
         setlistOrder((prev) => {
             const copyData = prev.filter((item, index) => index !== index1);
             return copyData;
         });
     }else{
-        console.log("l2");
+;
         if(waitingTime !=="00:00"){
             const listNotOred = listOrder.filter((items)=>!items.status);
             const listWasOred = listOrder.filter((items)=>items.status);
-            console.log(listNotOred);
+
             
 
             const listDelete = listWasOred.filter((item, index) => index !== index1);
@@ -97,13 +99,13 @@ export default function(){
             }
             return "false"
         }
-        console.log("log check /////////////");
+  
         
 
         const check2= check()
   
         if(check2!=="false"){
-            console.log("vào check");
+
             
             const copyData = [...prev];
             copyData[check2]= {
@@ -134,10 +136,10 @@ export default function(){
     const [listFoodGroup,setlistFoodGroup]=useState([]);
     const getFoodGroup=async()=>{
         try{
-            console.log("123");
+
             
             const data= await FoodGroupsServices.getAll();
-            console.log(data);
+  
             
             setlistFoodGroup([{
             id:"All",
@@ -165,10 +167,29 @@ export default function(){
     
     
     const getTable=async()=>{
+        console.log(idTable);
+        console.log("////////// id table");
+        
+        
             const dataTable =await TableServices.getAll();
+            
             setlistDropDow(dataTable)
-            setcurrentTable(dataTable[0]);
-            getDataBillByTable(dataTable[0])
+            console.log(dataTable);
+            
+            console.log("////// dataTable");
+            
+
+            const tablePrams= dataTable.find(item=>item.id===idTable);
+            console.log(tablePrams);
+            
+            console.log("///////// table prams");
+            
+
+            setcurrentTable(tablePrams);
+            getDataBillByTable(tablePrams)
+
+            // setcurrentTable(dataTable[0]);
+            // getDataBillByTable(dataTable[0])
         }
 
     const selectTable=(item)=>{
@@ -179,13 +200,13 @@ export default function(){
     // Kiểm tra và lấy danh sách đã order 
 
     const getDataBillByTable=async(idTable)=>{
-        console.log("data bill theo bàn /////////////");
+
         try{
             
             const data = await getBillByTable(idTable.id);
 
             
-            console.log(idTable.id);
+
             
             
             
