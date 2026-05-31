@@ -16,7 +16,7 @@ const ListFoodGroupsComponent = ({ list }) => {
             </thead>
             <tbody>
                 {
-                    list ? list.map((item, index) => {
+                    (Array.isArray(list) ? list : []).map((item, index) => {
                         return (
                             <tr key={index}>
                                 <th>{index + 1}</th>
@@ -47,7 +47,7 @@ const ListFoodGroupsComponent = ({ list }) => {
                                 </th>
                             </tr>
                         )
-                    }) : null
+                    })
                 }
             </tbody>
 

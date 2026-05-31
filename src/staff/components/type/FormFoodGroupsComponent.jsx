@@ -5,15 +5,15 @@ import Form from 'react-bootstrap/Form';
 import { useModalType } from '../../context/ModalType';
 import { FoodGroupsServices } from '../../../services/FoodGroupsServices';
 const FormAddFoodGroupsComponent = ({onSubmit,initialValues}) => {
-    const Schema = Yup.object().shape({
-        id: Yup.string()
-            .required(),
-        name: Yup.string()
-            .required(),
-    });
+    // const Schema = Yup.object().shape({
+    //     id: Yup.string()
+    //         .required(),
+    //     name: Yup.string()
+    //         .required(),
+    // });
     return (
         <Formik
-            validationSchema={Schema}
+            //validationSchema={Schema}
 
             initialValues={initialValues}
             onSubmit={onSubmit}
@@ -29,13 +29,13 @@ const FormAddFoodGroupsComponent = ({onSubmit,initialValues}) => {
                             value={values.id}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            isInvalid={
-                                touched.id && errors.id
-                            }
+                            // isInvalid={
+                            //     touched.id && errors.id
+                            // }
                         ></Form.Control>
-                        <Form.Control.Feedback type='invalid'>
+                        {/* <Form.Control.Feedback type='invalid'>
                             Some of fields are invalid!
-                        </Form.Control.Feedback>
+                        </Form.Control.Feedback> */}
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Tên:</Form.Label>
@@ -43,13 +43,13 @@ const FormAddFoodGroupsComponent = ({onSubmit,initialValues}) => {
                             value={values.name}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            isInvalid={
-                                touched.name && errors.name
-                            }
+                            // isInvalid={
+                            //     touched.name && errors.name
+                            // }
                         ></Form.Control>
-                        <Form.Control.Feedback type='invalid'>
+                        {/* <Form.Control.Feedback type='invalid'>
                             Some of fields are invalid!
-                        </Form.Control.Feedback>
+                        </Form.Control.Feedback> */}
                     </Form.Group>
                 </Form>
             )

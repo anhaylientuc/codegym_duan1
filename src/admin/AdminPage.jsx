@@ -23,25 +23,31 @@ export const AdminPage = () => {
       title: "Quản lý Nhóm món",
       desc: "Phân loại món ăn",
       icon: "📋",
-      onClick: () => {},
+      onClick: () => navigate("/staff/food-groups", { state: { user } }),
     },
     {
       title: "Quản lý Món ăn",
       desc: "Thực đơn quán cafe",
       icon: "🍴",
-      onClick: () => {},
+      onClick: () => navigate("/staff/food", { state: { user } }),
     },
     {
       title: "Quản lý Bàn",
       desc: "Sơ đồ bàn phục vụ",
       icon: "💺",
-      onClick: () => {},
+      onClick: () => navigate("/staff/tables", { state: { user } }),
     },
     {
       title: "Quản lý Hóa đơn",
       desc: "Thanh toán & doanh thu",
       icon: "🧾",
-      onClick: () => {},
+      onClick: () => navigate("/staff/bills", { state: { user } }),
+    },
+    {
+      title: "Quản lý bài đăng",
+      desc: "quản lý dánh sách bài đăng",
+      icon: "📰",
+      onClick: () => {navigate("/admin/NewsManagement", { state: { user } })},
     },
   ];
 

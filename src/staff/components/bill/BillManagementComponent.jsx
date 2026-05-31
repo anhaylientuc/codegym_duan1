@@ -16,7 +16,6 @@ const BillManagementComponent = () => {
     const { show, setshow, setid, id, keyword, setkeyword } = useModalFood()
     const fields = [{ label: 'Số hóa đơn', value: 'id' }, {}]
     const handleSearch = async (values) => {
-        console.log('ok')
         const res = await BillServices.search(page, values);
         setpage(1)
         setlist(res.data);
@@ -42,6 +41,7 @@ const BillManagementComponent = () => {
                 <ModalBillComponent />
 
                 <Row className="justify-content-center mb-3">
+                    
                     <FormBillComponent onSubmit={handleSearch} />
 
                 </Row>

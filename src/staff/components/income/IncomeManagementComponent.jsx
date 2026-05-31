@@ -6,8 +6,8 @@ import * as Yup from 'yup';
 import { BillServices } from '../../../services/BillServices';
 import Form from 'react-bootstrap/Form';
 import { DateHelper } from '../../utilities/DateHelper';
-import { set } from '@cloudinary/url-gen/actions/variable';
 import { ModalFoodProvider } from '../../context/ModalFood';
+import { FormatCurrency } from '../../utilities/FormatCurrency';
 
 const IncomeManagementComponent = () => {
     const [totalAmount, settotalAmount] = useState(0)
@@ -17,7 +17,7 @@ const IncomeManagementComponent = () => {
     const [income4, setincome4] = useState(0)
     const getIncome = (data) => {
         return data.reduce((total, item) => {
-            return total + item.totalAmount;
+            return total + item.totalPrice;
         }, 0)
     }
     const handleSearch = async (values) => {
@@ -49,41 +49,46 @@ const IncomeManagementComponent = () => {
         fetchData();
     }, [])
     return (
-            <Container>
-                <h3>Quản lý thu nhập</h3>
-                <h6>Tổng thu nhập: {totalAmount}</h6>
+        <Container>
+            <h3>Quản lý thu nhập</h3>
+            <h6>Tổng thu nhập: {totalAmount}</h6>
 
-                <Formik
-                    initialValues={{
-                        from: '',
-                        to: ''
-                    }}
-                    enableReinitialize
-                    onSubmit={handleSearch}
-                >
-                    {({ handleSubmit, values, setFieldValue }) => (
+            <Formik
+                initialValues={{
+                    from: '',
+                    to: ''
+                }}
+                enableReinitialize
+                onSubmit={handleSearch}
+            >
+                {({ handleSubmit, values, setFieldValue }) => (
                         <Form onSubmit={handleSubmit}>
                             <Row>
-                                <Col>
-                                    <CustomDate values={values} setFieldValue={setFieldValue} />
-                                </Col>
+                                <CustomDate values={values} setFieldValue={setFieldValue} />
+
                                 <Col>
                                     <Button type='submit'>Tính thu nhập</Button>
+
                                 </Col>
                             </Row>
 
+
+
+
+
                         </Form>
-                    )
 
-                    }
+                )
+
+                }
 
 
-                </Formik>
-                <h6>Hôm nay: {income1}</h6>
-                <h6>Tuần này:{income2}</h6>
-                <h6>Tháng này:{income3}</h6>
-                <h6>Năm này:{income4}</h6>
-            </Container>
+            </Formik>
+            <h6>Hôm nay: {FormatCurrency.formatVND(income1)}</h6>
+            <h6>Tuần này:{FormatCurrency.formatVND(income2)}</h6>
+            <h6>Tháng này:{FormatCurrency.formatVND(income3)}</h6>
+            <h6>Năm này:{FormatCurrency.formatVND(income4)}</h6>
+        </Container>
 
     )
 }

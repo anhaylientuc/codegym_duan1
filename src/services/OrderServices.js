@@ -19,3 +19,17 @@ export const addOrder=async(item)=>{
 
 /////////////////////////
 
+// lấy order chưa thanh toán
+
+export const getOrderUnpain=async(idTable)=>{
+    try{
+        const data = await axios.get(`${BASE_URL}?status_ne=Paid&idTable=${idTable}`);
+        return data.data[0];
+        
+    }catch(err){
+        console.log("get order unpain false : "+err);
+        return false;
+        
+    }
+}
+

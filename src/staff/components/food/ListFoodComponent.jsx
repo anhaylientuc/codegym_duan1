@@ -6,7 +6,7 @@ const ListFoodComponent = ({list,page}) => {
     const { setshow, setid, action, setaction } = useModalFood();
 
     return (
-        <Table bordered className='text-center'>
+        <Table bordered className='custom-table'>
             <thead>
                 <tr>
                     <th >STT</th>

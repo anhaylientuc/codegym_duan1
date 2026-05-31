@@ -21,7 +21,7 @@ const TableManagementComponent = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await TableServices.search(page, keyword);
-            console.log(keyword)
+            console.log(res )
             setlist(res.data)
             settoggles(res.data.map(item => item.on))
             setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
@@ -41,7 +41,7 @@ const TableManagementComponent = () => {
             <Container>
                 <Row className="justify-content-center mb-3">
                     <Col xs="auto">
-                        <h3>Danh sách nhóm món</h3>
+                        <h3>Danh sách bàn</h3>
                     </Col>
                 </Row>
                 <ModalTableComponent

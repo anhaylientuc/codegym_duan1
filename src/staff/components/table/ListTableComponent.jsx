@@ -7,7 +7,7 @@ import { TableServices } from '../../../services/TableServices';
 const ListTableComponent = ({ list, page, toggles, settoggles }) => {
     const { setshow, setid, action, setaction } = useModalFood();
     return (
-        <Table bordered className='text-center'>
+        <Table bordered className='custom-table'>
             <thead>
                 <tr>
                     <th >STT</th>
@@ -45,7 +45,6 @@ const ListTableComponent = ({ list, page, toggles, settoggles }) => {
                                         }}
                                     />
                                 </th>
-                                <th>{item.type}</th>
                                 <th>
                                     <Stack direction='horizontal'
                                         className='justify-content-evenly'>

@@ -8,50 +8,64 @@ export default function Body(){
     const apiData = import.meta.env.VITE_API_URL;
     const [listNewFood,setlistNewFood] = useState([]);
     const [listTopFood,setlistTopFood] = useState([]);
+    
 
 
 const getTop5=(data)=>{
     
 const countData=[];
 for(let i=0; i< data.length;i++){
-    for(let j=0;j< data[i].ordered.length; j++){
+    for(let j=0;j< data[i].items.length; j++){
         let count =0;
         for(let k=0;k<countData.length;k++){
-            if(data[i].ordered[j].id===countData[k].id){
-                countData[k].quantity= countData[k].quantity+ data[i].ordered[j].quantity;
+            if(data[i].items[j].id===countData[k].id){
+                countData[k].quantity= countData[k].quantity+ data[i].items[j].quantity;
                 count++;
             }
         }
         if(count===0){
             
-            countData.push(data[i].ordered[j]);
+            countData.push(data[i].items[j]);
         }
     }
     }
-    console.log("phần đã thêm vào data để lọc");
+
     
-    console.log(countData);
+
     countData.sort((a,b)=>b.quantity - a.quantity);
     const top5 =[];
+    console.log(countData);
+    console.log("//// countData");
+    
+    
     for(let i=0;i<5;i++){
-        top5.push(countData[i]);
+        if(countData[i]){
+            top5.push(countData[i]);
+        }
+        
     }
-    console.log("/////////////// phần đã lọc //////////////////");
+
+    console.log(top5);
+    console.log("///// top 5");
+    
     
     setlistTopFood(top5)
 }
 
     const getData=async()=>{
         try{
-            const dataNewFood= await axios.get(`${apiData}/foods?_sort=-id&_page=1&_per_page=5`);
+            const dataNewFood = await axios.get(`${apiData}/foods?_sort=id&_order=desc&_page=1&_limit=5`);
+
+            
+            
             if(dataNewFood){
            
-                setlistNewFood(dataNewFood.data.data);
+                setlistNewFood(dataNewFood.data);
             }
             const dataTopFood = await getAllBill();
-            console.log("top 5 món");
-            
+            console.log("data top food //////////////");
             console.log(dataTopFood);
+            console.log("data top food //////////////");
             getTop5(dataTopFood);
         }catch(err){
             console.log("erro get data new food : " +err);
@@ -68,7 +82,7 @@ for(let i=0; i< data.length;i++){
     useEffect(()=>{
         if(tapList===1){
             setlistShow(listNewFood);
-            console.log(listNewFood);
+           
             
         }else{
             setlistShow(listTopFood);
@@ -230,7 +244,7 @@ for(let i=0; i< data.length;i++){
                         height:"100%",
                         objectFit:"cover"
                      }}
-                     src={`${e.img}`} alt="" />
+                     src={`${e?.img}`} alt="" />
                 </div>
                 <div
         style={{
@@ -264,7 +278,7 @@ for(let i=0; i< data.length;i++){
             overflow:"hidden",
             textOverflow:"ellipsis"
         }}
-        >{e.name}</p>
+        >{e?.name}</p>
         <div
         style={{
             width:"15px",

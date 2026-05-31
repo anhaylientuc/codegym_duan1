@@ -2,12 +2,14 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react"
 
 import '../customer.css'
-import { data } from "react-router-dom";
+import { data, useParams } from "react-router-dom";
 
 
 export default function MainMenu({tap , addOrder}){
+
     
-    console.log(tap.id);
+    
+    
 
     const scroll = useRef();
 
@@ -23,23 +25,23 @@ export default function MainMenu({tap , addOrder}){
     const [numberPage,setnumberPage] = useState(1);
 
     const getListProduct =async()=>{
+        
+        
         try{
             if(tap.id==="All"){
-                const data = await axios.get(`${api}/foods?_page=${numberPage}&_per_page=10`);
-                console.log(data.data);
+                const data = await axios.get(`${api}/foods?_page=${numberPage}&_limit=10`);
+                const urlTest = `${api}/foods?_page=${numberPage}&_limit=5`;
+
                 
-                setDataProduct(data.data);
-                setlistProduct(data.data.data)
+                setDataProduct(data);
+                setlistProduct(data.data)
 
             }else{
-                const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_per_page=10`);
-                console.log(data.data);
-                setDataProduct(data.data);
-                setlistProduct(data.data.data)
+                const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_limit=10`);
+
+                setDataProduct(data);
+                setlistProduct(data.data)
             }
-            
-            
- 
         }catch(err){
             console.log("get data product false : "+err);
             
@@ -160,7 +162,7 @@ export default function MainMenu({tap , addOrder}){
 
                 <button
                 onClick={()=>{
-                    addOrder(e.id , e.name , e.price, e.waitTime)
+                    addOrder(e.id,e.img , e.name , e.price, e.waitTime)
                 }}
                 style={{
                     padding:"5px 10px",

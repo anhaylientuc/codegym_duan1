@@ -23,6 +23,7 @@ const ModalAddFoodGroupsComponent = () => {
     }
     const handleAdd = async (values) => {
         try {
+            console.log(values)
             const res = await FoodGroupsServices.insert(values);
             setshow(false);
             clearData();
@@ -45,7 +46,7 @@ const ModalAddFoodGroupsComponent = () => {
     const handleRemove = async (values) => {
         try {
             const { id } = values
-            const res = await FoodGroupsServices.insert(id, values);
+            const res = await FoodGroupsServices.remove(id, values);
             setshow(false);
             clearData();
         } catch (error) {

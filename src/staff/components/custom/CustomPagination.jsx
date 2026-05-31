@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import { Pagination } from 'react-bootstrap'
-const CustomPagination = ({ numPages, setpage, page }) => {
+const CustomPagination = ({ numPages, setpage, page,data }) => {
     let showDot=false;
 
     return (
@@ -31,7 +31,9 @@ const CustomPagination = ({ numPages, setpage, page }) => {
 
             }
             <Pagination.Next onClick={() => {
-                if (page < numPages)
+                console.log("ádf");
+                
+                if (page > data.last)
                     setpage(page + 1);
             }}>
                 Sau
