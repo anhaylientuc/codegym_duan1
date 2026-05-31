@@ -80,8 +80,8 @@ const SaleManagementComponent = () => {
                         className='justify-content-end gap-2' >
 
                         <Button variant='success' onClick={() => {
-                            const state = { idTable: keyword.idTable || '' }
-                            navigate('/customer/menu', { state })
+                            
+                            navigate(`/customer/menu/${keyword.idTable}`)
                         }}
                         >Đặt tiếp món</Button>
                         {status!='Đã thanh toán'&&<Button variant='primary'

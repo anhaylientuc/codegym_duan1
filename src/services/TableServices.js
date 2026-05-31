@@ -79,4 +79,4 @@ const getById = async (id) => {
 
     }
 }
-export const TableServices = { updateStatus, getAll, search, getByPage, insert, update, remove, getById }
+export const TableServices = { getAll, search, getByPage, insert, update, remove, getById }
