@@ -117,10 +117,6 @@
     {
       "id": "SVT008",
       "name": "Phở"
-    },
-    {
-      "id": "THANG",
-      "name": "1234"
     }
   ],
   "foods": [
@@ -526,109 +522,38 @@
   ],
   "bill": [
     {
-      "id": "B001",
-      "table": "TB001",
-      "status": "doing",
-      "totalAmount": 100000,
-      "createdAt": "2026-01-15T08:30:00Z",
-      "paidAt": "2026-01-15T09:45:00Z",
-      "totalPrice": 100000,
-      "items": [
-        {
-          "id": "SV011",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
-          "quantity": 1,
-          "waitTime": "03:00"
-        },
-        {
-          "id": "SV012",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "quantity": 2,
-          "waitTime": "03:00"
-        }
-      ]
-    },
-    {
-      "id": "YNi3WlwTmdI",
+      "id": "1780214296129",
       "idTable": "TB001",
       "status": "unpaid",
-      "createdAt": "22:26:23 29/5/2026",
+      "createdAt": "2026-05-31T07:58:16.129Z",
       "paidAt": null,
-      "totalPrice": 210000,
+      "totalPrice": 35000,
       "items": [
         {
-          "id": "SV011",
-          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
-          "name": "Cà phê bạc xỉu",
-          "price": 30000,
-          "waitingTime": "03:00",
-          "quantity": 1,
-          "status": "ordered"
-        },
-        {
           "id": "SV012",
           "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
           "name": "Cà phê muối",
           "price": 35000,
-          "waitingTime": "03:00",
           "quantity": 1,
-          "status": "ordered"
-        },
-        {
-          "id": "SV014",
-          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
-          "name": "Cappuccino",
-          "price": 50000,
-          "waitingTime": "03:00",
-          "quantity": 1,
-          "status": "ordered"
-        },
-        {
-          "id": "SV016",
-          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
-          "name": "Nước ép táo",
-          "price": 30000,
-          "waitingTime": "03:00",
-          "quantity": 2,
-          "status": "ordered"
-        },
-        {
-          "id": "SV012",
-          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "waitingTime": "03:00",
-          "quantity": 1
+          "waitingTime": "2026-05-31T07:58:16.129Z"
         }
       ]
     },
     {
-      "id": "wFTHUc12L2c",
-      "idTable": "TB002",
+      "id": "1780214334745",
+      "idTable": "TB006",
       "status": "unpaid",
-      "createdAt": "23:06:39 29/5/2026",
+      "createdAt": "2026-05-31T07:58:54.745Z",
       "paidAt": null,
-      "totalPrice": 335000,
+      "totalPrice": 50000,
       "items": [
-        {
-          "id": "SV012",
-          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "waitingTime": "03:00",
-          "quantity": 1
-        },
         {
           "id": "SV014",
           "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
           "name": "Cappuccino",
           "price": 50000,
-          "waitingTime": "03:00",
-          "quantity": 6
+          "quantity": 1,
+          "waitingTime": "2026-05-31T07:58:54.745Z"
         }
       ]
     }
