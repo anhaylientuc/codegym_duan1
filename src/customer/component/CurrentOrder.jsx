@@ -9,6 +9,7 @@ import { addCustomerRequests } from "../../services/CustomerRequestsServices";
 import toast, { Toaster } from 'react-hot-toast';
 import DishOrdered from "../../admin/components/AddNews"
 import { addBillClient, updateBillOrder } from "../../services/BillServices"
+import { TableServices } from "../../services/TableServices"
 
 export default function CurrentOrder({idBill , getDataBillByTable, selectTable, listOrder,controlQuantity,removeOrder,listTable, currentTable}){
     const day= new Date().toLocaleDateString('vi-VN');
@@ -48,7 +49,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                 const newOrder ={
                 id: Date.now().toString(),
                 idTable:currentTable.id,
-                status: "unpaid",
+                status: "doing",
                 createdAt: time,
                 paidAt : null,
                 totalPrice :totalPrice,
@@ -58,6 +59,10 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                 if(res){
                     getDataBillByTable(currentTable);
                     toast.success("đả gửi order");
+                    const updateDataTable ={
+                        on: false
+                    }
+                    await TableServices.updateStatus(currentTable.id,updateDataTable);
                 }
              }else{
                 const waitingTime= new Date();
@@ -81,6 +86,10 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                 if(res){
                     getDataBillByTable(currentTable);
                     toast.success("đả gửi order mới");
+                    const updateDataTable ={
+                        on: false
+                    }
+                    await TableServices.updateStatus(currentTable.id,updateDataTable);
                 }
 
              }
