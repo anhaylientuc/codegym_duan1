@@ -9,8 +9,8 @@ import { useModalFood } from '../../context/ModalFood';
 import { FoodsServices } from '../../../services/FoodServices';
 import DropdownType from '../custom/DropdownType';
 const SearchFoodComponent = (props) => {
-    const { handleSearch, setlist, types,page,setnumPages,setpage } = props;
-    const {setkeyword}=useModalFood();
+    const { handleSearch, setlist, types, page, setnumPages, setpage } = props;
+    const { setkeyword } = useModalFood();
     const Schema = Yup.object().shape({
         id: Yup.string(),
         name: Yup.string(),
@@ -21,16 +21,17 @@ const SearchFoodComponent = (props) => {
     return (
         <Formik
             initialValues={{
-                id: '',
+                // id: '',
                 name: '',
-                price: '',
-                unit: ''
+                // price: '',
+                // unit: '',
+                type: ''
             }}
             validationSchema={Schema}
             onSubmit={async (values) => {
-                const res = await FoodsServices.search(page,values);
+                const res = await FoodsServices.search(page, values);
                 setpage(1)
-                setlist(res.data);   
+                setlist(res.data);
                 setkeyword(values);
                 setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
 
@@ -41,24 +42,24 @@ const SearchFoodComponent = (props) => {
                     <Container>
                         <Row className='mb-3'>
                             <Col md="5">
-                                <Form.Group as={Row} className="align-items-center">
+                                <Form.Group className="custom-form-group">
 
-                                    <Col md="2">
-                                        <Form.Label>Mã:</Form.Label>
-                                    </Col>
-                                    <Col md="8">
-                                        <Form.Control name='id'
-                                            value={values.id}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            isInvalid={
-                                                touched.id && errors.id
-                                            }
-                                        ></Form.Control>
-                                        <Form.Control.Feedback type='invalid'>
-                                            Some of fields are invalid!
-                                        </Form.Control.Feedback>
-                                    </Col>
+
+                                    <Form.Label>Tên món:</Form.Label>
+
+
+                                    <Form.Control name='name'
+                                        value={values.name}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        isInvalid={
+                                            touched.name && errors.name
+                                        }
+                                    ></Form.Control>
+                                    <Form.Control.Feedback type='invalid'>
+                                        Some of fields are invalid!
+                                    </Form.Control.Feedback>
+
 
 
 
@@ -67,34 +68,34 @@ const SearchFoodComponent = (props) => {
                             </Col>
 
                             <Col md="5">
-                                <Form.Group as={Row} className="align-items-center" >
+                                <Form.Group className="custom-form-group" >
 
-                                    <Col md="2">
-                                        <Form.Label>Tên:</Form.Label>
-                                    </Col>
-                                    <Col md="8">
-                                        <Form.Control name='name'
-                                            value={values.name}
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            isInvalid={
-                                                touched.name && errors.name
-                                            }
-                                        ></Form.Control>
-                                        <Form.Control.Feedback type='invalid'>
-                                            Some of fields are invalid!
-                                        </Form.Control.Feedback>
-                                    </Col>
+                                    <Form.Label>Tên kiểu món:</Form.Label>
+
+                                    <Form.Control name='type'
+                                        value={values.type}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        isInvalid={
+                                            touched.type && errors.type
+                                        }
+                                    ></Form.Control>
+                                    <Form.Control.Feedback type='invalid'>
+                                        Some of fields are invalid!
+                                    </Form.Control.Feedback>
+
 
 
 
                                 </Form.Group>
                             </Col>
-
+                            <Col md={2}>
+                                <Button type='submit'>Tìm kiếm</Button>
+                            </Col>
 
                         </Row>
                         <Row className='mb-3'>
-                            <Col md={5}>
+                            {/* <Col md={5}>
                                 <Form.Group as={Row} className="align-items-center">
 
                                     <Col md="2">
@@ -118,9 +119,9 @@ const SearchFoodComponent = (props) => {
 
 
                                 </Form.Group>
-                            </Col>
+                            </Col> */}
 
-                            <Col md={5}>
+                            {/* <Col md={5}>
                                 <DropdownType
                                     handleSubmit={handleSubmit}
                                     handleChange={handleChange}
@@ -130,11 +131,9 @@ const SearchFoodComponent = (props) => {
                                     values={values}
                                     types={types}
                                 />
-                            </Col>
-                            
-                            <Col md={2}>
-                                <Button type='submit'>Search</Button>
-                            </Col>
+                            </Col> */}
+
+
                         </Row>
 
                     </Container>

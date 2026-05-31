@@ -16,7 +16,7 @@ const ListTableComponent = ({ list }) => {
                                 }}
                                 onClick={()=>{
                                     console.log(item.id)
-                                    setkeyword({table:item.id})
+                                    setkeyword({idTable:item.id})
                                 }}
                             >
                                 <Card.Body>

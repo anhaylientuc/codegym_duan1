@@ -17,12 +17,13 @@ const getByPage = async (page) => {
         console.log(error)
     }
 }
-const search = async (page,keyword) => {
+const search = async (page,keyword={}) => {
 
     try {
         const params = new URLSearchParams();
         Object.entries(keyword).forEach(([key, value]) => {
-            params.append(key + '_like', value)
+            if(value&&value!='')
+                params.append(key + '_like', value)
         })
         params.append('_page', page);
         params.append('_limit', 6);
