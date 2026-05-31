@@ -58,21 +58,6 @@ const update = async (id, data) => {
     }
 }
 
-const updateStatus =async(id,data)=>{
-    try {
-        console.log("update");
-        console.log(id);
-        console.log("///// log id //////////");
-        
-        const res = await axios.patch(`${BASE_URL}/${id}`,data);
-      
-        return res.data
-
-    } catch (error) {
-        console.log(error)
-        return false
-    }
-}
 
 const remove = async (id) => {
     try {

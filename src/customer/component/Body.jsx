@@ -34,9 +34,21 @@ for(let i=0; i< data.length;i++){
 
     countData.sort((a,b)=>b.quantity - a.quantity);
     const top5 =[];
-    for(let i=0;i<countData.length;i++){
-        top5.push(countData[i]);
+    console.log(countData);
+    console.log("//// countData");
+    
+    
+    for(let i=0;i<5;i++){
+        if(countData[i]){
+            top5.push(countData[i]);
+        }
+        
     }
+
+    console.log(top5);
+    console.log("///// top 5");
+    
+    
     setlistTopFood(top5)
 }
 

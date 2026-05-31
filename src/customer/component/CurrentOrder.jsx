@@ -62,7 +62,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                     const updateDataTable ={
                         on: false
                     }
-                    await TableServices.updateStatus(currentTable.id,updateDataTable);
+                    await TableServices.update(currentTable.id,updateDataTable);
                 }
              }else{
                 const waitingTime= new Date();
@@ -89,7 +89,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                     const updateDataTable ={
                         on: false
                     }
-                    await TableServices.updateStatus(currentTable.id,updateDataTable);
+                    await TableServices.update(currentTable.id,updateDataTable);
                 }
 
              }
