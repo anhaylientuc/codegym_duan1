@@ -99,7 +99,6 @@ const SaleManagementComponent = () => {
                     <CustomPagination
                         as={Col} numPages={numPages} setpage={setpage} page={page}
                     />
-
                 </Col>
             </Row>
         </Container>
