@@ -109,4 +109,16 @@ const search = async (page,keyword={}) => {
         console.log(error)
     }
 }
-export const BillServices = { getAllBill, getByPage, getById, search }
+const update = async (id, data) => {
+    try {
+        console.log(data)
+        const url = BASE_URL + `/${id}`;
+        const res = await axios.put(url, data);
+        console.log(res)
+        return res.data
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const BillServices = { getAllBill, getByPage, getById, search,update }
