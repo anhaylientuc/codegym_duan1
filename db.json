@@ -539,13 +539,75 @@
           "status": "ordered"
         }
       ]
+    },
+    {
+      "id": "1780239229837",
+      "idTable": "TB001",
+      "status": "paid",
+      "createdAt": "2026-05-31T14:53:49.837Z",
+      "paidAt": null,
+      "totalPrice": 80000,
+      "items": [
+        {
+          "id": "SV031",
+          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
+          "name": "Bánh kem dâu",
+          "price": 55000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:53:49.837Z"
+        },
+        {
+          "id": "SV032",
+          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
+          "name": "Bánh flan",
+          "price": 25000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:53:49.837Z"
+        }
+      ]
+    },
+    {
+      "id": "1780239258648",
+      "idTable": "TB001",
+      "status": "unpaid",
+      "createdAt": "2026-05-31T14:54:18.648Z",
+      "paidAt": null,
+      "totalPrice": 111000,
+      "items": [
+        {
+          "id": "SV029",
+          "img": "https://cdn.tgdd.vn/2020/10/CookProduct/6-1200x676.jpg",
+          "name": "Sinh tố mãng cầu",
+          "price": 46000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:54:18.648Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV018",
+          "img": "https://bizweb.dktcdn.net/100/421/036/files/nguyen-lieu-che-bien-nuoc-ep-carot.jpg?v=1617093099366",
+          "name": "Nước ép cà rốt",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:54:45.725Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV016",
+          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
+          "name": "Nước ép táo",
+          "price": 30000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T14:55:08.161Z"
+        }
+      ]
     }
   ],
   "tables": [
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB002",
@@ -570,7 +632,7 @@
     {
       "id": "TB006",
       "state": "Tốt",
-      "on": true
+      "on": false
     },
     {
       "id": "TB007",
