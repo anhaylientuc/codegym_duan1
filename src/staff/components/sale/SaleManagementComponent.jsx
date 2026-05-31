@@ -7,33 +7,41 @@ import ListBillComponent from './ListBillComponent'
 import { ModalFoodProvider, useModalFood } from '../../context/ModalFood'
 import { TableServices } from '../../../services/TableServices'
 import { useNavigate } from 'react-router-dom'
+import ModalFormBillComponent from './ModalFormBillComponent'
 const SaleManagementComponent = () => {
     const [numPages, setnumPages] = useState(0)
     const [page, setpage] = useState(1)
-    //const [list, setlist] = useState([])
     const [tables, settables] = useState([])
-    const { keyword, setkeyword, id, setid } = useModalFood();
+    const { keyword, setkeyword, id, setid, show, setshow } = useModalFood();
     const [bill, setbill] = useState(undefined)
     const [status, setstatus] = useState(undefined)
+    const [action, setaction] = useState(0)
     const navigate = useNavigate()
     const handleCheckout = async () => {
         try {
-            console.log('api',id)
             const res = await BillServices.update(id, { ...bill, status: 'paid' });
+            const selectedTable = tables.find((item) => {
+                if (item.id == keyword.idTable)
+                    return item;
+            })
+            const res1 = await TableServices.update(keyword.idTable, { ...selectedTable, on: true });
             setstatus('Đã thanh toán')
         } catch (error) {
-            
+
+        }
+    }
+    const fetchingTable = async () => {
+        const res = await TableServices.getByPage(page);
+        settables(res.data)
+        const arr = res.data
+        setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
+        if (Array.isArray(arr) && arr.length > 0) {
+            setkeyword({ ...keyword, idTable: arr[0].id })
         }
     }
     useEffect(() => {
         const fetchData = async () => {
-            const res = await TableServices.getByPage(page);
-            settables(res.data)
-            const arr = res.data
-            setnumPages(Math.ceil(res.headers["x-total-count"] / 6));
-            if (Array.isArray(arr) && arr.length > 0) {
-                setkeyword({ ...keyword, idTable: arr[0].id })
-            }
+            await fetchingTable();
         }
         fetchData();
     }, [page])
@@ -43,7 +51,6 @@ const SaleManagementComponent = () => {
             const newRes = res.data.find(item => item.status == 'doing' || item.status == 'unpaid')
             if (newRes) {
                 setid(newRes.id);
-                console.log(newRes.id);
                 //setlist(newRes.items)
                 setbill(newRes)
                 switch (newRes.status) {
@@ -60,7 +67,7 @@ const SaleManagementComponent = () => {
                 }
             }
             else {
-                setbill([])
+                setbill(null)
                 setstatus('CÒN TRỐNG')
             }
         }
@@ -69,6 +76,7 @@ const SaleManagementComponent = () => {
     return (
         <Container>
             <Row>
+                <ModalFormBillComponent action={action} setstatus={setstatus} />
                 <Col>
                     <ListTableComponent list={tables} />
                 </Col>
@@ -80,17 +88,43 @@ const SaleManagementComponent = () => {
                         className='justify-content-end gap-2' >
 
                         <Button variant='success' onClick={() => {
-                            
+
                             navigate(`/customer/menu/${keyword.idTable}`)
                         }}
                         >Đặt tiếp món</Button>
-                        {status!='Đã thanh toán'&&<Button variant='primary'
-                            onClick={() => { handleCheckout() }}
-                        >Tính tiền</Button>}
-                        {status=='Đã thanh toán'&&<Button variant='secondary'
-                        // onClick={()=>{handleCheckout(id,bill)}}
-                        >In hóa đơn</Button>}
-                        <Button variant='warning'>Làm mới bảng</Button>
+
+
+                        {bill && status !== 'Đã thanh toán' && (
+                            <Button
+                                variant='primary'
+                                onClick={() => {
+                                    //handleCheckout() 
+                                    setaction(0)
+                                    setshow(true)
+                                }}
+                            >
+                                Tính tiền
+                            </Button>
+                        )}
+                        {bill && status === 'Đã thanh toán' && (
+                            <Button
+                                variant='secondary'
+                                onClick={() => {
+                                    setshow(true)
+                                    setaction(1);
+                                }}
+                            >
+                                In hóa đơn
+                            </Button>
+                        )}
+                        <Button
+                            onClick={() => {
+                                setkeyword({ ...keyword })
+                                fetchingTable()
+                            }}
+                            variant='warning'>
+                            Làm mới bảng
+                        </Button>
                     </Stack>
                 </Col>
             </Row>

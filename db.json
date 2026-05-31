@@ -552,7 +552,7 @@
     {
       "id": "1780238445781",
       "idTable": "TB005",
-      "status": "doing",
+      "status": "paid",
       "createdAt": "2026-05-31T14:40:45.781Z",
       "paidAt": null,
       "totalPrice": 50000,
@@ -568,142 +568,9 @@
       ]
     },
     {
-      "id": "1780239229837",
-      "idTable": "TB001",
-      "status": "paid",
-      "createdAt": "2026-05-31T14:53:49.837Z",
-      "paidAt": null,
-      "totalPrice": 80000,
-      "items": [
-        {
-          "id": "SV031",
-          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
-          "name": "Bánh kem dâu",
-          "price": 55000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:53:49.837Z"
-        },
-        {
-          "id": "SV032",
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "name": "Bánh flan",
-          "price": 25000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:53:49.837Z"
-        }
-      ]
-    },
-    {
-      "id": "1780239258648",
-      "idTable": "TB001",
-      "status": "unpaid",
-      "createdAt": "2026-05-31T14:54:18.648Z",
-      "paidAt": null,
-      "totalPrice": 111000,
-      "items": [
-        {
-          "id": "SV029",
-          "img": "https://cdn.tgdd.vn/2020/10/CookProduct/6-1200x676.jpg",
-          "name": "Sinh tố mãng cầu",
-          "price": 46000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:54:18.648Z",
-          "status": "ordered"
-        },
-        {
-          "id": "SV018",
-          "img": "https://bizweb.dktcdn.net/100/421/036/files/nguyen-lieu-che-bien-nuoc-ep-carot.jpg?v=1617093099366",
-          "name": "Nước ép cà rốt",
-          "price": 35000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:54:45.725Z",
-          "status": "ordered"
-        },
-        {
-          "id": "SV016",
-          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
-          "name": "Nước ép táo",
-          "price": 30000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:55:08.161Z"
-        }
-      ]
-    },
-    {
-      "id": "1780239229837",
-      "idTable": "TB001",
-      "status": "paid",
-      "createdAt": "2026-05-31T14:53:49.837Z",
-      "paidAt": null,
-      "totalPrice": 80000,
-      "items": [
-        {
-          "id": "SV031",
-          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
-          "name": "Bánh kem dâu",
-          "price": 55000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:53:49.837Z"
-        },
-        {
-          "id": "SV032",
-          "img": "https://lypham.vn/wp-content/uploads/2025/10/cach-lam-banh-flan.jpg",
-          "name": "Bánh flan",
-          "price": 25000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:53:49.837Z"
-        }
-      ]
-    },
-    {
-      "id": "1780239258648",
-      "idTable": "TB001",
-      "status": "unpaid",
-      "createdAt": "2026-05-31T14:54:18.648Z",
-      "paidAt": null,
-      "totalPrice": 166000,
-      "items": [
-        {
-          "id": "SV029",
-          "img": "https://cdn.tgdd.vn/2020/10/CookProduct/6-1200x676.jpg",
-          "name": "Sinh tố mãng cầu",
-          "price": 46000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:54:18.648Z",
-          "status": "ordered"
-        },
-        {
-          "id": "SV018",
-          "img": "https://bizweb.dktcdn.net/100/421/036/files/nguyen-lieu-che-bien-nuoc-ep-carot.jpg?v=1617093099366",
-          "name": "Nước ép cà rốt",
-          "price": 35000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:54:45.725Z",
-          "status": "ordered"
-        },
-        {
-          "id": "SV016",
-          "img": "https://cdn.tgdd.vn/2021/11/CookDish/4-cach-lam-nuoc-ep-tao-ngon-don-gian-tai-nha-avt-1200x676-1.jpg",
-          "name": "Nước ép táo",
-          "price": 30000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T14:55:08.161Z",
-          "status": "ordered"
-        },
-        {
-          "id": "SV031",
-          "img": "https://cdn.tgdd.vn/2020/12/CookRecipe/GalleryStep/thanh-pham-1090.jpg",
-          "name": "Bánh kem dâu",
-          "price": 55000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T15:04:45.859Z"
-        }
-      ]
-    },
-    {
       "id": "1780241083366",
       "idTable": "TB002",
-      "status": "doing",
+      "status": "paid",
       "createdAt": "2026-05-31T15:24:43.366Z",
       "paidAt": null,
       "totalPrice": 85000,
@@ -729,7 +596,7 @@
     {
       "id": "1780241473808",
       "idTable": "TB004",
-      "status": "doing",
+      "status": "paid",
       "createdAt": "2026-05-31T15:31:13.808Z",
       "paidAt": null,
       "totalPrice": 35000,
@@ -761,36 +628,79 @@
           "waitingTime": "2026-05-31T15:35:10.900Z"
         }
       ]
+    },
+    {
+      "id": "1780244891123",
+      "idTable": "TB001",
+      "status": "paid",
+      "createdAt": "2026-05-31T16:28:11.123Z",
+      "paidAt": null,
+      "totalPrice": 65000,
+      "items": [
+        {
+          "id": "SV012",
+          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
+          "name": "Cà phê muối",
+          "price": 35000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T16:28:11.123Z",
+          "status": "ordered"
+        },
+        {
+          "id": "SV011",
+          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T16:28:43.333Z"
+        }
+      ]
+    },
+    {
+      "id": "1780263897434",
+      "idTable": "TB005",
+      "status": "paid",
+      "createdAt": "2026-05-31T21:44:57.434Z",
+      "paidAt": null,
+      "totalPrice": 30000,
+      "items": [
+        {
+          "id": "SV011",
+          "img": "https://caphekhoanbetong.com/wp-content/uploads/2025/11/bac-xiu-ca-phe-da-giao-hang-online-10.jpg",
+          "name": "Cà phê bạc xỉu",
+          "price": 30000,
+          "quantity": 1,
+          "waitingTime": "2026-05-31T21:44:57.434Z"
+        }
+      ]
     }
   ],
   "tables": [
     {
-      "id": "TB001",
-      "state": "Tốt",
-      "on": false
+      "on": true,
+      "id": "TB001"
     },
     {
       "id": "TB002",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
-      "on": false,
+      "on": true,
       "id": "TB003"
     },
     {
-      "on": false,
+      "on": true,
       "id": "TB004"
     },
     {
-      "id": "TB005",
-      "state": "Lỗi",
-      "on": true
+      "on": true,
+      "id": "TB005"
     },
     {
       "id": "TB006",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB007",

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Stack, Card, Row, Col } from 'react-bootstrap'
 import { useModalFood } from '../../context/ModalFood'
 const ListTableComponent = ({ list }) => {
-    const { setid, id,keyword,setkeyword } = useModalFood()
+    const { setid, id, keyword, setkeyword } = useModalFood()
     return (
         <Row>
             {
@@ -14,9 +14,9 @@ const ListTableComponent = ({ list }) => {
                                     cursor: 'pointer',
                                     backgroundColor: item.on ? '#d1e7dd' : '#f8d7da'
                                 }}
-                                onClick={()=>{
+                                onClick={() => {
                                     console.log(item.id)
-                                    setkeyword({idTable:item.id})
+                                    setkeyword({ idTable: item.id })
                                 }}
                             >
                                 <Card.Body>

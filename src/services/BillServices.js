@@ -104,7 +104,6 @@ const search = async (page,keyword={}) => {
             params.append('_page', page);
         params.append('_limit', 6);
         const url = BASE_URL + `?${params}`
-        console.log(url)
         const res = await axios.get(url);
 
         return res;
@@ -114,10 +113,8 @@ const search = async (page,keyword={}) => {
 }
 const update = async (id, data) => {
     try {
-        console.log(data)
         const url = BASE_URL + `/${id}`;
         const res = await axios.put(url, data);
-        console.log(res)
         return res.data
 
     } catch (error) {
