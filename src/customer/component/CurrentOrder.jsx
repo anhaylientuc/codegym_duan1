@@ -48,7 +48,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                 const newOrder ={
                 id: Date.now().toString(),
                 idTable:currentTable.id,
-                status: "unpaid",
+                status: "doing",
                 createdAt: time,
                 paidAt : null,
                 totalPrice :totalPrice,

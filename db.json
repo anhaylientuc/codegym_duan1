@@ -521,48 +521,13 @@
     }
   ],
   "bill": [
-    {
-      "id": "YNi3WlwTmdI",
-      "idTable": "TB001",
-      "status": "unpaid",
-      "createdAt": "2026-05-31T07:58:16.129Z",
-      "paidAt": null,
-      "totalPrice": 35000,
-      "items": [
-        {
-          "id": "SV012",
-          "img": "https://lypham.vn/wp-content/uploads/2024/09/cong-thuc-ca-phe-muoi.jpg",
-          "name": "Cà phê muối",
-          "price": 35000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T07:58:16.129Z"
-        }
-      ]
-    },
-    {
-      "id": "1780214334745",
-      "idTable": "TB006",
-      "status": "unpaid",
-      "createdAt": "2026-05-31T07:58:54.745Z",
-      "paidAt": null,
-      "totalPrice": 50000,
-      "items": [
-        {
-          "id": "SV014",
-          "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1280px-Cappuccino_at_Sightglass_Coffee.jpg",
-          "name": "Cappuccino",
-          "price": 50000,
-          "quantity": 1,
-          "waitingTime": "2026-05-31T07:58:54.745Z"
-        }
-      ]
-    }
+
   ],
   "tables": [
     {
       "id": "TB001",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB002",
@@ -582,7 +547,7 @@
     {
       "id": "TB005",
       "state": "Lỗi",
-      "on": false
+      "on": true
     },
     {
       "id": "TB006",
@@ -592,7 +557,7 @@
     {
       "id": "TB007",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB008",
@@ -602,7 +567,7 @@
     {
       "id": "TB009",
       "state": "Tốt",
-      "on": false
+      "on": true
     },
     {
       "id": "TB010",
