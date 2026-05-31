@@ -25,12 +25,26 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
     
 
     const postOrder=async()=>{
-        const time = new Date().toLocaleString('vi-VN');
+        const time = new Date()
 
         try{
             
 
              if(idBill===""){
+                const waitingTime= new Date();
+                const listOrderUpdate = listOrder.map((item)=>{
+                    if(item.status){
+                        
+                        return ({...item})
+                    }else{
+                        return ({
+                            ...item,
+                            waitingTime: waitingTime
+                        })
+                    }
+                });
+                console.log(listOrderUpdate);
+                
                 const newOrder ={
                 id: Date.now().toString(),
                 idTable:currentTable.id,
@@ -38,7 +52,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                 createdAt: time,
                 paidAt : null,
                 totalPrice :totalPrice,
-                items:[...listOrder]
+                items:[...listOrderUpdate]
                  }
                 const res = await addBillClient(newOrder);
                 if(res){
@@ -46,9 +60,22 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
                     toast.success("đả gửi order");
                 }
              }else{
+                const waitingTime= new Date();
+                const listOrderUpdate = listOrder.map((item)=>{
+                    if(item.status){
+                        
+                        return ({...item})
+                    }else{
+                        return ({
+                            ...item,
+                            waitingTime: waitingTime
+                        })
+                    }
+                });
+                 console.log(listOrderUpdate);
                 const updeteItem={
                     totalPrice:totalPrice,
-                    items:[...listOrder]
+                    items:[...listOrderUpdate]
                 }
                 const res = await updateBillOrder(idBill,updeteItem);
                 if(res){
@@ -156,7 +183,7 @@ export default function CurrentOrder({idBill , getDataBillByTable, selectTable, 
             scope="col">Tổng</th>
             <th
             style={{
-                width:"10%",
+                width:"12%",
                textAlign:"center"
             }}
             scope="col">tg chờ</th>

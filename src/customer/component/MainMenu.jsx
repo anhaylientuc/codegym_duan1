@@ -23,19 +23,24 @@ export default function MainMenu({tap , addOrder}){
     const [numberPage,setnumberPage] = useState(1);
 
     const getListProduct =async()=>{
+        
+        
         try{
             if(tap.id==="All"){
-                const data = await axios.get(`${api}/foods?_page=${numberPage}&_per_page=10`);
+                const data = await axios.get(`${api}/foods?_page=${numberPage}&_limit=10`);
+                const urlTest = `${api}/foods?_page=${numberPage}&_limit=5`;
+                console.log("Link API đang gọi là:", urlTest);
                 console.log(data.data);
+                console.log("////////// list food //////////////");
                 
-                setDataProduct(data.data);
-                setlistProduct(data.data.data)
+                setDataProduct(data);
+                setlistProduct(data.data)
 
             }else{
-                const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_per_page=10`);
+                const data = await axios.get(`${api}/foods?unit=${tap.id}&_page=${numberPage}&_limit=10`);
                 console.log(data.data);
-                setDataProduct(data.data);
-                setlistProduct(data.data.data)
+                setDataProduct(data);
+                setlistProduct(data.data)
             }
         }catch(err){
             console.log("get data product false : "+err);
