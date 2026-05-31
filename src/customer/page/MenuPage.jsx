@@ -7,7 +7,8 @@ import { FoodGroupsServices } from "../../services/FoodGroupsServices";
 import CurrentOrder from "../component/CurrentOrder";
 import { TableServices } from "../../services/TableServices";
 import DishOrdered from "../component/DishOrdered";
-import { getBillByTable } from "../../services/BillServices";
+import { getBillByTable, updateBillOrder } from "../../services/BillServices";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function(){
 
@@ -38,15 +39,47 @@ export default function(){
 }
 
 // xóa món từ danh sách món
- function removeOrderByID(id) {
+ const removeOrderByID =async(id,index1,waitingTime)=> {
+    
+ 
+    if(!listOrder[index1].status){
+
+        console.log("l1");
+        
         setlistOrder((prev) => {
-            const copyData = [...prev].filter(item => item.id !== id);
+            const copyData = prev.filter((item, index) => index !== index1);
             return copyData;
         });
+    }else{
+        console.log("l2");
+        if(waitingTime !=="00:00"){
+            const listNotOred = listOrder.filter((items)=>!items.status);
+            const listWasOred = listOrder.filter((items)=>items.status);
+            console.log(listNotOred);
+            
+
+            const listDelete = listWasOred.filter((item, index) => index !== index1);
+            const updateItem = {
+                items:[...listDelete]
+            }
+            const res = await updateBillOrder(idBill,updateItem);
+
+            if(res){          
+                await getDataBillByTable(currentTable);     
+                setlistOrder(prev=>[...prev,...listNotOred])  
+            }
+        }else{
+            toast.error("đã hết thời gian xóa");
+        }
+        
+        
+
+    }
+        
     }
 
 
-   
+   /////////////////////////
 
    const addOrder=(id,img,name,price,waitingTime)=>{
     
@@ -84,7 +117,6 @@ export default function(){
             img:img,
             name:name,
             price:price,
-            waitingTime:"03:00",
             quantity:1
             }
             return [...prev,newListOrder];
@@ -200,6 +232,7 @@ export default function(){
     }}
     >
     {/* <DishOrdered idTable={currentTable}/> */}
+    <Toaster position="top-right" reverseOrder={false} />
     <Sidebar listTap={listFoodGroup} tap={tap} selectTap={selectTap}/>
     <MainMenu addOrder={addOrder} tap={tap}/>
     <CurrentOrder idBill={idBill} getDataBillByTable={getDataBillByTable} selectTable={selectTable} currentTable={currentTable} listTable={listDropDow} removeOrder={removeOrderByID} listOrder={listOrder} controlQuantity={controlQuantity}/>
